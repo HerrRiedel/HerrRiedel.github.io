@@ -1,5 +1,11 @@
 # main links
 main:
+  - title: "About"
+    url: /tabs/about
+  - title: "Research"
+    url: /tabs/research
+  - title: "Curriculum"
+    url: /tabs/CV
   - title: "Short Stories"
     url: /tabs/short
     description: "A few short stories that I've written (mostly in Spanish)"
