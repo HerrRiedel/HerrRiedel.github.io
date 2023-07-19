@@ -111,6 +111,9 @@ author:
   location         : "San Diego, CA"
   email            : "gabrielcr@ucsd.edu"
   links:
+    - label: "UC San Diego"
+      icon: "fa-solid fa-building-columns"
+      url: "https://economics.ucsd.edu/graduate-program/about/grad-profiles/cohort%202021/CanedoRiedel-gabriel.html"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
