@@ -1,13 +1,13 @@
 # main links
 main:
   - title: "About"
-    url: /pages/about
+    url: /_pages/about
   - title: "Research"
-    url: /pages/research
+    url: /_pages/research
   - title: "Curriculum"
-    url: /pages/CV
+    url: /_pages/CV
   - title: "Short Stories"
-    url: /pages/short
+    url: /_pages/short
     description: "A few short stories that I've written (mostly in Spanish)"
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
