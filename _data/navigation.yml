@@ -3,11 +3,11 @@ main:
   - title: "About"
     url: /about/
   - title: "Research"
-    url: /_pages/research
+    url: /research/
   - title: "Curriculum"
-    url: /_pages/CV
+    url: /CV/
   - title: "Short Stories"
-    url: /_pages/short
+    url: /SS/
     description: "A few short stories that I've written (mostly in Spanish)"
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
