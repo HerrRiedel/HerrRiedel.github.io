@@ -10,8 +10,8 @@ redirect_from:
 
 ## Working Papers
 
-### Education
+### Games
 
 ### Spatial Economics
 
-### Games
+### Education
