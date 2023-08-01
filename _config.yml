@@ -106,7 +106,7 @@ analytics:
 # Site Author
 author:
   name             : "Gabriel Cañedo Riedel"
-  avatar           : "/assets/images/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/2Gprofile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "PhD in Economics Student"
   location         : "San Diego, CA"
   email            : "gabrielcr@ucsd.edu"
