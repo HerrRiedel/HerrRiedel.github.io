@@ -8,10 +8,10 @@ redirect_from:
   - /research.html
 ---
 
-### Working Papers
-
 ## Working Papers
 
-# Working Papers
+### Education
 
-Working Papers
+### Spatial Economics
+
+### Games
