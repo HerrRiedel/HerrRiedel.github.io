@@ -24,3 +24,5 @@ redirect_from:
 
 
 ### Education
+1. [*Living with Density: Did Permitting Reform for ADUs in California Lower Neighborhood Home Values?* (Presentation)](https://drive.google.com/file/d/1OrNDyBx1Qah5bL-ZKZQXaCjYTseWCUj9/view?usp=drive_link), with [Phil Hoxie](https://www.philiphoxie.com/)
+1. [*Living with Density: Did Permitting Reform for ADUs in California Lower Neighborhood Home Values?* (Presentation)](https://drive.google.com/file/d/1OrNDyBx1Qah5bL-ZKZQXaCjYTseWCUj9/view?usp=drive_link), with [Phil Hoxie](https://www.philiphoxie.com/)
