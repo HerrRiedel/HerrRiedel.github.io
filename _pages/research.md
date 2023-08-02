@@ -8,7 +8,7 @@ redirect_from:
   - /research.html
 ---
 
-## Working Papers
+## Working Papers (Mostly Drafts)
 
 ### Games
 
