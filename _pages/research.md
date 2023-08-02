@@ -12,6 +12,8 @@ redirect_from:
 
 ### Games
 
+## Theory
+
 ### Spatial Economics
 
 ### Education
