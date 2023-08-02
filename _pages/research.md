@@ -10,7 +10,7 @@ redirect_from:
 
 ## Working Papers (Mostly Drafts)
 
-### Games
+### Games we Play
 
 ### Theory
 
