@@ -243,7 +243,7 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-
+  - jakyll-redirect-from
 
 # Archives
 #  Type
