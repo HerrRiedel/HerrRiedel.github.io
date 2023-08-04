@@ -5,7 +5,7 @@ classes: wide
 title: "About"
 ---
 
-<div style="text-align: right">
+<div style="text-align: justify">
 I think economics lives in the intersection between math and story-telling. Both a science and an art. I think the job of an economist is to capture the human experience and lay it out in a transparent and intuitive mathematical model that has both credible mechanisms and explanatory power. 
   
 My interests in economics include microeconomic theory, distribution of economic variables, and spatial economics (aka., the final frontier economics). Outside of economics my interests include evolutionary biology, history of philosophical thinking, and literature (specially short stories and its symbolisms).
