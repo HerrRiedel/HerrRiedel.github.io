@@ -1,10 +1,11 @@
 ---
-title: "Jeep and Surfboard"
-excerpt: "Picture of my Jeep"
-author_profile: false
-sitemap: false
-permalink: /Geep.html
-header: false
+permalink: /Geep/
+title: ""
+excerpt: "Jeep GCR"
+author_profile: true
+redirect_from: 
+  - /Geep/
+  - /Geep.html
 ---
 
 ![alt text](/assets/images/board.jpg "GCR Jeep")
