@@ -112,7 +112,7 @@ author:
   email            : "gabrielcr@ucsd.edu"
   links:
     - label: "San Diego, CA"
-      icon: "fas fa-fw fa-map-marker"
+      icon: "fas fa-fw fa-map-marker-dot"
       url: "https://en.wikipedia.org/wiki/San_Diego"
     - label: "UC San Diego"
       icon: "fas fa-fw fa-landmark"
