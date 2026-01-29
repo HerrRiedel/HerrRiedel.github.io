@@ -1,7 +1,7 @@
 ---
 permalink: /CV/
-title: "Curriculum"
-excerpt: "Curriculum GabrielCR"
+title: "CV"
+excerpt: "Curriculum vitae"
 author_profile: true
 redirect_from: 
   - /CV/
