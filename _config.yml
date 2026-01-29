@@ -107,7 +107,7 @@ analytics:
 author:
   name             : "Gabriel Cañedo Riedel"
   avatar           : "/assets/images/2Gprofile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD candidate in Economics (UCSD)"
+  bio              : "PhD candidate in Economics"
   links:
     - label: "San Diego, CA"
       icon: "fa-solid fa-location-dot"
