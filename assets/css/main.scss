@@ -8,17 +8,15 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/* --- Footer tightening (custom) --- */
+/* Footer: tighter spacing + smaller type */
 .page__footer {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
 
-.page__footer footer {
-  font-size: 0.9rem;
+.page__footer footer,
+.page__footer-copyright {
+  font-size: 0.85rem;
   line-height: 1.2;
 }
 
-.page__footer-copyright {
-  font-size: 0.9rem;
-}
