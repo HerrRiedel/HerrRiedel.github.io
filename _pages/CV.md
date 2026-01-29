@@ -8,10 +8,13 @@ redirect_from:
   - /CV.html
 ---
 
-## [Download](/assets/other/CV2023.pdf)
+## Download
+[CV2023.pdf](/assets/other/CV2023.pdf)
 
-<object data="/assets/other/CV2023.pdf" type="application/pdf" width="1200px" height="1800px">
-    <embed src="/assets/other/CV2023.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/assets/other/CV2023.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+## View
+<iframe
+  src="/assets/other/CV2023.pdf#view=FitH"
+  width="100%"
+  height="1100"
+  style="border:0;">
+</iframe>
