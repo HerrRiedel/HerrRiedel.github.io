@@ -119,7 +119,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:gabrielcr@ucsd.edu"
     - label: "X (personal)"
-      icon: "fab fa-fw fa-twitter-square"
+      icon: "fab fa-fw fa-square-x-twitter"
       url: "https://twitter.com/GCanedoRiedel"
 
 # Site Footer
