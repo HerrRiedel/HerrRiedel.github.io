@@ -109,7 +109,7 @@ author:
   avatar           : "/assets/images/2Gprofile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "PhD candidate in Economics"
   links:
-    - label: "San Diego, CA"
+    - label: "  San Diego, CA"
       icon: "fa-solid fa-location-dot"
       url: "https://en.wikipedia.org/wiki/San_Diego"
     - label: "UC San Diego"
