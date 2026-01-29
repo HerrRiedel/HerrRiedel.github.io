@@ -1,19 +1,8 @@
 # main links
 main:
-  # - title: "About"
-  #   url: /
+  - title: "About"
+    url: /
   - title: "Research"
     url: /research/
-  - title: "Curriculum"
+  - title: "CV"
     url: /CV/
-  - title: "Short Stories"
-    url: /SS/
-    description: "A few short stories that I've written (mostly in Spanish)"
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
