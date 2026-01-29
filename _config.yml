@@ -107,7 +107,7 @@ analytics:
 author:
   name             : "Gabriel Cañedo Riedel"
   avatar           : "/assets/images/2Gprofile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD in Economics Student"
+  bio              : "PhD candidate in Economics (UCSD)"
 #  location         : "San Diego, CA"
   email            : "gabrielcr@ucsd.edu"
   links:
@@ -119,7 +119,7 @@ author:
       url: "https://economics.ucsd.edu/graduate-program/about/grad-profiles/cohort%202021/CanedoRiedel-gabriel.html"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:gabrielcr@ucsd.edu"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -131,7 +131,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/HerrRiedel"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
