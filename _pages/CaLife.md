@@ -4,7 +4,6 @@ title: ""
 excerpt: "Cali Lifestyle"
 author_profile: true
 redirect_from: 
-  - /CaLife/
   - /CaLife.html
 ---
 
