@@ -19,6 +19,13 @@
 {% endif %}
 
 {% include analytics.html %}
+
+<script>
+  document.querySelectorAll('a[href$=".pdf"], a[href$=".pdf"]').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener');
+  });
+</script>
 {% include /comments-providers/scripts.html %}
 
 {% if site.after_footer_scripts %}
