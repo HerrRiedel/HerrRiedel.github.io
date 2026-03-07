@@ -12,8 +12,8 @@ title: "About"
   <p>
     <strong>Education.</strong><br>
     Ph.D. Economics, UC San Diego, 2021–present<br>
-    M.A. Economic Theory, ITAM, 2021<br>
-    B.A. Economics, ITAM, 2018
+    M.A. Economic Theory, ITAM, 2021, Summa Cum Laude<br>
+    B.A. Economics, ITAM, 2018, Summa Cum Laude
   </p>
   <p>
     <strong>Contact.</strong> The best way to reach me is by email: gabrielcr@ucsd.edu.
