@@ -24,6 +24,8 @@ redirect_from:
 
 ## Education
 
-*Inputs and the School Quality Effects of Targeted Vouchers*, with Cristián Sánchez &nbsp;·&nbsp; [Draft](/assets/papers/paper_quality.pdf)
+**Inputs and the School Quality Effects of Targeted Vouchers**, with Cristián Sánchez &nbsp;·&nbsp; [Draft](/assets/papers/paper_quality.pdf)
+<br><small>We study how Chile's targeted voucher (SEP) affects school quality through changes in inputs. Schools receiving SEP funding increase spending on instructional materials and personnel, with modest positive effects on standardized test scores concentrated in lower-income schools.</small>
 
-*Price Effects of a Targeted Voucher Reform*, with Cristián Sánchez, Francisco Garrido and Emiliano Ramírez &nbsp;·&nbsp; [Draft](/assets/papers/paper_priceandsep.pdf)
+**Price Effects of a Targeted Voucher Reform**, with Cristián Sánchez, Francisco Garrido and Emiliano Ramírez &nbsp;·&nbsp; [Draft](/assets/papers/paper_priceandsep.pdf)
+<br><small>We estimate the effect of Chile's SEP voucher on private school tuition. The additional per-student funding is partially passed through to higher fees, suggesting schools capture part of the subsidy increase through pricing.</small>
