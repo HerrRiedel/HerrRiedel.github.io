@@ -11,7 +11,7 @@ title: "About"
   </p>
   <p>
     <strong>Education.</strong><br>
-    Ph.D. Economics, UC San Diego, 2021–present<br>
+    Ph.D. Economics, UC San Diego, 2021–present (Candidate since 2023)<br>
     M.A. Economic Theory, ITAM, 2021, Summa Cum Laude<br>
     B.A. Economics, ITAM, 2018, Summa Cum Laude
   </p>
