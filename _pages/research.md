@@ -18,7 +18,7 @@ redirect_from:
 <br><small>This paper studies demand systems through their associated budget share functions and shows that CES demand systems have shares that correspond pointwise to log-logistic distribution functions. The result provides a constructive framework for designing demand systems beyond CES, clarifying the structure of existing generalizations and linking continuous-good demand to distribution-based representations in discrete choice theory.</small>
 
 **Living with Density: The Impacts of California's By-Right Permitting for Accessory Dwelling Units**, with [Philip Hoxie](https://www.philiphoxie.com/) &nbsp;·&nbsp; [Draft](/assets/papers/Coastal_Zone.pdf)
-<br><small>California's ADU permitting reforms since 2016 have dramatically increased housing production, but their effect on property values depends on whether the option to build — not just actual construction — is priced by the market. Using a difference-in-discontinuities design that exploits the California Coastal Zone as a stable regulatory boundary, we find that permitting activity roughly doubles and that the option value of potential ADU construction capitalizes into land values at 5–10%.</small>
+<br><small>Using a difference-in-discontinuities design that exploits the California Coastal Zone as a stable regulatory boundary, we find that ADU permitting roughly doubles outside the Coastal Zone after California's by-right reforms — though at most 1% of parcels choose to build. The reforms nonetheless create an option value that capitalizes into land prices: we estimate it at 5–10% of land values for the average residential parcel.</small>
 
 ---
 
