@@ -7,12 +7,12 @@ title: "About"
 
 <div style='text-align: justify;'>
   <p>
-    I am a PhD student in Economics at UC San Diego. My interests are in theory and regulatory capture.
-  </p>
-  <p> 
-    This website is a hub for my work: drafts and slides, and a current CV.
+    I am a PhD candidate in Economics at UC San Diego. My research is in theory and industrial organization, with a focus on how product market competition shapes the distributional effects of regulation.
   </p>
   <p>
-    **Contact.** The best way to reach me is by email: gabrielcr@ucsd.edu.
+    This website is a hub for my work: drafts, slides, and a current CV.
+  </p>
+  <p>
+    <strong>Contact.</strong> The best way to reach me is by email: gabrielcr@ucsd.edu.
   </p>
 </div>
