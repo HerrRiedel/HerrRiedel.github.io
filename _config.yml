@@ -109,9 +109,6 @@ author:
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "PhD candidate in Economics"
   links:
-    - label: "San Diego, CA"
-      icon: "fa-fw fa-solid fa-location-dot"
-      url: "https://en.wikipedia.org/wiki/San_Diego"
     - label: "UC San Diego"
       icon: "fa-fw fa-solid fa-graduation-cap"
       url: "https://economics.ucsd.edu/graduate-program/about/grad-profiles/cohort%202021/CanedoRiedel-gabriel.html"
