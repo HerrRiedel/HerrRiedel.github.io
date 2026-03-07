@@ -107,7 +107,7 @@ analytics:
 author:
   name             : "Gabriel Cañedo Riedel"
   avatar           : "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD candidate in Economics"
+  bio              :
   links:
     - label: "Email"
       icon: "fa-fw fa-solid fa-envelope"
