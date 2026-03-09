@@ -12,6 +12,7 @@ redirect_from:
 
 **Regulatory Capture via Price Aggregator** &nbsp;·&nbsp; [Draft](/assets/papers/Regulatory%20Capture%20via%20Price%20Aggregator%20(Draft)%20-%20Gabriel%20Canedo%20Riedel.pdf)
 &nbsp;&nbsp;[Theory (Slides)](/assets/papers/Regulatory%20Capture%20via%20Price%20Aggregator%20(Theory%20Slides)%20-%20Gabriel%20Canedo%20Riedel.pdf) &nbsp;·&nbsp; [Minimum Wage Application (Slides)](/assets/papers/Who%20Benefits%20from%20the%20Minimum%20Wage%20(Slides)%20-%20Gabriel%20Canedo%20Riedel.pdf)
+<br><small><a href="/assets/papers/Regulatory%20Capture%20via%20Price%20Aggregator%20(Draft)%20-%20Gabriel%20Canedo%20Riedel.pdf">(Current version)</a></small>
 <br><small>Under monopolistic competition, a firm's profit depends on its cost relative to an industry price aggregator — not on its cost in levels. Regulation that raises all costs can therefore improve the competitive position of the most productive firms if its burden vanishes at the top of the productivity distribution. I classify cost-increasing regulations into three types — proportional, additive, and shape-changing — and show that only shape-changing regulations generate this effect. Applied to minimum wages, the framework explains why firms already paying above the floor expand, gain market share, and appear more productive after increases: the minimum wage operates as a shape-changing regulation that reallocates demand through the price aggregator.</small>
 
 **Across CES** &nbsp;·&nbsp; [Draft](/assets/papers/Across%20CES%20(Draft)%20-%20Gabriel%20Canedo%20Riedel.pdf)
