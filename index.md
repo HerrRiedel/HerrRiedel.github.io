@@ -10,7 +10,7 @@ title: "About"
     I am a PhD candidate in Economics at UC San Diego. My research is in macroeconomic theory — I study how regulation shapes market competition and firm dynamics.
   </p>
   <p>
-    I work in theory because it forces you to be honest about your assumptions. Because they're explicit, anyone can engage with them directly. That is what separates a result from an opinion.
+    I work in theory because it forces you to be honest about your assumptions. That transparency means anyone can engage with them directly. That is what separates a result from an opinion.
   </p>
   <p>
     I grew up in Guadalajara, did my undergrad and master's at ITAM in Mexico City, and came to San Diego for the PhD. Asimov's <em>Foundation</em> is part of why I'm an economist. Outside the work I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
