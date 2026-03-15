@@ -36,7 +36,3 @@ title: "About"
     <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;">2018 &nbsp;·&nbsp; Summa Cum Laude</td>
   </tr>
 </table>
-
-## Contact
-
-The best way to reach me is by email: gabrielcr@ucsd.edu.
