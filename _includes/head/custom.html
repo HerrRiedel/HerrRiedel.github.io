@@ -46,189 +46,115 @@
 <style>
   #crow-logo { position: relative; display: inline-block; cursor: pointer; }
 
-  #crow-svg-anim {
-    display: none;
+  /* Animate the SVG crow directly — no element swapping */
+  #crow-svg { transform-origin: center 84%; }
+
+  @keyframes crow-flap {
+    0%   { transform: translateY(0px)  rotate(0deg);  }
+    12%  { transform: translateY(-5px) rotate(-7deg); }
+    24%  { transform: translateY(-1px) rotate(4deg);  }
+    36%  { transform: translateY(-6px) rotate(-8deg); }
+    48%  { transform: translateY(-2px) rotate(3deg);  }
+    60%  { transform: translateY(-4px) rotate(-5deg); }
+    72%  { transform: translateY(-1px) rotate(2deg);  }
+    86%  { transform: translateY(-2px) rotate(-1deg); }
+    100% { transform: translateY(0px)  rotate(0deg);  }
+  }
+  @keyframes crow-peck {
+    0%   { transform: rotate(0deg);  }
+    35%  { transform: rotate(22deg); }
+    60%  { transform: rotate(22deg); }
+    100% { transform: rotate(0deg);  }
+  }
+  @keyframes crow-eat {
+    0%   { transform: rotate(0deg);  }
+    30%  { transform: rotate(18deg); }
+    55%  { transform: rotate(18deg); }
+    80%  { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg);  }
+  }
+
+  #crow-svg.crow-flapping { animation: crow-flap 1.2s ease-in-out forwards; }
+  #crow-svg.crow-pecking  { animation: crow-peck 0.7s ease-in-out forwards; }
+  #crow-svg.crow-eating   { animation: crow-eat  0.5s ease-in-out forwards; }
+
+  /* Item overlaid at beak tip — beak is ~86% from left, ~28% from top of svg */
+  #crow-item {
+    position: absolute;
+    left: 86%;
+    top: 28%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
     overflow: visible;
-    color: #ede8e0;        /* warm off-white — matches text colour */
   }
-  #crow-svg-anim .cw-eye        { fill: #231f1c; }   /* background colour = hole */
-  #crow-svg-anim .cw-item-f     { fill: #b5735a; }   /* terracotta items */
-  #crow-svg-anim .cw-item-s     { fill: none; stroke: #b5735a; stroke-linecap: round; }
-  #crow-svg-anim .cw-item       { transition: opacity 0.12s ease; }
-
-  /* --- wing flap --- */
-  @keyframes cw-flap {
-    0%   { transform: rotate(0deg);   }
-    14%  { transform: rotate(-52deg); }
-    28%  { transform: rotate(16deg);  }
-    42%  { transform: rotate(-46deg); }
-    56%  { transform: rotate(12deg);  }
-    70%  { transform: rotate(-24deg); }
-    84%  { transform: rotate(4deg);   }
-    100% { transform: rotate(0deg);   }
-  }
-  /* --- head peck --- */
-  @keyframes cw-peck {
-    0%   { transform: rotate(0deg);  }
-    35%  { transform: rotate(26deg); }
-    58%  { transform: rotate(26deg); }
-    100% { transform: rotate(0deg);  }
-  }
-  /* --- eat (quick head bob) --- */
-  @keyframes cw-eat {
-    0%   { transform: rotate(0deg);  }
-    30%  { transform: rotate(22deg); }
-    55%  { transform: rotate(22deg); }
-    80%  { transform: rotate(-4deg); }
-    100% { transform: rotate(0deg);  }
-  }
-
-  .cw-flapping #cw-wing-back  { animation: cw-flap 1.0s ease-in-out forwards; }
-  .cw-flapping #cw-wing-front { animation: cw-flap 1.0s ease-in-out 0.05s forwards; }
-  .cw-pecking  #cw-head       { animation: cw-peck 0.75s ease-in-out forwards; }
-  .cw-eating   #cw-head       { animation: cw-eat  0.45s ease-in-out forwards; }
+  #crow-item.visible { opacity: 1; }
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var crowLogo  = document.getElementById('crow-logo');
   var crowTitle = document.getElementById('crow-title');
-  if (!crowLogo) return;
+  var crowSVG   = document.getElementById('crow-svg');
+  if (!crowLogo || !crowSVG) return;
 
-  /* ---- Build SVG crow ---- */
-  var NS  = 'http://www.w3.org/2000/svg';
-  var svg = document.createElementNS(NS, 'svg');
-  svg.id  = 'crow-svg-anim';
-  svg.setAttribute('viewBox', '0 0 120 80');
-  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-  svg.innerHTML = [
-    /* tail */
-    '<path fill="currentColor" d="M 5,50 Q 10,54 16,60 Q 10,58 8,65 Q 14,56 22,52 Z"/>',
+  /* Item overlay element */
+  var itemEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  itemEl.id = 'crow-item';
+  itemEl.setAttribute('width', '18');
+  itemEl.setAttribute('height', '14');
+  itemEl.setAttribute('viewBox', '0 0 18 14');
+  itemEl.setAttribute('overflow', 'visible');
+  crowLogo.appendChild(itemEl);
 
-    /* body */
-    '<path fill="currentColor" d="M 20,48 Q 38,34 60,31 Q 66,28 68,30 Q 71,37 66,50 Q 55,64 36,67 Q 20,68 14,58 Q 10,51 20,48 Z"/>',
+  var ROCK  = '<ellipse cx="7" cy="6" rx="6.5" ry="5" fill="#b5735a"/>';
+  var STICK = '<line x1="0" y1="12" x2="15" y2="2" stroke="#b5735a" stroke-width="2.2" stroke-linecap="round"/>'
+            + '<line x1="7" y1="7"  x2="12" y2="1" stroke="#b5735a" stroke-width="1.6" stroke-linecap="round"/>';
 
-    /* back wing */
-    '<g id="cw-wing-back" style="transform-origin:17px 54px">',
-      '<path fill="currentColor" opacity="0.65" d="M 15,52 Q 32,20 60,31 Q 46,52 20,58 Z"/>',
-    '</g>',
-
-    /* front wing */
-    '<g id="cw-wing-front" style="transform-origin:19px 56px">',
-      '<path fill="currentColor" opacity="0.78" d="M 19,54 Q 36,22 62,33 Q 48,54 24,60 Z"/>',
-    '</g>',
-
-    /* head group — rotates at neck for peck/eat */
-    '<g id="cw-head" style="transform-origin:64px 34px">',
-      '<ellipse cx="72" cy="22" rx="13" ry="11" fill="currentColor"/>',
-      '<polygon points="82,17 102,22 100,25 82,28" fill="currentColor"/>',
-      '<circle cx="75" cy="19" r="2.6" class="cw-eye"/>',
-
-      /* bug */
-      '<g id="cw-item-bug" class="cw-item" style="opacity:0">',
-        '<ellipse cx="107" cy="23" rx="3.8" ry="2.5" class="cw-item-f"/>',
-        '<ellipse cx="113" cy="23" rx="2.8" ry="2.0" class="cw-item-f"/>',
-        '<line x1="105" y1="21" x2="101" y2="17" class="cw-item-s" stroke-width="1"/>',
-        '<line x1="107" y1="21" x2="105" y2="17" class="cw-item-s" stroke-width="1"/>',
-        '<line x1="109" y1="21" x2="107" y2="17" class="cw-item-s" stroke-width="1"/>',
-        '<line x1="105" y1="25" x2="101" y2="29" class="cw-item-s" stroke-width="1"/>',
-        '<line x1="107" y1="25" x2="105" y2="29" class="cw-item-s" stroke-width="1"/>',
-        '<line x1="109" y1="25" x2="107" y2="29" class="cw-item-s" stroke-width="1"/>',
-        '<line x1="112" y1="21" x2="110" y2="17" class="cw-item-s" stroke-width="0.8"/>',
-        '<line x1="114" y1="22" x2="118" y2="19" class="cw-item-s" stroke-width="0.8"/>',
-      '</g>',
-
-      /* twig */
-      '<g id="cw-item-twig" class="cw-item" style="opacity:0">',
-        '<line x1="103" y1="25" x2="120" y2="12" class="cw-item-s" stroke-width="2.5"/>',
-        '<line x1="110" y1="19" x2="114" y2="12" class="cw-item-s" stroke-width="1.8"/>',
-        '<line x1="115" y1="14" x2="120" y2="17" class="cw-item-s" stroke-width="1.5"/>',
-      '</g>',
-
-      /* stone */
-      '<g id="cw-item-stone" class="cw-item" style="opacity:0">',
-        '<ellipse cx="108" cy="27" rx="6.5" ry="4.5" class="cw-item-f"/>',
-      '</g>',
-
-      /* seed */
-      '<g id="cw-item-seed" class="cw-item" style="opacity:0">',
-        '<ellipse cx="107" cy="23" rx="5.5" ry="3.5" class="cw-item-f"/>',
-        '<line x1="107" y1="19.5" x2="107" y2="16" class="cw-item-s" stroke-width="1.5"/>',
-      '</g>',
-    '</g>',
-
-    /* legs */
-    '<rect x="33" y="64" width="4" height="13" rx="1.5" fill="currentColor"/>',
-    '<rect x="47" y="64" width="4" height="13" rx="1.5" fill="currentColor"/>',
-
-    /* feet */
-    '<line x1="27" y1="76" x2="40" y2="76" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>',
-    '<line x1="43" y1="76" x2="56" y2="76" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>',
-  ].join('');
-
-  crowLogo.appendChild(svg);
-
-  var img = crowLogo.querySelector('img');
-
-  /* ---- State machine ---- */
-  var IDLE = 0, ANIM = 1, HOLDING = 2;
-  var state   = IDLE;
+  var ITEMS = [ROCK, STICK];
   var itemIdx = 0;
-  var ITEMS   = ['bug', 'twig', 'stone', 'seed'];
+
+  var IDLE = 0, ANIM = 1, HOLDING = 2;
+  var state = IDLE;
 
   function triggerCrow(e) {
     e.preventDefault();
-    if (state === ANIM)    return;
-    if (state === IDLE)    startPickup();
-    else                   startEating();
+    if (state === ANIM)  return;
+    if (state === IDLE)  startPickup();
+    else                 startEating();
   }
 
   function startPickup() {
     state = ANIM;
-
-    /* size SVG to match img */
-    svg.style.height = (img.offsetHeight || 30) + 'px';
-    svg.style.width  = 'auto';
-
-    img.style.display = 'none';
-    svg.style.display = 'inline-block';
-
-    var itemId = ITEMS[itemIdx % ITEMS.length];
+    var item = ITEMS[itemIdx % ITEMS.length];
     itemIdx++;
 
-    /* phase 1: flap (1.0s) */
-    svg.classList.add('cw-flapping');
+    /* Phase 1: flap (1.2s) */
+    crowSVG.classList.add('crow-flapping');
     setTimeout(function () {
-      svg.classList.remove('cw-flapping');
+      crowSVG.classList.remove('crow-flapping');
 
-      /* phase 2: peck (0.75s) — item appears at 58% ≈ 435ms */
-      svg.classList.add('cw-pecking');
+      /* Phase 2: peck (0.7s) — item appears when head returns (after 700ms) */
+      crowSVG.classList.add('crow-pecking');
       setTimeout(function () {
-        svg.querySelector('#cw-item-' + itemId).style.opacity = '1';
-      }, 435);
-      setTimeout(function () {
-        svg.classList.remove('cw-pecking');
+        crowSVG.classList.remove('crow-pecking');
+        itemEl.innerHTML = item;
+        itemEl.classList.add('visible');
         state = HOLDING;
-      }, 750);
-
-    }, 1000);
+      }, 700);
+    }, 1200);
   }
 
   function startEating() {
     state = ANIM;
-    svg.classList.add('cw-eating');
-
-    /* item disappears mid-chomp */
+    itemEl.classList.remove('visible');
+    crowSVG.classList.add('crow-eating');
     setTimeout(function () {
-      svg.querySelectorAll('.cw-item').forEach(function (el) { el.style.opacity = '0'; });
-    }, 135);
-
-    setTimeout(function () {
-      svg.classList.remove('cw-eating');
-      svg.style.display = 'none';
-      img.style.display = '';
+      crowSVG.classList.remove('crow-eating');
+      itemEl.innerHTML = '';
       state = IDLE;
-    }, 450);
+    }, 500);
   }
 
   [crowLogo, crowTitle].forEach(function (el) {
