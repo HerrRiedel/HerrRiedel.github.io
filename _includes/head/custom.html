@@ -45,6 +45,8 @@
 <!-- crow easter egg -------------------------------------------------------- -->
 <style>
   #crow-logo { position: relative; display: inline-block; cursor: pointer; }
+  #crow-logo:focus:not(:focus-visible),
+  #crow-title:focus:not(:focus-visible) { outline: none; }
 
   /* Animate the SVG crow directly — no element swapping */
   #crow-svg { transform-origin: center 84%; }
