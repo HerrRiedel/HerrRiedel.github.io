@@ -102,11 +102,11 @@
   #crow-svg.crow-pecking  { animation: crow-peck 0.7s ease-in-out forwards; }
   #crow-svg.crow-eating   { animation: crow-eat  0.5s ease-in-out forwards; }
 
-  /* Item overlaid at beak tip — beak is ~86% from left, ~28% from top of svg */
+  /* Item overlaid at beak tip — shifted left/up so item sits in beak */
   #crow-item {
     position: absolute;
-    left: 86%;
-    top: 28%;
+    left: 82%;
+    top: 24%;
     transform: translateY(-50%);
     opacity: 0;
     transition: opacity 0.15s ease;
@@ -132,11 +132,15 @@ document.addEventListener('DOMContentLoaded', function () {
   itemEl.setAttribute('overflow', 'visible');
   crowLogo.appendChild(itemEl);
 
-  var ROCK  = '<ellipse cx="7" cy="6" rx="6.5" ry="5" fill="#b5735a"/>';
-  var STICK = '<line x1="0" y1="12" x2="15" y2="2" stroke="#b5735a" stroke-width="2.2" stroke-linecap="round"/>'
-            + '<line x1="7" y1="7"  x2="12" y2="1" stroke="#b5735a" stroke-width="1.6" stroke-linecap="round"/>';
+  var COIN  = '<circle cx="7" cy="7" r="5.5" fill="#b5735a"/>'
+            + '<circle cx="7" cy="7" r="3.8" fill="none" stroke="#c88060" stroke-width="0.9"/>';
+  var STICK = '<line x1="1" y1="7" x2="16" y2="1" stroke="#b5735a" stroke-width="2.2" stroke-linecap="round"/>'
+            + '<line x1="9" y1="4" x2="13" y2="-1" stroke="#b5735a" stroke-width="1.6" stroke-linecap="round"/>';
+  var BILL  = '<rect x="0" y="4" width="17" height="7" rx="1" fill="#b5735a"/>'
+            + '<line x1="2" y1="7" x2="15" y2="7" stroke="#231f1c" stroke-width="0.7" stroke-linecap="round" opacity="0.35"/>'
+            + '<line x1="2" y1="9" x2="11" y2="9" stroke="#231f1c" stroke-width="0.7" stroke-linecap="round" opacity="0.35"/>';
 
-  var ITEMS = [ROCK, STICK];
+  var ITEMS = [COIN, STICK, BILL];
   var itemIdx = 0;
 
   var IDLE = 0, ANIM = 1, HOLDING = 2;
