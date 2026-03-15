@@ -5,7 +5,7 @@ classes: wide
 title: "About"
 ---
 
-<div style='text-align: justify;'>
+<div>
   <p>
     I am a PhD candidate in Economics at UC San Diego. My research is in macroeconomic theory — I study how regulation shapes market competition and firm dynamics.
   </p>
