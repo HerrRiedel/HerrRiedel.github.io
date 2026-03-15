@@ -7,7 +7,13 @@ title: "About"
 
 <div style='text-align: justify;'>
   <p>
-    I am a PhD candidate in Economics at UC San Diego, expected to graduate in 2027. My research is in macroeconomic theory and regulatory capture. My job market paper develops a theory in which firms benefit from industry-wide regulation that raises their own costs. Under monopolistic competition, a firm's profit depends on its cost relative to an industry price aggregator — not on its cost in levels. I classify cost-increasing regulations into three types and show that only shape-changing regulations — those whose burden vanishes for the most productive firms — improve their competitive position. Applied to minimum wages, the framework explains a well-documented puzzle: firms already paying above the floor expand, gain market share, and appear more productive after increases, because the minimum wage operates as a shape-changing regulation that reallocates demand through the price aggregator.
+    I am a PhD candidate in Economics at UC San Diego. My research is in macroeconomic theory — I study how regulation shapes market competition and firm dynamics.
+  </p>
+  <p>
+    Theory forces you to be honest about your assumptions. Because they're explicit, anyone can engage with them directly. That is what separates a result from an opinion.
+  </p>
+  <p>
+    I grew up in Guadalajara, did my undergrad and master's at ITAM in Mexico City, and came to San Diego for the PhD. Asimov's <em>Foundation</em> is part of why I'm an economist. Outside the work I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
   </p>
   <p><strong>Education.</strong></p>
   <table style="border:none; border-collapse:collapse; width:100%; margin-top:-0.5em; font-size:0.95em;">
