@@ -41,6 +41,22 @@
     padding-bottom: 0.05em;
   }
 
+  /* Profile photo: remove border, fill sidebar width */
+  .author__avatar img {
+    border: none !important;
+    max-width: 100%;
+    padding: 0 !important;
+  }
+
+  /* Section headings: smaller than page title */
+  article.page h2 {
+    font-size: 1.1em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: none;
+    margin-top: 1.4em;
+  }
+
   /* Content area sits slightly above sidebar — creates depth (~2% lift) */
   article.page {
     background-color: #272421;
@@ -55,7 +71,7 @@
   /* Section divider on content pages */
   .page__content hr {
     border: none;
-    border-top: 1px solid #3d3a37;
+    border-top: 1px solid #4a4542;
     margin: 2em 0;
   }
 

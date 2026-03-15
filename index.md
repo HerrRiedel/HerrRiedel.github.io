@@ -22,21 +22,21 @@ title: "About"
 <table style="border:none; border-collapse:collapse; width:100%; margin-top:-0.5em; font-size:0.95em;">
   <tr>
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">Ph.D. Economics</td>
-    <td style="border:none; padding:4px 14px 4px 0;">UC San Diego</td>
+    <td style="border:none; padding:4px 14px 4px 0; width:100%;">UC San Diego</td>
     <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:#a8a09a; text-align:right;">2021–present</td>
     <td style="border:none; padding:4px 0; color:#a8a09a;">&nbsp;·&nbsp;</td>
     <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;">Candidate since 2023</td>
   </tr>
   <tr>
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">M.A. Economic Theory</td>
-    <td style="border:none; padding:4px 14px 4px 0;">ITAM</td>
+    <td style="border:none; padding:4px 14px 4px 0; width:100%;">ITAM</td>
     <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:#a8a09a; text-align:right;">2021</td>
     <td style="border:none; padding:4px 0; color:#a8a09a;">&nbsp;·&nbsp;</td>
     <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;">Summa Cum Laude</td>
   </tr>
   <tr>
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">B.A. Economics</td>
-    <td style="border:none; padding:4px 14px 4px 0;">ITAM</td>
+    <td style="border:none; padding:4px 14px 4px 0; width:100%;">ITAM</td>
     <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:#a8a09a; text-align:right;">2018</td>
     <td style="border:none; padding:4px 0; color:#a8a09a;">&nbsp;·&nbsp;</td>
     <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;">Summa Cum Laude</td>
