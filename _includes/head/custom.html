@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
 <link rel="manifest" href="/assets/favicon/site.webmanifest">
-<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#b5735a">
 <meta name="msapplication-TileColor" content="#333333">
 <meta name="theme-color" content="#333333">
 
@@ -44,98 +44,197 @@
 
 <!-- crow easter egg -------------------------------------------------------- -->
 <style>
-  /* Wrap the logo anchor so we can position the crumb relative to it */
-  #crow-logo {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+  #crow-logo { position: relative; display: inline-block; cursor: pointer; }
+
+  #crow-svg-anim {
+    display: none;
+    overflow: visible;
+    color: #ede8e0;        /* warm off-white — matches text colour */
+  }
+  #crow-svg-anim .cw-eye        { fill: #231f1c; }   /* background colour = hole */
+  #crow-svg-anim .cw-item-f     { fill: #b5735a; }   /* terracotta items */
+  #crow-svg-anim .cw-item-s     { fill: none; stroke: #b5735a; stroke-linecap: round; }
+  #crow-svg-anim .cw-item       { transition: opacity 0.12s ease; }
+
+  /* --- wing flap --- */
+  @keyframes cw-flap {
+    0%   { transform: rotate(0deg);   }
+    14%  { transform: rotate(-52deg); }
+    28%  { transform: rotate(16deg);  }
+    42%  { transform: rotate(-46deg); }
+    56%  { transform: rotate(12deg);  }
+    70%  { transform: rotate(-24deg); }
+    84%  { transform: rotate(4deg);   }
+    100% { transform: rotate(0deg);   }
+  }
+  /* --- head peck --- */
+  @keyframes cw-peck {
+    0%   { transform: rotate(0deg);  }
+    35%  { transform: rotate(26deg); }
+    58%  { transform: rotate(26deg); }
+    100% { transform: rotate(0deg);  }
+  }
+  /* --- eat (quick head bob) --- */
+  @keyframes cw-eat {
+    0%   { transform: rotate(0deg);  }
+    30%  { transform: rotate(22deg); }
+    55%  { transform: rotate(22deg); }
+    80%  { transform: rotate(-4deg); }
+    100% { transform: rotate(0deg);  }
   }
 
-  /* Wing-flap + peck sequence */
-  @keyframes crow-animate {
-    /* flap: rapid left-right rock, staying in place */
-    0%   { transform: rotate(0deg)   translateY(0px);  }
-    8%   { transform: rotate(-10deg) translateY(-2px); }
-    16%  { transform: rotate(10deg)  translateY(-2px); }
-    24%  { transform: rotate(-10deg) translateY(-2px); }
-    32%  { transform: rotate(10deg)  translateY(-2px); }
-    40%  { transform: rotate(-6deg)  translateY(-1px); }
-    48%  { transform: rotate(6deg)   translateY(-1px); }
-    /* settle */
-    56%  { transform: rotate(0deg)   translateY(0px);  }
-    /* peck: tilt forward and dip */
-    66%  { transform: rotate(22deg)  translateY(5px);  }
-    76%  { transform: rotate(22deg)  translateY(5px);  }
-    /* lift back */
-    90%  { transform: rotate(0deg)   translateY(0px);  }
-    100% { transform: rotate(0deg)   translateY(0px);  }
-  }
-
-  #crow-logo.crow-eating img {
-    animation: crow-animate 2.0s ease-in-out forwards;
-    transform-origin: center bottom;
-  }
-
-  /* The food item that appears at the crow's feet */
-  #crow-crumb {
-    position: absolute;
-    bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 9px;
-    line-height: 1;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.15s ease-in;
-    user-select: none;
-  }
-  #crow-crumb.visible {
-    opacity: 1;
-  }
+  .cw-flapping #cw-wing-back  { animation: cw-flap 1.0s ease-in-out forwards; }
+  .cw-flapping #cw-wing-front { animation: cw-flap 1.0s ease-in-out 0.05s forwards; }
+  .cw-pecking  #cw-head       { animation: cw-peck 0.75s ease-in-out forwards; }
+  .cw-eating   #cw-head       { animation: cw-eat  0.45s ease-in-out forwards; }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var crowLogo  = document.getElementById('crow-logo');
-    var crowTitle = document.getElementById('crow-title');
-    var animating = false;
+document.addEventListener('DOMContentLoaded', function () {
+  var crowLogo  = document.getElementById('crow-logo');
+  var crowTitle = document.getElementById('crow-title');
+  if (!crowLogo) return;
 
-    // Cycle through a small set of snacks for variety
-    var snacks = ['🌾', '🫘', '🪲', '🌰'];
-    var snackIdx = 0;
+  /* ---- Build SVG crow ---- */
+  var NS  = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(NS, 'svg');
+  svg.id  = 'crow-svg-anim';
+  svg.setAttribute('viewBox', '0 0 120 80');
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  svg.innerHTML = [
+    /* tail */
+    '<path fill="currentColor" d="M 5,50 Q 10,54 16,60 Q 10,58 8,65 Q 14,56 22,52 Z"/>',
 
-    function triggerCrow(e) {
-      if (animating) return;
-      // Only prevent navigation if we're on the home page (no-op anyway);
-      // allow normal navigation after animation on other pages.
-      e.preventDefault();
-      animating = true;
+    /* body */
+    '<path fill="currentColor" d="M 20,48 Q 38,34 60,31 Q 66,28 68,30 Q 71,37 66,50 Q 55,64 36,67 Q 20,68 14,58 Q 10,51 20,48 Z"/>',
 
-      crowLogo.classList.add('crow-eating');
+    /* back wing */
+    '<g id="cw-wing-back" style="transform-origin:17px 54px">',
+      '<path fill="currentColor" opacity="0.65" d="M 15,52 Q 32,20 60,31 Q 46,52 20,58 Z"/>',
+    '</g>',
 
-      // Spawn the crumb
-      var crumb = document.createElement('span');
-      crumb.id = 'crow-crumb';
-      crumb.textContent = snacks[snackIdx % snacks.length];
-      snackIdx++;
-      crowLogo.appendChild(crumb);
+    /* front wing */
+    '<g id="cw-wing-front" style="transform-origin:19px 56px">',
+      '<path fill="currentColor" opacity="0.78" d="M 19,54 Q 36,22 62,33 Q 48,54 24,60 Z"/>',
+    '</g>',
 
-      // Show crumb when crow pecks (66% of 2000ms ≈ 1320ms)
-      setTimeout(function () { crumb.classList.add('visible'); }, 1280);
-      // Hide it as crow lifts (76% ≈ 1520ms)
-      setTimeout(function () { crumb.classList.remove('visible'); }, 1520);
+    /* head group — rotates at neck for peck/eat */
+    '<g id="cw-head" style="transform-origin:64px 34px">',
+      '<ellipse cx="72" cy="22" rx="13" ry="11" fill="currentColor"/>',
+      '<polygon points="82,17 102,22 100,25 82,28" fill="currentColor"/>',
+      '<circle cx="75" cy="19" r="2.6" class="cw-eye"/>',
 
-      // Clean up after full animation
+      /* bug */
+      '<g id="cw-item-bug" class="cw-item" style="opacity:0">',
+        '<ellipse cx="107" cy="23" rx="3.8" ry="2.5" class="cw-item-f"/>',
+        '<ellipse cx="113" cy="23" rx="2.8" ry="2.0" class="cw-item-f"/>',
+        '<line x1="105" y1="21" x2="101" y2="17" class="cw-item-s" stroke-width="1"/>',
+        '<line x1="107" y1="21" x2="105" y2="17" class="cw-item-s" stroke-width="1"/>',
+        '<line x1="109" y1="21" x2="107" y2="17" class="cw-item-s" stroke-width="1"/>',
+        '<line x1="105" y1="25" x2="101" y2="29" class="cw-item-s" stroke-width="1"/>',
+        '<line x1="107" y1="25" x2="105" y2="29" class="cw-item-s" stroke-width="1"/>',
+        '<line x1="109" y1="25" x2="107" y2="29" class="cw-item-s" stroke-width="1"/>',
+        '<line x1="112" y1="21" x2="110" y2="17" class="cw-item-s" stroke-width="0.8"/>',
+        '<line x1="114" y1="22" x2="118" y2="19" class="cw-item-s" stroke-width="0.8"/>',
+      '</g>',
+
+      /* twig */
+      '<g id="cw-item-twig" class="cw-item" style="opacity:0">',
+        '<line x1="103" y1="25" x2="120" y2="12" class="cw-item-s" stroke-width="2.5"/>',
+        '<line x1="110" y1="19" x2="114" y2="12" class="cw-item-s" stroke-width="1.8"/>',
+        '<line x1="115" y1="14" x2="120" y2="17" class="cw-item-s" stroke-width="1.5"/>',
+      '</g>',
+
+      /* stone */
+      '<g id="cw-item-stone" class="cw-item" style="opacity:0">',
+        '<ellipse cx="108" cy="27" rx="6.5" ry="4.5" class="cw-item-f"/>',
+      '</g>',
+
+      /* seed */
+      '<g id="cw-item-seed" class="cw-item" style="opacity:0">',
+        '<ellipse cx="107" cy="23" rx="5.5" ry="3.5" class="cw-item-f"/>',
+        '<line x1="107" y1="19.5" x2="107" y2="16" class="cw-item-s" stroke-width="1.5"/>',
+      '</g>',
+    '</g>',
+
+    /* legs */
+    '<rect x="33" y="64" width="4" height="13" rx="1.5" fill="currentColor"/>',
+    '<rect x="47" y="64" width="4" height="13" rx="1.5" fill="currentColor"/>',
+
+    /* feet */
+    '<line x1="27" y1="76" x2="40" y2="76" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>',
+    '<line x1="43" y1="76" x2="56" y2="76" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>',
+  ].join('');
+
+  crowLogo.appendChild(svg);
+
+  var img = crowLogo.querySelector('img');
+
+  /* ---- State machine ---- */
+  var IDLE = 0, ANIM = 1, HOLDING = 2;
+  var state   = IDLE;
+  var itemIdx = 0;
+  var ITEMS   = ['bug', 'twig', 'stone', 'seed'];
+
+  function triggerCrow(e) {
+    e.preventDefault();
+    if (state === ANIM)    return;
+    if (state === IDLE)    startPickup();
+    else                   startEating();
+  }
+
+  function startPickup() {
+    state = ANIM;
+
+    /* size SVG to match img */
+    svg.style.height = (img.offsetHeight || 30) + 'px';
+    svg.style.width  = 'auto';
+
+    img.style.display = 'none';
+    svg.style.display = 'inline-block';
+
+    var itemId = ITEMS[itemIdx % ITEMS.length];
+    itemIdx++;
+
+    /* phase 1: flap (1.0s) */
+    svg.classList.add('cw-flapping');
+    setTimeout(function () {
+      svg.classList.remove('cw-flapping');
+
+      /* phase 2: peck (0.75s) — item appears at 58% ≈ 435ms */
+      svg.classList.add('cw-pecking');
       setTimeout(function () {
-        crowLogo.classList.remove('crow-eating');
-        crumb.remove();
-        animating = false;
-      }, 2100);
-    }
+        svg.querySelector('#cw-item-' + itemId).style.opacity = '1';
+      }, 435);
+      setTimeout(function () {
+        svg.classList.remove('cw-pecking');
+        state = HOLDING;
+      }, 750);
 
-    if (crowLogo)  crowLogo.addEventListener('click',  triggerCrow);
-    if (crowTitle) crowTitle.addEventListener('click', triggerCrow);
+    }, 1000);
+  }
+
+  function startEating() {
+    state = ANIM;
+    svg.classList.add('cw-eating');
+
+    /* item disappears mid-chomp */
+    setTimeout(function () {
+      svg.querySelectorAll('.cw-item').forEach(function (el) { el.style.opacity = '0'; });
+    }, 135);
+
+    setTimeout(function () {
+      svg.classList.remove('cw-eating');
+      svg.style.display = 'none';
+      img.style.display = '';
+      state = IDLE;
+    }, 450);
+  }
+
+  [crowLogo, crowTitle].forEach(function (el) {
+    if (el) el.addEventListener('click', triggerCrow);
   });
+});
 </script>
 <!-- end crow easter egg ---------------------------------------------------- -->
 
