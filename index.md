@@ -17,6 +17,8 @@ title: "About"
   </p>
 </div>
 
+---
+
 ## Education
 
 <table style="border:none; border-collapse:collapse; width:100%; margin-top:-0.5em; font-size:0.95em;">
