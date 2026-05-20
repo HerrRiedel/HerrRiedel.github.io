@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CES + Pareto: regulatory shocks</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+         max-width: 1280px; margin: 24px auto; padding: 0 16px; color: #222; }
+  h1 { font-size: 1.3em; margin-bottom: 4px; }
+  .sub { color: #666; font-size: 0.9em; margin-bottom: 16px; }
+  .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
+  .panel { border: 1px solid #ddd; border-radius: 6px; padding: 12px 14px; }
+  .panel h2 { font-size: 1em; margin: 0 0 8px 0; }
+  .row { display: grid; grid-template-columns: 90px 1fr 70px; align-items: center; gap: 8px; margin: 4px 0; }
+  .row label { font-size: 0.9em; }
+  .row input[type=range] { width: 100%; }
+  .row .val { font-size: 0.85em; color: #444; text-align: right; }
+  .baseline { background: #f6f8ff; }
+  .cf       { background: #fff6f0; }
+  #chart { width: 100%; height: 580px; }
+  .readout { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; font-size: 0.9em; }
+  .readout .box { border: 1px solid #ddd; border-radius: 4px; padding: 6px 8px; }
+  .readout .box b { display: block; color: #555; font-weight: normal; font-size: 0.85em; }
+  .warn { color: #b00; font-size: 0.85em; margin-top: 6px; }
+  .footnote { color: #777; font-size: 0.8em; margin-top: 16px; line-height: 1.4; }
+  .footnote b { color: #444; }
+  .info { position: relative; border-bottom: 1px dotted #888; cursor: help; user-select: none; }
+  .info .tip {
+    display: none; position: absolute; bottom: calc(100% + 6px); left: 0;
+    background: #2b2b2b; color: #fff; padding: 8px 11px; border-radius: 4px;
+    font-size: 12px; line-height: 1.4; width: 300px; max-width: 80vw;
+    z-index: 1000; box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    white-space: normal; text-align: left; font-weight: normal;
+    pointer-events: none;
+  }
+  .info.tip-right .tip { left: auto; right: 0; }
+  .info .tip::after {
+    content: ""; position: absolute; top: 100%; left: 14px;
+    border: 5px solid transparent; border-top-color: #2b2b2b;
+  }
+  .info.tip-right .tip::after { left: auto; right: 14px; }
+  .info:hover .tip, .info.open .tip { display: block; }
+  .theorems { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0 14px 0; }
+  .thm { border-left: 3px solid #3a5fcd; background: #f6f8ff; padding: 8px 12px; font-size: 0.9em; border-radius: 0 4px 4px 0; }
+  .thm.t2 { border-left-color: #888; background: #f6f6f6; }
+  .thm b { color: #333; }
+  .legendbar { display: flex; gap: 18px; font-size: 0.85em; margin: 4px 0 8px 2px; color: #555; flex-wrap: wrap; }
+  .legendbar span { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<h1>CES preferences, Pareto costs, fixed cost f &mdash; baseline vs counterfactual</h1>
+<div class="sub">Single industry. Continuum of firms with marginal costs distributed Pareto. CES price aggregator P. Melitz-style selection: firms with negative net profit exit, and the productivity cutoff is determined jointly with P in equilibrium. Outputs: sales and profits by productivity rank &omega; (0 = most productive), plus aggregate welfare changes.</div>
+
+<div class="panels">
+  <div class="panel baseline">
+    <h2>Baseline</h2>
+    <div class="row"><label>&sigma; (CES)</label><input id="b_sigma" type="range" min="1.2" max="10" step="0.05" value="4"><span class="val" id="b_sigma_v"></span></div>
+    <div class="row"><label>&kappa; (Pareto)</label><input id="b_kappa" type="range" min="0.5" max="10" step="0.05" value="4"><span class="val" id="b_kappa_v"></span></div>
+    <div class="row"><label>&psi;<sub>0</sub> (Pareto)</label><input id="b_psi0" type="range" min="0.1" max="5" step="0.05" value="1"><span class="val" id="b_psi0_v"></span></div>
+    <div class="row"><label>f (fixed cost)</label><input id="b_f" type="range" min="0" max="2" step="0.005" value="0"><span class="val" id="b_f_v"></span></div>
+    <div class="row"><label>Y (expenditure)</label><input id="b_Y" type="range" min="0.5" max="50" step="0.1" value="10"><span class="val" id="b_Y_v"></span></div>
+    <div class="warn" id="b_warn"></div>
+  </div>
+
+  <div class="panel cf">
+    <h2>Counterfactual (CF)</h2>
+    <div class="row"><label>&sigma;'</label><input id="c_sigma" type="range" min="1.2" max="10" step="0.05" value="4"><span class="val" id="c_sigma_v"></span></div>
+    <div class="row"><label>&kappa;'</label><input id="c_kappa" type="range" min="0.5" max="10" step="0.05" value="4"><span class="val" id="c_kappa_v"></span></div>
+    <div class="row"><label>&psi;<sub>0</sub>'</label><input id="c_psi0" type="range" min="0.1" max="5" step="0.05" value="1"><span class="val" id="c_psi0_v"></span></div>
+    <div class="row"><label>f'</label><input id="c_f" type="range" min="0" max="2" step="0.005" value="0"><span class="val" id="c_f_v"></span></div>
+    <div class="row"><label>Y'</label><input id="c_Y" type="range" min="0.5" max="50" step="0.1" value="10"><span class="val" id="c_Y_v"></span></div>
+    <div class="warn" id="c_warn"></div>
+  </div>
+</div>
+
+<div class="theorems">
+  <div class="thm"><b>Theorem 1.</b> The most productive firms benefit from cost increases via the shape parameter (decreases in &kappa;).</div>
+  <div class="thm t2"><b>Theorem 2.</b> No firm benefits (or is negatively affected) from changes in the scale parameter &psi;<sub>0</sub>.</div>
+</div>
+
+<div class="legendbar">
+  <span class="info">Marginal cost ⓘ<span class="tip">Firm-&omega; marginal cost: &psi;(&omega;) = &psi;<sub>0</sub> &middot; (1&minus;&omega;)<sup>&minus;1/&kappa;</sup>. At &omega; = 0 (most productive), &psi; = &psi;<sub>0</sub>. As &omega; &rarr; 1, &psi; &rarr; &infin; (Pareto tail).</span></span>
+  <span class="info">Sales ⓘ<span class="tip">Firm-&omega; revenue: r(&omega;) = Y &middot; (1&minus;&omega;)<sup>(&sigma;&minus;1)/&kappa;</sup> / [C &middot; (1&minus;t<sup>&alpha;</sup>)], where C = &kappa;/(&kappa;+&sigma;&minus;1), &alpha; = &kappa;+&sigma;&minus;1, t = &psi;<sub>0</sub>/&psi;&#772;. Equivalently r(&omega;) = Y &middot; (&mu;&psi;<sub>&omega;</sub>/P)<sup>1&minus;&sigma;</sup>.</span></span>
+  <span class="info">Net profit ⓘ<span class="tip">Net profit per firm: &pi;(&omega;) = r(&omega;)/&sigma; &minus; f. Operating profit equals revenue/&sigma; under CES with constant markup &mu; = &sigma;/(&sigma;&minus;1); subtract fixed cost f.</span></span>
+  <span class="info">Y/P ⓘ<span class="tip">Consumer real income. P is the CES price aggregator over active firms; under CES, indirect utility from spending Y is exactly Y/P.</span></span>
+  <span class="info">&Pi; ⓘ<span class="tip">Aggregate net profit: &Pi; = Y/&sigma; &minus; f&middot;&omega;&#772;, where &omega;&#772; is the mass of active firms. Operating profits sum to Y/&sigma; under Dixit&ndash;Stiglitz; subtract total fixed costs paid by survivors.</span></span>
+</div>
+
+<div id="chart"></div>
+
+<div class="readout">
+  <div class="box"><b><span class="info">Active mass &omega;&#772; (base / CF) ⓘ<span class="tip">Fraction of potential entrants with non-negative net profit. &omega;&#772; = 1 &minus; (&psi;<sub>0</sub>/&psi;&#772;)<sup>&kappa;</sup>, where &psi;&#772; is the marginal-cost cutoff. &omega;&#772; = 1 when f = 0 (no exit).</span></span></b><span id="r_omegabar"></span></div>
+  <div class="box"><b><span class="info">Aggregator P (base / CF) ⓘ<span class="tip">CES price aggregator: P = (&int; p<sub>&omega;</sub><sup>1&minus;&sigma;</sup> d&omega;)<sup>1/(1&minus;&sigma;)</sup> over active firms. With CES markup &mu; = &sigma;/(&sigma;&minus;1), p<sub>&omega;</sub> = &mu;&psi;<sub>&omega;</sub>.</span></span></b><span id="r_P"></span></div>
+  <div class="box"><b><span class="info">Top &epsilon; in favor ⓘ<span class="tip">Top firm interval [0, &epsilon;] such that every firm in that range earns higher net profit under the counterfactual than under the baseline.</span></span></b><span id="r_eps"></span></div>
+  <div class="box"><b><span class="info">&Delta;% Y/P / &Delta;% &Pi; ⓘ<span class="tip">&Delta;% Y/P: percent change in consumer real income (Y/P) from baseline to CF. &Delta;% &Pi;: percent change in aggregate net profit.</span></span></b><span id="r_w"></span></div>
+</div>
+
+<div class="footnote">
+  <b>Demand.</b> CES demand system with elasticity &sigma; over a unit mass of varieties. Expenditure Y is exogenous and spent entirely on the industry.
+  <br><br>
+  <b>Firms.</b> Monopolistic competition. Marginal costs &psi; are distributed Pareto with shape &kappa; and scale &psi;<sub>0</sub>: G(&psi;) = 1 &minus; (&psi;<sub>0</sub>/&psi;)<sup>&kappa;</sup> for &psi; &ge; &psi;<sub>0</sub>. Convergence of the price aggregator requires &kappa; &gt; &sigma; &minus; 1. Each active firm pays an operating fixed cost f.
+  <br><br>
+  <b>Equilibrium.</b> Optimal price is a constant markup over marginal cost, p<sub>&omega;</sub> = &mu;&psi;<sub>&omega;</sub> with &mu; = &sigma;/(&sigma;&minus;1). Operating profit equals (Y/&sigma;)&middot;(&mu;&psi;/P)<sup>1&minus;&sigma;</sup>. Net profit subtracts f; firms with negative net profit exit. The exit cutoff &psi;&#772; satisfies &psi;&#772;/P = (1/&mu;)(&sigma;f/Y)<sup>1/(1&minus;&sigma;)</sup>, and the CES price aggregator P depends on the surviving firms &mdash; so &psi;&#772; and P are determined as a fixed point of the system (each implies the other). With Pareto costs this reduces to a one-dimensional equation in t = &psi;<sub>0</sub>/&psi;&#772;, solved by bisection. Rank &omega; = G(&psi;<sub>&omega;</sub>), so &omega; = 0 is the most productive firm.
+  <br><br>
+  <b>Welfare.</b> "Y/P" = consumer real income (CES indirect utility from spending Y). "&Pi;" = aggregate net profit = Y/&sigma; &minus; f&middot;&omega;&#772;. Both reported as % change CF vs baseline.
+  <br><br>
+  <b>&epsilon; (top in favor).</b> Firm interval [0, &epsilon;] of ranks with &Delta;&pi;<sub>&omega;</sub> &gt; 0 under the counterfactual.
+</div>
+
+<script>
+function solveT(sigma, kappa, psi0, f, Y) {
+  if (f <= 0) return 0;
+  const alpha = kappa + sigma - 1;
+  const C = kappa / alpha;
+  const beta = Y / (sigma * f * C);
+  const h = (t) => beta * Math.pow(t, sigma - 1) + Math.pow(t, alpha) - 1;
+  if (h(1) <= 0) return 1;
+  let lo = 1e-15, hi = 1.0;
+  for (let i = 0; i < 200; i++) {
+    const mid = 0.5 * (lo + hi);
+    if (h(mid) > 0) hi = mid; else lo = mid;
+    if (hi - lo < 1e-14) break;
+  }
+  return 0.5 * (lo + hi);
+}
+
+function compute(p) {
+  const { sigma, kappa, psi0, f, Y } = p;
+  const alpha = kappa + sigma - 1;
+  const C = kappa / alpha;
+  const mu = sigma / (sigma - 1);
+  const t = solveT(sigma, kappa, psi0, f, Y);
+  const omegaBar = 1 - Math.pow(t, kappa);
+  const denomA = C * (1 - Math.pow(t, alpha));
+  const A = mu * psi0 * Math.pow(denomA, 1 / (1 - sigma));
+  const totalProfit = Y / sigma - f * omegaBar;
+  const realIncome = Y / A;
+  return { P: A, t, omegaBar, alpha, C, mu, totalProfit, realIncome };
+}
+
+function profileAt(p, omegas) {
+  const eq = compute(p);
+  const { sigma, kappa, psi0, f, Y } = p;
+  const expo = (sigma - 1) / kappa;
+  const denom = eq.C * (1 - Math.pow(eq.t, eq.alpha));
+  const sales = [], profits = [], mc = [];
+  for (const w of omegas) {
+    const psi = psi0 * Math.pow(1 - w, -1 / kappa);
+    if (w > eq.omegaBar + 1e-12) {
+      sales.push(null);
+      profits.push(null);
+      mc.push(null);
+    } else {
+      const r = Y * Math.pow(1 - w, expo) / denom;
+      sales.push(r);
+      profits.push(r / sigma - f);
+      mc.push(psi);
+    }
+  }
+  return { eq, sales, profits, mc };
+}
+
+function validate(p, prefix) {
+  const warn = document.getElementById(prefix + "_warn");
+  const msgs = [];
+  if (p.sigma <= 1) msgs.push("σ must be > 1");
+  if (p.kappa <= p.sigma - 1) msgs.push("κ must be > σ − 1");
+  if (p.psi0 <= 0) msgs.push("ψ₀ > 0");
+  if (p.f < 0) msgs.push("f ≥ 0");
+  if (p.Y <= 0) msgs.push("Y > 0");
+  warn.textContent = msgs.join("; ");
+  return msgs.length === 0;
+}
+
+function topEpsilon(baseProf, cfProf, omegas) {
+  for (let i = 0; i < omegas.length; i++) {
+    const b = baseProf[i], c = cfProf[i];
+    if (b == null || c == null || c <= b) return omegas[i];
+  }
+  return omegas[omegas.length - 1];
+}
+
+function readParams(prefix) {
+  const g = (id) => parseFloat(document.getElementById(prefix + "_" + id).value);
+  return { sigma: g("sigma"), kappa: g("kappa"), psi0: g("psi0"), f: g("f"), Y: g("Y") };
+}
+
+function fmt(x, d) {
+  d = (d === undefined) ? 3 : d;
+  if (x == null || !isFinite(x)) return "—";
+  if (Math.abs(x) >= 1000) return x.toExponential(2);
+  return x.toFixed(d);
+}
+
+const OMEGAS = (() => {
+  const N = 400;
+  const arr = [];
+  for (let i = 0; i <= N; i++) arr.push(i / N);
+  return arr;
+})();
+
+let firstDraw = true;
+function redraw() {
+  const bp = readParams("b");
+  const cp = readParams("c");
+  for (const k of ["sigma","kappa","psi0","f","Y"]) {
+    document.getElementById("b_"+k+"_v").textContent = fmt(bp[k]);
+    document.getElementById("c_"+k+"_v").textContent = fmt(cp[k]);
+  }
+  if (!validate(bp, "b") || !validate(cp, "c")) return;
+
+  const B = profileAt(bp, OMEGAS);
+  const C = profileAt(cp, OMEGAS);
+
+  const eps = topEpsilon(B.profits, C.profits, OMEGAS);
+
+  const dRealInc = (C.eq.realIncome / B.eq.realIncome - 1) * 100;
+  const dProfit  = (C.eq.totalProfit / B.eq.totalProfit - 1) * 100;
+
+  const cBase = "#3a5fcd";
+  const cCF   = "#d94f00";
+
+  const traces = [
+    // marginal cost (panel 1)
+    { x: B.mc, y: OMEGAS, mode: "lines", name: "Baseline",
+      line: { color: cBase, width: 2 }, xaxis: "x1", yaxis: "y1" },
+    { x: C.mc, y: OMEGAS, mode: "lines", name: "Counterfactual",
+      line: { color: cCF, width: 2, dash: "dash" }, xaxis: "x1", yaxis: "y1" },
+
+    // sales (panel 2)
+    { x: B.sales, y: OMEGAS, mode: "lines",
+      line: { color: cBase, width: 2 }, xaxis: "x2", yaxis: "y2", showlegend: false },
+    { x: C.sales, y: OMEGAS, mode: "lines",
+      line: { color: cCF, width: 2, dash: "dash" }, xaxis: "x2", yaxis: "y2", showlegend: false },
+
+    // profits (panel 3)
+    { x: B.profits, y: OMEGAS, mode: "lines",
+      line: { color: cBase, width: 2 }, xaxis: "x3", yaxis: "y3", showlegend: false },
+    { x: C.profits, y: OMEGAS, mode: "lines",
+      line: { color: cCF, width: 2, dash: "dash" }, xaxis: "x3", yaxis: "y3", showlegend: false },
+
+    // welfare bars — horizontal, bottom row (panel 4)
+    { x: [dRealInc, dProfit],
+      y: ["Δ% Y/P", "Δ% Π"],
+      type: "bar", orientation: "h",
+      marker: { color: cCF },
+      xaxis: "x4", yaxis: "y4", showlegend: false,
+      text: [fmt(dRealInc,2)+"%", fmt(dProfit,2)+"%"],
+      textposition: "outside",
+      hovertemplate: "%{y}: %{x:.3f}%<extra></extra>" },
+  ];
+
+  const shapes = [];
+  const annot = [];
+  const profileAxes = [
+    { xref: "x1 domain", yref: "y1" },
+    { xref: "x2 domain", yref: "y2" },
+    { xref: "x3 domain", yref: "y3" },
+  ];
+  if (bp.f > 0 && B.eq.omegaBar < 1) {
+    for (const a of profileAxes) shapes.push({ type: "line",
+      xref: a.xref, yref: a.yref,
+      x0: 0, x1: 1, y0: B.eq.omegaBar, y1: B.eq.omegaBar,
+      line: { color: cBase, width: 1, dash: "dot" } });
+  }
+  if (cp.f > 0 && C.eq.omegaBar < 1) {
+    for (const a of profileAxes) shapes.push({ type: "line",
+      xref: a.xref, yref: a.yref,
+      x0: 0, x1: 1, y0: C.eq.omegaBar, y1: C.eq.omegaBar,
+      line: { color: cCF, width: 1, dash: "dot" } });
+  }
+  if (eps > 0) {
+    shapes.push({ type: "rect", xref: "x3 domain", yref: "y3",
+      x0: 0, x1: 1, y0: 0, y1: eps,
+      fillcolor: "rgba(40,170,80,0.10)", line: { width: 0 } });
+    annot.push({ xref: "x3 domain", yref: "y3",
+      x: 0.02, y: eps/2, xanchor: "left", yanchor: "middle",
+      text: "in favor (ε = " + fmt(eps, 3) + ")",
+      showarrow: false, font: { color: "#197a36", size: 11 } });
+  }
+
+  const allSales = B.sales.concat(C.sales).filter(v => v != null && isFinite(v));
+  const allProf  = B.profits.concat(C.profits).filter(v => v != null && isFinite(v));
+  const salesMax = Math.max(0, ...allSales) * 1.05;
+  const profMax  = Math.max(0, ...allProf) * 1.05;
+  const profMin  = Math.min(0, ...allProf) * 1.05;
+
+  // marginal-cost x-axis cap: if there's an exit cutoff use the larger ψ̄; otherwise cap at ψ(0.95).
+  function mcCap(p, eq) {
+    const wCap = eq.omegaBar < 0.999 ? eq.omegaBar : 0.95;
+    return p.psi0 * Math.pow(1 - wCap, -1 / p.kappa);
+  }
+  const mcMax = Math.max(mcCap(bp, B.eq), mcCap(cp, C.eq)) * 1.05;
+
+  // Top row: 3 profile panels share rank ω on y. Bottom row: horizontal bar chart.
+  const topY = [0.32, 1.0];
+  const botY = [0.0, 0.18];
+  const layout = {
+    xaxis1: { title: "Marginal cost ψ", range: [0, mcMax], domain: [0.0,  0.30], anchor: "y1" },
+    yaxis1: { title: "rank ω (0 = most productive)", range: [0, 1], domain: topY, anchor: "x1" },
+    xaxis2: { title: "Sales",       range: [0, salesMax || 1],          domain: [0.36, 0.66], anchor: "y2" },
+    yaxis2: { range: [0, 1], domain: topY, anchor: "x2" },
+    xaxis3: { title: "Net profit",  range: [profMin, profMax || 1],     domain: [0.72, 1.00], anchor: "y3" },
+    yaxis3: { range: [0, 1], domain: topY, anchor: "x3" },
+    xaxis4: { title: "Δ% (CF vs baseline)", domain: [0.06, 1.0], anchor: "y4", zeroline: true, zerolinecolor: "#999" },
+    yaxis4: { type: "category", domain: botY, anchor: "x4", automargin: true },
+    margin: { t: 30, r: 20, l: 60, b: 50 },
+    shapes: shapes, annotations: annot,
+    legend: { orientation: "h", x: 0, y: 1.10 },
+  };
+
+  if (firstDraw) {
+    Plotly.newPlot("chart", traces, layout, { displayModeBar: false, responsive: true });
+    firstDraw = false;
+  } else {
+    Plotly.react("chart", traces, layout, { displayModeBar: false, responsive: true });
+  }
+
+  document.getElementById("r_omegabar").textContent =
+    fmt(B.eq.omegaBar) + " / " + fmt(C.eq.omegaBar);
+  document.getElementById("r_P").textContent =
+    fmt(B.eq.P) + " / " + fmt(C.eq.P);
+  document.getElementById("r_eps").textContent = fmt(eps, 3);
+  document.getElementById("r_w").textContent =
+    fmt(dRealInc, 2) + "% / " + fmt(dProfit, 2) + "%";
+}
+
+document.querySelectorAll("input[type=range]").forEach(el => {
+  el.addEventListener("input", redraw);
+});
+redraw();
+
+// Click-to-toggle tooltips (in addition to hover).
+// Also: auto-flip to right-anchored if the tooltip would overflow the viewport.
+function placeTip(el) {
+  const tip = el.querySelector(".tip");
+  if (!tip) return;
+  el.classList.remove("tip-right");
+  const r = tip.getBoundingClientRect();
+  if (r.right > window.innerWidth - 4) el.classList.add("tip-right");
+}
+document.querySelectorAll(".info").forEach(el => {
+  el.addEventListener("mouseenter", () => placeTip(el));
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const wasOpen = el.classList.contains("open");
+    document.querySelectorAll(".info.open").forEach(o => o.classList.remove("open"));
+    if (!wasOpen) { el.classList.add("open"); placeTip(el); }
+  });
+});
+document.addEventListener("click", () => {
+  document.querySelectorAll(".info.open").forEach(o => o.classList.remove("open"));
+});
+</script>
+</body>
+</html>
