@@ -47,6 +47,13 @@
   .thm b { color: #333; }
   .legendbar { display: flex; gap: 18px; font-size: 0.85em; margin: 4px 0 8px 2px; color: #555; flex-wrap: wrap; }
   .legendbar span { white-space: nowrap; }
+  .pegbar { display: flex; align-items: center; gap: 10px; font-size: 0.9em;
+            background: #f3f6fb; border: 1px solid #d4ddee; border-radius: 4px;
+            padding: 8px 12px; margin: 0 0 12px 0; flex-wrap: wrap; }
+  .pegbar label { font-weight: 600; color: #333; }
+  .pegbar select { font-size: 0.95em; padding: 2px 6px; }
+  .pegbar .pegstate { color: #b06000; font-size: 0.85em; }
+  input[type=range]:disabled { opacity: 0.4; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -74,6 +81,17 @@
     <div class="row"><label>Y'</label><input id="c_Y" type="range" min="0.5" max="50" step="0.1" value="10"><span class="val" id="c_Y_v"></span></div>
     <div class="warn" id="c_warn"></div>
   </div>
+</div>
+
+<div class="pegbar">
+  <label>Peg:</label>
+  <select id="pegMode">
+    <option value="none">none (sliders independent)</option>
+    <option value="psi0">&kappa; vs &psi;<sub>0</sub>: move &kappa;, adjust &psi;<sub>0</sub>' so &Delta;% Y/P = 0</option>
+    <option value="f">&kappa; vs f: move &kappa;, adjust f' so &Delta;% Y/P = 0</option>
+  </select>
+  <span class="pegstate" id="pegState"></span>
+  <span class="info" style="margin-left:auto; font-weight:normal;">what is this? ⓘ<span class="tip">Pegging holds &Delta;% Y/P = 0 by auto-adjusting one CF parameter. On activation, all sliders reset to defaults (with f &gt; 0 so the exit margin binds; needed for &Pi; to move). The CF panel locks. In the baseline only &kappa; is movable; the CF compensator (&psi;<sub>0</sub>' or f') adjusts. Use this view to isolate redistribution (&Delta;% &Pi;, &epsilon;) holding consumer welfare constant.</span></span>
 </div>
 
 <div class="theorems">
@@ -184,7 +202,14 @@ function topEpsilon(baseProf, cfProf, omegas) {
 }
 
 function readParams(prefix) {
-  const g = (id) => parseFloat(document.getElementById(prefix + "_" + id).value);
+  const g = (id) => {
+    const key = prefix + "_" + id;
+    // If this slider is currently pegged, use the exact float (not the step-rounded slider value).
+    if (PEG_VALUES[key] !== undefined && document.getElementById(key).disabled) {
+      return PEG_VALUES[key];
+    }
+    return parseFloat(document.getElementById(key).value);
+  };
   return { sigma: g("sigma"), kappa: g("kappa"), psi0: g("psi0"), f: g("f"), Y: g("Y") };
 }
 
@@ -202,8 +227,97 @@ const OMEGAS = (() => {
   return arr;
 })();
 
+// ---- pegging: solve a CF parameter so that Δ% Y/P = 0 ----
+function applyPeg() {
+  const mode = document.getElementById("pegMode").value;
+  const pegState = document.getElementById("pegState");
+  pegState.textContent = "";
+  if (mode === "none") return;
+
+  const bp = readParams("b");
+  if (!validate(bp, "b")) return;
+  const baseEq = compute(bp);
+  const realIncBase = baseEq.realIncome;          // = Y / P (baseline)
+  const Yp     = parseFloat(document.getElementById("c_Y").value);
+  const sigmap = parseFloat(document.getElementById("c_sigma").value);
+  const kappap = parseFloat(document.getElementById("c_kappa").value);
+  if (kappap <= sigmap - 1) return;                // invalid CF; skip pegging
+  const Pgoal  = Yp / realIncBase;                 // target P' such that Y'/P' = Y/P
+
+  if (mode === "psi0") {
+    // P' = mu' · ψ₀' · [C' (1 − t'^α')]^(1/(1−σ')), with t' independent of ψ₀'.
+    const alpha = kappap + sigmap - 1;
+    const C = kappap / alpha;
+    const mu = sigmap / (sigmap - 1);
+    const fp = parseFloat(document.getElementById("c_f").value);
+    const t = solveT(sigmap, kappap, 1, fp, Yp);   // any ψ₀ works here
+    const K = mu * Math.pow(C * (1 - Math.pow(t, alpha)), 1/(1-sigmap));
+    const newPsi0 = Pgoal / K;
+    setSlider("c_psi0", newPsi0, pegState);
+  } else if (mode === "f") {
+    // Solve for f' s.t. P'(f') = Pgoal. P' is monotone INCREASING in f' (more exit ⇒ less competition ⇒ higher P).
+    const psi0p = parseFloat(document.getElementById("c_psi0").value);
+    const slider = document.getElementById("c_f");
+    const lo = Math.max(parseFloat(slider.min), 1e-12);
+    const hi = parseFloat(slider.max);
+    const evalP = (fval) => compute({sigma: sigmap, kappa: kappap, psi0: psi0p, f: fval, Y: Yp}).P;
+    const Plo = evalP(lo), Phi = evalP(hi);
+    let newF;
+    if (Pgoal <= Plo) newF = parseFloat(slider.min);
+    else if (Pgoal >= Phi) newF = hi;
+    else {
+      let l = lo, h = hi;
+      for (let i = 0; i < 80; i++) {
+        const mid = 0.5*(l+h);
+        if (evalP(mid) > Pgoal) h = mid; else l = mid;
+      }
+      newF = 0.5*(l+h);
+    }
+    setSlider("c_f", newF, pegState);
+  }
+}
+
+function setSlider(id, value, stateEl) {
+  const slider = document.getElementById(id);
+  const lo = parseFloat(slider.min), hi = parseFloat(slider.max);
+  let v = value;
+  let clamped = false;
+  if (!(isFinite(v))) { v = lo; clamped = true; }
+  if (v < lo) { v = lo; clamped = true; }
+  if (v > hi) { v = hi; clamped = true; }
+  slider.value = v;            // visual snap to step grid is fine
+  PEG_VALUES[id] = v;          // exact value bypasses step rounding for computation
+  if (clamped && stateEl) stateEl.textContent = "(target outside slider range — clamped)";
+}
+
+const PEG_DEFAULTS = { sigma: 4, kappa: 4, psi0: 1, f: 0.5, Y: 10 };
+const FREE_VAR = { psi0: "kappa", f: "kappa" };  // when pegging X, the free baseline var is κ
+const PEG_VALUES = {};  // exact pegged values, used to bypass slider step-rounding
+
+function applyPegDefaults() {
+  for (const k of ["sigma","kappa","psi0","f","Y"]) {
+    document.getElementById("b_"+k).value = PEG_DEFAULTS[k];
+    document.getElementById("c_"+k).value = PEG_DEFAULTS[k];
+  }
+}
+
+function syncPegUI() {
+  const mode = document.getElementById("pegMode").value;
+  // CF panel: all locked when pegging
+  for (const k of ["sigma","kappa","psi0","f","Y"]) {
+    document.getElementById("c_"+k).disabled = (mode !== "none");
+  }
+  // Baseline panel: only the non-pegged cost-distribution parameter is movable
+  for (const k of ["sigma","kappa","psi0","f","Y"]) {
+    const enabled = (mode === "none") || (k === FREE_VAR[mode]);
+    document.getElementById("b_"+k).disabled = !enabled;
+  }
+}
+
 let firstDraw = true;
 function redraw() {
+  syncPegUI();
+  applyPeg();
   const bp = readParams("b");
   const cp = readParams("c");
   for (const k of ["sigma","kappa","psi0","f","Y"]) {
@@ -330,6 +444,11 @@ function redraw() {
 
 document.querySelectorAll("input[type=range]").forEach(el => {
   el.addEventListener("input", redraw);
+});
+document.getElementById("pegMode").addEventListener("change", () => {
+  for (const k of Object.keys(PEG_VALUES)) delete PEG_VALUES[k];
+  if (document.getElementById("pegMode").value !== "none") applyPegDefaults();
+  redraw();
 });
 redraw();
 
