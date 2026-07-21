@@ -171,14 +171,30 @@ function setLayer(key) {
   document.getElementById("floorcap").innerHTML =
     `Showing hexagons with viability ≥ <b>${threshold.toFixed(2)}</b>`;
   updateLegend();
+  renderCandidates(key);
 }
 
+let candidatesByLayer = null;
+
 async function loadCandidates() {
-  const box = document.getElementById("cands");
   try {
-    const items = await (await fetch("candidates.json")).json();
-    box.innerHTML = "";
-    for (const c of items) {
+    // no-cache = always revalidate with the server (304 when unchanged), so a
+    // stale cached copy can never shadow an updated data file.
+    candidatesByLayer = await (await fetch("candidates.json", {cache: "no-cache"})).json();
+    renderCandidates(document.querySelector('input[name="layer"]:checked').value);
+  } catch (err) {
+    document.getElementById("cands").textContent =
+      "Could not load candidates.json — serve this folder over HTTP.";
+  }
+}
+
+function renderCandidates(key) {
+  const box = document.getElementById("cands");
+  if (!candidatesByLayer) return;
+  const items = candidatesByLayer[key] || [];
+  if (activeMarker) { activeMarker.remove(); activeMarker = null; }
+  box.innerHTML = "";
+  for (const c of items) {
       const div = document.createElement("div");
       div.className = "cand";
       div.innerHTML =
@@ -196,9 +212,7 @@ async function loadCandidates() {
       };
       box.appendChild(div);
     }
-  } catch (err) {
-    box.textContent = "Could not load candidates.json — serve this folder over HTTP.";
-  }
+  if (!items.length) box.textContent = "No candidates for this layer.";
 }
 </script>
 </body>
