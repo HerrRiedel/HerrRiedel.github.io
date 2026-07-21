@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MaMi — Pharmacy Site Selection, Guadalajara Metro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>
+  :root { --panel-w: 340px; }
+  html, body { margin: 0; height: 100%; font-family: system-ui, -apple-system, sans-serif; }
+  #map { position: absolute; inset: 0 0 0 var(--panel-w); }
+  #panel {
+    position: absolute; top: 0; left: 0; bottom: 0; width: var(--panel-w);
+    background: #16161d; color: #e8e8ee; overflow-y: auto; box-sizing: border-box;
+    padding: 18px 16px; z-index: 5;
+  }
+  #panel h1 { font-size: 17px; margin: 0 0 2px; }
+  #panel .sub { font-size: 12px; color: #9a9aa8; margin-bottom: 14px; }
+  .layerpick { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .layerpick label { font-size: 13px; cursor: pointer; display: flex; gap: 8px; align-items: baseline; }
+  .layerpick .desc { color: #9a9aa8; font-size: 11px; }
+  .legend { margin: 6px 0 16px; }
+  .legend .bar { height: 10px; border-radius: 5px; }
+  .legend .ticks { display: flex; justify-content: space-between; font-size: 10px; color: #9a9aa8; }
+  .threshold { margin: 0 0 16px; font-size: 12px; color: #c9c9d4; }
+  .threshold input { accent-color: #de4968; margin-top: 4px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
+       color: #9a9aa8; margin: 12px 0 8px; }
+  .cand { padding: 8px 10px; border-radius: 8px; cursor: pointer; margin-bottom: 6px;
+          background: #1f1f2a; transition: background .15s; }
+  .cand:hover, .cand.active { background: #2d2d3d; }
+  .cand .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .cand .rank { font-weight: 600; font-size: 13px; }
+  .cand .score { font-size: 12px; color: #fe9f6d; font-variant-numeric: tabular-nums; }
+  .cand .loc { font-size: 12px; color: #c9c9d4; margin-top: 2px; }
+  .cand .why { font-size: 11px; color: #9a9aa8; margin-top: 4px; }
+  .cand .why li { margin-left: 14px; }
+  .foot { font-size: 10px; color: #6a6a78; margin-top: 16px; line-height: 1.5; }
+  .maplibregl-popup-content { font-family: inherit; font-size: 12px; color: #222; }
+  @media (max-width: 760px) {
+    :root { --panel-w: 0px; }
+    #panel { position: relative; width: auto; height: 40vh; }
+    #map { position: relative; height: 60vh; inset: auto; }
+  }
+</style>
+</head>
+<body>
+<div id="panel">
+  <h1>Pharmacy Site Selection — Guadalajara Metro</h1>
+  <div class="sub">Survival-based viability model · MaMi v2 · DENUE 2016–2026, Censo 2010/2020, OSM</div>
+
+  <div class="layerpick" id="layers">
+    <label><input type="radio" name="layer" value="m" checked>
+      <span>Open opportunity <span class="desc">— no pharmacy within a 5-min walk</span></span></label>
+    <label><input type="radio" name="layer" value="m1">
+      <span>Room for one more <span class="desc">— ≤1 pharmacy within 5 min</span></span></label>
+    <label><input type="radio" name="layer" value="d10">
+      <span>Pharmacy deserts <span class="desc">— none within a 10-min walk</span></span></label>
+    <label><input type="radio" name="layer" value="s">
+      <span>Raw viability <span class="desc">— model score, no competition mask</span></span></label>
+  </div>
+
+  <div class="legend">
+    <div class="bar" id="legendbar"></div>
+    <div class="ticks"><span id="legendmin">0.70</span><span>viability score</span><span>1</span></div>
+  </div>
+
+  <div class="threshold" id="floorcap">Showing hexagons with viability ≥ <b>0.70</b></div>
+
+  <h2>Top suggested locations</h2>
+  <div id="cands">Loading…</div>
+
+  <div class="foot">
+    Scores are calibrated survival probabilities from a gradient-boosted model
+    trained on 8 generations of establishment survival (2016–2026), validated on
+    spatially held-out blocks (PR-AUC 0.93). Hexagons ≈ 130 m.
+    Basemap © CARTO © OpenStreetMap contributors.
+  </div>
+</div>
+<div id="map"></div>
+
+<script>
+const MAGMA = [0.0,"#000004",0.25,"#3b0f70",0.5,"#8c2981",0.7,"#de4968",0.85,"#fe9f6d",1.0,"#fcfdbf"];
+
+// Sample the magma ramp at an arbitrary t ∈ [0,1] (linear hex interpolation)
+function magmaAt(t) {
+  for (let i = 0; i < MAGMA.length - 2; i += 2) {
+    const t0 = MAGMA[i], t1 = MAGMA[i + 2];
+    if (t <= t1) {
+      const f = (t - t0) / (t1 - t0);
+      const c0 = MAGMA[i + 1], c1 = MAGMA[i + 3];
+      const ch = (a, b) => Math.round(parseInt(a, 16) + f * (parseInt(b, 16) - parseInt(a, 16)));
+      return "#" + [1, 3, 5].map(j =>
+        ch(c0.slice(j, j + 2), c1.slice(j, j + 2)).toString(16).padStart(2, "0")).join("");
+    }
+  }
+  return MAGMA[MAGMA.length - 1];
+}
+
+// Legend shows only the visible (≥ threshold) part of the ramp
+function updateLegend() {
+  const stops = [];
+  for (let i = 0; i <= 10; i++) {
+    stops.push(magmaAt(threshold + (1 - threshold) * i / 10));
+  }
+  document.getElementById("legendbar").style.background =
+    `linear-gradient(to right, ${stops.join(",")})`;
+  document.getElementById("legendmin").textContent = threshold.toFixed(2);
+}
+
+const map = new maplibregl.Map({
+  container: "map",
+  style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  center: [-103.36, 20.66],
+  zoom: 10.7,
+  attributionControl: true,
+});
+map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+let activeMarker = null;
+// Per-layer viability floors. The desert layer's scores top out lower (true
+// 10-min deserts sit in thinner commercial fabric), so it gets a lower floor.
+const FLOORS = { m: 0.70, m1: 0.70, s: 0.70, d10: 0.20 };
+let threshold = FLOORS.m;
+
+function opacityExpr(key) {
+  // Floor: hexes below the layer's viability floor are not painted at all —
+  // the basemap (streets, neighbourhoods) shows through instead.
+  return ["case", ["<", ["get", key], FLOORS[key]], 0.0, 0.62];
+}
+
+map.on("load", () => {
+  map.addSource("hexes", { type: "geojson", data: "hexes.json" });
+  map.addLayer({
+    id: "hexfill", type: "fill", source: "hexes",
+    paint: {
+      "fill-color": ["interpolate", ["linear"], ["get", "m"], ...MAGMA],
+      "fill-opacity": opacityExpr("m"),
+    },
+  });
+
+  document.querySelectorAll('input[name="layer"]').forEach(el =>
+    el.addEventListener("change", e => setLayer(e.target.value)));
+
+  updateLegend();
+
+  map.on("click", "hexfill", e => {
+    const p = e.features[0].properties;
+    const cur = document.querySelector('input[name="layer"]:checked').value;
+    new maplibregl.Popup({ closeButton: false })
+      .setLngLat(e.lngLat)
+      .setHTML(
+        `<b>Viability: ${Number(p[cur]).toFixed(2)}</b><br>` +
+        `Raw score: ${Number(p.s).toFixed(2)}<br>` +
+        `Pharmacies within 5-min walk: ${p.cc}<br>` +
+        `Pharmacies within 10-min walk: ${p.cc10 ?? "—"}`)
+      .addTo(map);
+  });
+  map.on("mouseenter", "hexfill", () => map.getCanvas().style.cursor = "pointer");
+  map.on("mouseleave", "hexfill", () => map.getCanvas().style.cursor = "");
+
+  loadCandidates();
+});
+
+function setLayer(key) {
+  map.setPaintProperty("hexfill", "fill-color",
+    ["interpolate", ["linear"], ["get", key], ...MAGMA]);
+  map.setPaintProperty("hexfill", "fill-opacity", opacityExpr(key));
+  threshold = FLOORS[key];
+  document.getElementById("floorcap").innerHTML =
+    `Showing hexagons with viability ≥ <b>${threshold.toFixed(2)}</b>`;
+  updateLegend();
+}
+
+async function loadCandidates() {
+  const box = document.getElementById("cands");
+  try {
+    const items = await (await fetch("candidates.json")).json();
+    box.innerHTML = "";
+    for (const c of items) {
+      const div = document.createElement("div");
+      div.className = "cand";
+      div.innerHTML =
+        `<div class="top"><span class="rank">#${c.rank}</span>` +
+        `<span class="score">${c.score.toFixed(2)}</span></div>` +
+        `<div class="loc">${c.location}</div>` +
+        (c.why.length ? `<ul class="why">` + c.why.map(w => `<li>${w}</li>`).join("") + `</ul>` : "");
+      div.onclick = () => {
+        document.querySelectorAll(".cand").forEach(d => d.classList.remove("active"));
+        div.classList.add("active");
+        map.flyTo({ center: [c.lon, c.lat], zoom: 14.5, speed: 1.4 });
+        if (activeMarker) activeMarker.remove();
+        activeMarker = new maplibregl.Marker({ color: "#de4968" })
+          .setLngLat([c.lon, c.lat]).addTo(map);
+      };
+      box.appendChild(div);
+    }
+  } catch (err) {
+    box.textContent = "Could not load candidates.json — serve this folder over HTTP.";
+  }
+}
+</script>
+</body>
+</html>
