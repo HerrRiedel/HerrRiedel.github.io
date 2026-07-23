@@ -155,7 +155,8 @@ function switchCity(c) {
 let activeMarker = null;
 // Per-layer viability floors. The desert layer's scores top out lower (true
 // 10-min deserts sit in thinner commercial fabric), so it gets a lower floor.
-const FLOORS = { m: 0.70, m1: 0.70, s: 0.70, d10: 0.20 };
+// The raw layer has NO floor: it is the full model output, 0 → 1, unmasked.
+const FLOORS = { m: 0.70, m1: 0.70, s: 0.0, d10: 0.20 };
 let threshold = FLOORS.m;
 
 function opacityExpr(key) {
@@ -165,6 +166,9 @@ function opacityExpr(key) {
 }
 
 map.on("load", () => {
+  // The browser restores the previously-checked radio across refreshes, but the
+  // map always starts on the default layer — resync the UI to reality.
+  document.querySelector('input[name="layer"][value="m"]').checked = true;
   document.querySelectorAll("#citypick button").forEach(b => {
     b.classList.toggle("active", b.dataset.city === city);
     b.addEventListener("click", () => switchCity(b.dataset.city));
@@ -206,8 +210,9 @@ function setLayer(key) {
     ["interpolate", ["linear"], ["get", key], ...MAGMA]);
   map.setPaintProperty("hexfill", "fill-opacity", opacityExpr(key));
   threshold = FLOORS[key];
-  document.getElementById("floorcap").innerHTML =
-    `Showing hexagons with viability ≥ <b>${threshold.toFixed(2)}</b>`;
+  document.getElementById("floorcap").innerHTML = threshold > 0
+    ? `Showing hexagons with viability ≥ <b>${threshold.toFixed(2)}</b>`
+    : `Showing <b>all</b> values (no floor) — full model output`;
   updateLegend();
   renderCandidates(key);
 }
