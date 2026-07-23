@@ -1,0 +1,1565 @@
+{
+ "m": [
+  {
+   "rank": 1,
+   "hex_id": "8a48a206cb8ffff",
+   "lat": 25.692369,
+   "lon": -100.44753,
+   "score": 0.948,
+   "location": "Calle B Oriente, Santa Catarina",
+   "why": [
+    "4,811 residents within a 5-min walk (top 20% citywide)",
+    "269 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a48a204ba07fff",
+   "lat": 25.79785,
+   "lon": -100.413517,
+   "score": 0.948,
+   "location": "Calle Unidad Ecológica, General Escobedo",
+   "why": [
+    "7,536 residents within a 5-min walk (top 5% citywide)",
+    "222 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a48a20ee787fff",
+   "lat": 25.775698,
+   "lon": -100.239018,
+   "score": 0.932,
+   "location": "Avenida Santa Cecilia, Apodaca",
+   "why": [
+    "5,004 residents within a 5-min walk (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a48a205339ffff",
+   "lat": 25.757339,
+   "lon": -100.296706,
+   "score": 0.932,
+   "location": "Prolongación General Ignacio Zaragoza, San Nicolás de los Garza",
+   "why": [
+    "409 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "30 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a48a204cd0ffff",
+   "lat": 25.741189,
+   "lon": -100.405228,
+   "score": 0.93,
+   "location": "Avenida Alejandro de Rodas, Monterrey",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)",
+    "6 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a48a20e4467fff",
+   "lat": 25.709332,
+   "lon": -100.225034,
+   "score": 0.899,
+   "location": "Avenida Apolo, Arboledas de Nueva Linda Vista, Guadalupe",
+   "why": [
+    "4,124 residents within a 5-min walk (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a48a2040c27fff",
+   "lat": 25.713753,
+   "lon": -100.362288,
+   "score": 0.893,
+   "location": "Calle Nueva Zelanda, Monterrey",
+   "why": [
+    "211 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a48a207398ffff",
+   "lat": 25.684677,
+   "lon": -100.327082,
+   "score": 0.893,
+   "location": "Calle José María Arteaga, Monterrey",
+   "why": [
+    "375 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a48a2066ac7fff",
+   "lat": 25.653855,
+   "lon": -100.385843,
+   "score": 0.893,
+   "location": "Calzada del Rosario, San Pedro Garza García",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "3 transit stops within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a48a20489a7fff",
+   "lat": 25.763407,
+   "lon": -100.408505,
+   "score": 0.888,
+   "location": "Monterrey",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a48a20ec45ffff",
+   "lat": 25.764035,
+   "lon": -100.263023,
+   "score": 0.888,
+   "location": "Petra Sambrano, Apodaca",
+   "why": [
+    "7,561 residents within a 5-min walk (top 5% citywide)",
+    "308 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a48a23b4987fff",
+   "lat": 25.802373,
+   "lon": -100.311119,
+   "score": 0.888,
+   "location": "Nueva Rosita, General Escobedo",
+   "why": [
+    "3,971 residents within a 5-min walk (top 20% citywide)",
+    "198 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a48a2060d5ffff",
+   "lat": 25.657751,
+   "lon": -100.394723,
+   "score": 0.888,
+   "location": "Calle Hermenegildo Galeana, San Pedro Garza García",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "2 transit stops within 5 min (top 5% citywide)",
+    "15 schools within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a48a20524effff",
+   "lat": 25.740379,
+   "lon": -100.264647,
+   "score": 0.888,
+   "location": "Calle San Francisco, San Nicolás de los Garza",
+   "why": [
+    "4,422 residents within a 5-min walk (top 20% citywide)",
+    "225 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a48a205ca6ffff",
+   "lat": 25.756896,
+   "lon": -100.35445,
+   "score": 0.888,
+   "location": "Calle Bernardino Rivaldivia, Monterrey",
+   "why": [
+    "5,322 residents within a 5-min walk (top 20% citywide)",
+    "292 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a48a2023877fff",
+   "lat": 25.581892,
+   "lon": -100.25308,
+   "score": 0.888,
+   "location": "Carretera Nacional, Monterrey",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a48a204e187fff",
+   "lat": 25.75841,
+   "lon": -100.382401,
+   "score": 0.888,
+   "location": "Calle Pirámide, Monterrey",
+   "why": [
+    "4,631 residents within a 5-min walk (top 20% citywide)",
+    "297 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a48a2058627fff",
+   "lat": 25.786331,
+   "lon": -100.333341,
+   "score": 0.888,
+   "location": "Calle Cerro Azul, General Escobedo",
+   "why": [
+    "6,419 residents within a 5-min walk (top 5% citywide)",
+    "322 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a48a20e541ffff",
+   "lat": 25.723927,
+   "lon": -100.241909,
+   "score": 0.888,
+   "location": "Mina de Oro, San Nicolás de los Garza",
+   "why": [
+    "6,108 residents within a 5-min walk (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a48a20f5277fff",
+   "lat": 25.735113,
+   "lon": -100.190787,
+   "score": 0.888,
+   "location": "Avenida Monterrey, Apodaca",
+   "why": [
+    "7,137 residents within a 5-min walk (top 5% citywide)",
+    "284 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a48a201b10ffff",
+   "lat": 25.700584,
+   "lon": -100.187262,
+   "score": 0.888,
+   "location": "Avenida Jardines del Río, Guadalupe",
+   "why": [
+    "5,569 residents within a 5-min walk (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a48a205d8e7fff",
+   "lat": 25.764001,
+   "lon": -100.365741,
+   "score": 0.888,
+   "location": "Avenida Julio A. Roca, Colonia San Bernabe, Monterrey",
+   "why": [
+    "7,703 residents within a 5-min walk (top 5% citywide)",
+    "396 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a48a207249ffff",
+   "lat": 25.682649,
+   "lon": -100.289846,
+   "score": 0.87,
+   "location": "Prolongación Cananea, Monterrey",
+   "why": [
+    "376 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a48a20e105ffff",
+   "lat": 25.74907,
+   "lon": -100.251812,
+   "score": 0.86,
+   "location": "Calle Chopo, San Nicolás de los Garza",
+   "why": [
+    "4,932 residents within a 5-min walk (top 20% citywide)",
+    "329 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a48a20427b7fff",
+   "lat": 25.736873,
+   "lon": -100.334959,
+   "score": 0.84,
+   "location": "Bernabé González, Monterrey",
+   "why": [
+    "6,708 residents within a 5-min walk (top 5% citywide)",
+    "370 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a48a206b79ffff",
+   "lat": 25.748791,
+   "lon": -100.425841,
+   "score": 0.836,
+   "location": "Avenida Paseo de los Leones, Monterrey",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a48a2009a97fff",
+   "lat": 25.689715,
+   "lon": -100.284725,
+   "score": 0.836,
+   "location": "Calle Emiliano Zapata, Monterrey",
+   "why": [
+    "3,942 residents within a 5-min walk (top 20% citywide)",
+    "459 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a48a20f4cd7fff",
+   "lat": 25.708327,
+   "lon": -100.154402,
+   "score": 0.833,
+   "location": "Avenida Orquídea, Apodaca",
+   "why": [
+    "5,847 residents within a 5-min walk (top 20% citywide)",
+    "202 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a48a20c6a67fff",
+   "lat": 25.774379,
+   "lon": -100.190421,
+   "score": 0.833,
+   "location": "Calle Melchor Ocampo, Apodaca",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)",
+    "5 transit stops within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a48a2051d8ffff",
+   "lat": 25.73284,
+   "lon": -100.311091,
+   "score": 0.833,
+   "location": "Calle Juana de Ibarborou, San Nicolás de los Garza",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "5 hospitals within 5 min (top 5% citywide)",
+    "3 transit stops within 5 min (top 5% citywide)"
+   ]
+  }
+ ],
+ "m1": [
+  {
+   "rank": 1,
+   "hex_id": "8a48a204bb57fff",
+   "lat": 25.796593,
+   "lon": -100.415553,
+   "score": 0.98,
+   "location": "Calle Unidad Astronómica, General Escobedo",
+   "why": [
+    "6,745 residents within a 5-min walk (top 5% citywide)",
+    "233 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a48a206c16ffff",
+   "lat": 25.692559,
+   "lon": -100.444692,
+   "score": 0.948,
+   "location": "Colina Nevada, Santa Catarina",
+   "why": [
+    "4,469 residents within a 5-min walk (top 20% citywide)",
+    "241 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a48a20435a7fff",
+   "lat": 25.743603,
+   "lon": -100.351922,
+   "score": 0.948,
+   "location": "Calle Heriberto Jara, Monterrey",
+   "why": [
+    "7,397 residents within a 5-min walk (top 5% citywide)",
+    "378 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a48a2070737fff",
+   "lat": 25.673709,
+   "lon": -100.323326,
+   "score": 0.948,
+   "location": "Calle Julián Villagrán, Monterrey",
+   "why": [
+    "1316 retail businesses within 10 min (top 5% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "10 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a48a20706d7fff",
+   "lat": 25.681659,
+   "lon": -100.321843,
+   "score": 0.948,
+   "location": "Calle Isaac Garza, Monterrey",
+   "why": [
+    "698 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "5 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a48a20c5b4ffff",
+   "lat": 25.778114,
+   "lon": -100.236363,
+   "score": 0.948,
+   "location": "Calle Ceiba, Apodaca",
+   "why": [
+    "6,968 residents within a 5-min walk (top 5% citywide)",
+    "255 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a48a200bc27fff",
+   "lat": 25.689721,
+   "lon": -100.250512,
+   "score": 0.948,
+   "location": "Linares, Guadalupe",
+   "why": [
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "22 hospitals within 5 min (top 5% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a48a204ec57fff",
+   "lat": 25.75511,
+   "lon": -100.381413,
+   "score": 0.948,
+   "location": "Calle Truchas, Monterrey",
+   "why": [
+    "5,893 residents within a 5-min walk (top 20% citywide)",
+    "284 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a48a204e14ffff",
+   "lat": 25.760171,
+   "lon": -100.389683,
+   "score": 0.948,
+   "location": "Avenida No Reelección, Monterrey",
+   "why": [
+    "6,890 residents within a 5-min walk (top 5% citywide)",
+    "346 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a48a204cce7fff",
+   "lat": 25.745746,
+   "lon": -100.404181,
+   "score": 0.948,
+   "location": "Calle Villa Francesa, Monterrey",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a48a2042677fff",
+   "lat": 25.74096,
+   "lon": -100.341004,
+   "score": 0.948,
+   "location": "Diego Ayala, Monterrey",
+   "why": [
+    "7,190 residents within a 5-min walk (top 5% citywide)",
+    "349 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a48a2046d17fff",
+   "lat": 25.697313,
+   "lon": -100.339534,
+   "score": 0.948,
+   "location": "Calle Jerez, Monterrey",
+   "why": [
+    "217 retail businesses within 10 min (top 20% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a48a20e4197fff",
+   "lat": 25.705847,
+   "lon": -100.226887,
+   "score": 0.948,
+   "location": "Minerva, Nueva Linda Vista, Guadalupe",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "5 hospitals within 5 min (top 5% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a48a2075a87fff",
+   "lat": 25.661273,
+   "lon": -100.358654,
+   "score": 0.948,
+   "location": "Vía Savotino, San Pedro Garza García",
+   "why": [
+    "346 retail businesses within 10 min (top 5% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "13 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a48a20754effff",
+   "lat": 25.664539,
+   "lon": -100.343241,
+   "score": 0.948,
+   "location": "Calle Loma Grande, Monterrey",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "35 hospitals within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a48a205028ffff",
+   "lat": 25.736887,
+   "lon": -100.300727,
+   "score": 0.948,
+   "location": "Juan de Dios Peza, San Nicolás de los Garza",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "10 hospitals within 5 min (top 5% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a48a20f3147fff",
+   "lat": 25.758468,
+   "lon": -100.159185,
+   "score": 0.948,
+   "location": "Rio Nazas, Apodaca",
+   "why": [
+    "7,283 residents within a 5-min walk (top 5% citywide)",
+    "271 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a48a20c0daffff",
+   "lat": 25.77884,
+   "lon": -100.190785,
+   "score": 0.948,
+   "location": "Calle General Francisco Naranjo, Apodaca",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a48a20e80b7fff",
+   "lat": 25.784205,
+   "lon": -100.263252,
+   "score": 0.948,
+   "location": "Avenida de la Concordia, Apodaca",
+   "why": [
+    "5,159 residents within a 5-min walk (top 20% citywide)",
+    "233 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a48a2053077fff",
+   "lat": 25.751715,
+   "lon": -100.296956,
+   "score": 0.948,
+   "location": "Zona Poniente, San Nicolás de los Garza",
+   "why": [
+    "377 retail businesses within 10 min (top 5% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a48a2060d97fff",
+   "lat": 25.655992,
+   "lon": -100.387447,
+   "score": 0.948,
+   "location": "Avenida José Vasconcelos, San Pedro Garza García",
+   "why": [
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)",
+    "3 transit stops within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a48a2053d97fff",
+   "lat": 25.741307,
+   "lon": -100.284689,
+   "score": 0.948,
+   "location": "Calle Cordillera de los Andes, San Nicolás de los Garza",
+   "why": [
+    "4,197 residents within a 5-min walk (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "9 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a48a2009baffff",
+   "lat": 25.686135,
+   "lon": -100.287995,
+   "score": 0.948,
+   "location": "Calle Constituyentes del 57, Monterrey",
+   "why": [
+    "414 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a48a20ea937fff",
+   "lat": 25.780765,
+   "lon": -100.247278,
+   "score": 0.948,
+   "location": "Calle Francia, Apodaca",
+   "why": [
+    "6,949 residents within a 5-min walk (top 5% citywide)",
+    "377 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a48a20e592ffff",
+   "lat": 25.710495,
+   "lon": -100.25863,
+   "score": 0.948,
+   "location": "Avenida Calzada Unión, Fraccionamiento Las Galias, San Nicolás de los Garza",
+   "why": [
+    "5,360 residents within a 5-min walk (top 20% citywide)",
+    "249 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a48a204562ffff",
+   "lat": 25.720983,
+   "lon": -100.388566,
+   "score": 0.932,
+   "location": "Calle de los Navegantes, Cumbres, Monterrey",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a48a2a9069ffff",
+   "lat": 25.67143,
+   "lon": -100.458619,
+   "score": 0.932,
+   "location": "Tamuín, Santa Catarina",
+   "why": [
+    "250 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a48a2028667fff",
+   "lat": 25.626687,
+   "lon": -100.288096,
+   "score": 0.932,
+   "location": "Calle Puerto San Pablo, Monterrey",
+   "why": [
+    "6,643 residents within a 5-min walk (top 5% citywide)",
+    "251 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a48a20f509ffff",
+   "lat": 25.729159,
+   "lon": -100.178898,
+   "score": 0.932,
+   "location": "Avenida Los Suizos, Apodaca",
+   "why": [
+    "7,775 residents within a 5-min walk (top 5% citywide)",
+    "298 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a48a206a69ffff",
+   "lat": 25.737889,
+   "lon": -100.40424,
+   "score": 0.932,
+   "location": "Monterrey",
+   "why": [
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)",
+    "6 schools within 5 min (top 20% citywide)"
+   ]
+  }
+ ],
+ "d10": [
+  {
+   "rank": 1,
+   "hex_id": "8a48a2012997fff",
+   "lat": 25.626109,
+   "lon": -100.125665,
+   "score": 0.736,
+   "location": "San Francisco, Benito Juárez",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a48a200340ffff",
+   "lat": 25.647705,
+   "lon": -100.207177,
+   "score": 0.701,
+   "location": "Calle Joaquín Capilla, Guadalupe",
+   "why": [
+    "4,967 residents within a 5-min walk (top 20% citywide)",
+    "239 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a48a206b647fff",
+   "lat": 25.751713,
+   "lon": -100.432508,
+   "score": 0.673,
+   "location": "Avenida Paseo de los Leones, Privada Olimpo",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a48a20e5057fff",
+   "lat": 25.724252,
+   "lon": -100.254055,
+   "score": 0.669,
+   "location": "Calle Antiguo Camino a Apodaca, San Nicolás de los Garza",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a48a20ebbaffff",
+   "lat": 25.804887,
+   "lon": -100.272798,
+   "score": 0.635,
+   "location": "Tuna, General Escobedo",
+   "why": [
+    "3,945 residents within a 5-min walk (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a48a204dc57fff",
+   "lat": 25.759948,
+   "lon": -100.426772,
+   "score": 0.635,
+   "location": "Avenida Cumbres del Sol",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a48a20614b7fff",
+   "lat": 25.68066,
+   "lon": -100.404471,
+   "score": 0.62,
+   "location": "Francisco I. Madero, San Pedro Garza García",
+   "why": [
+    "6,276 residents within a 5-min walk (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a48a20a3cc7fff",
+   "lat": 25.650919,
+   "lon": -100.071423,
+   "score": 0.62,
+   "location": "Calle Topacio, Benito Juárez",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)",
+    "5 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a48a20e4cdffff",
+   "lat": 25.70487,
+   "lon": -100.224669,
+   "score": 0.62,
+   "location": "Avenida Miguel Alemán, Nueva Linda Vista, Guadalupe",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a48a2012707fff",
+   "lat": 25.640929,
+   "lon": -100.121879,
+   "score": 0.597,
+   "location": "Calle Doceava, Benito Juárez",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a48a200ea6ffff",
+   "lat": 25.661603,
+   "lon": -100.251772,
+   "score": 0.597,
+   "location": "12, Guadalupe",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a48a20eed27fff",
+   "lat": 25.757574,
+   "lon": -100.241813,
+   "score": 0.577,
+   "location": "Calle San Juan, Apodaca",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a48a20ac1affff",
+   "lat": 25.657795,
+   "lon": -100.121106,
+   "score": 0.573,
+   "location": "Hacienda Santa Lucía, Benito Juárez",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a48a20f2ba7fff",
+   "lat": 25.741634,
+   "lon": -100.142139,
+   "score": 0.573,
+   "location": "Misión Gerona, Apodaca",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a48a200dcb7fff",
+   "lat": 25.657973,
+   "lon": -100.272852,
+   "score": 0.547,
+   "location": "Privada Jesús Arreola, Monterrey",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a48a20ceb17fff",
+   "lat": 25.822583,
+   "lon": -100.225024,
+   "score": 0.547,
+   "location": "Calle Tórtola, Apodaca",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a48a2066807fff",
+   "lat": 25.642982,
+   "lon": -100.380663,
+   "score": 0.524,
+   "location": "Calle Corona, San Pedro Garza García",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 transit stops within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a48a232c88ffff",
+   "lat": 25.788276,
+   "lon": -100.589809,
+   "score": 0.503,
+   "location": "Salamanca, Paseo del Nogal, García",
+   "why": [
+    "5,988 residents within a 5-min walk (top 5% citywide)",
+    "228 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a48a201e8f7fff",
+   "lat": 25.659034,
+   "lon": -100.17106,
+   "score": 0.456,
+   "location": "Calle Río Colorado, Guadalupe",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a48a2333cf7fff",
+   "lat": 25.788725,
+   "lon": -100.466297,
+   "score": 0.456,
+   "location": "Calle Boro",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a48a2ad2627fff",
+   "lat": 25.777214,
+   "lon": -100.587442,
+   "score": 0.456,
+   "location": "Sierra Real, Paseo del Nogal, García",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a48a20c5b2ffff",
+   "lat": 25.774907,
+   "lon": -100.233961,
+   "score": 0.456,
+   "location": "Avenida Santa Cecilia, Apodaca",
+   "why": [
+    "6,284 residents within a 5-min walk (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a48a2041c57fff",
+   "lat": 25.731353,
+   "lon": -100.384434,
+   "score": 0.456,
+   "location": "Lantano, Monterrey",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a48a2314557fff",
+   "lat": 25.80275,
+   "lon": -100.441054,
+   "score": 0.456,
+   "location": "Calle Abeto",
+   "why": [
+    "4,401 residents within a 5-min walk (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a48a2a9e917fff",
+   "lat": 25.687378,
+   "lon": -100.48849,
+   "score": 0.456,
+   "location": "Calle Sierra San Miguel, Santa Catarina",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a48a205615ffff",
+   "lat": 25.712491,
+   "lon": -100.279468,
+   "score": 0.437,
+   "location": "Avenida Nogalar Sur, San Nicolás de los Garza",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a48a20a5a5ffff",
+   "lat": 25.62443,
+   "lon": -100.116986,
+   "score": 0.437,
+   "location": "Avenida Profesor Eloy Cavazos, Benito Juárez",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a48a206c507fff",
+   "lat": 25.691276,
+   "lon": -100.430318,
+   "score": 0.434,
+   "location": "Privada Juan Escutia, Santa Catarina",
+   "why": [
+    "4,635 residents within a 5-min walk (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a48a200a65ffff",
+   "lat": 25.695391,
+   "lon": -100.232446,
+   "score": 0.416,
+   "location": "Avenida San Rafael, Guadalupe",
+   "why": [
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a48a20708e7fff",
+   "lat": 25.664128,
+   "lon": -100.332514,
+   "score": 0.404,
+   "location": "16 de Septiembre, Monterrey",
+   "why": [
+    "502 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)",
+    "1 hospitals within 5 min (top 20% citywide)"
+   ]
+  }
+ ],
+ "s": [
+  {
+   "rank": 1,
+   "hex_id": "8a48a20705affff",
+   "lat": 25.668553,
+   "lon": -100.316485,
+   "score": 1.0,
+   "location": "Avenida Padre Mier, Monterrey",
+   "why": [
+    "2202 retail businesses within 10 min (top 5% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "25 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a48a204b4f7fff",
+   "lat": 25.801495,
+   "lon": -100.392405,
+   "score": 1.0,
+   "location": "Calle Paras, General Escobedo",
+   "why": [
+    "7,433 residents within a 5-min walk (top 5% citywide)",
+    "326 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a48a20430a7fff",
+   "lat": 25.74634,
+   "lon": -100.361423,
+   "score": 1.0,
+   "location": "Calle Mar Adriático, Monterrey",
+   "why": [
+    "3,894 residents within a 5-min walk (top 20% citywide)",
+    "311 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a48a2070697fff",
+   "lat": 25.679615,
+   "lon": -100.318823,
+   "score": 1.0,
+   "location": "Avenida José María Pino Suárez, Monterrey",
+   "why": [
+    "1887 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "114 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a48a2043c97fff",
+   "lat": 25.740116,
+   "lon": -100.353773,
+   "score": 1.0,
+   "location": "Calle Uxmal, Monterrey",
+   "why": [
+    "5,372 residents within a 5-min walk (top 20% citywide)",
+    "306 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a48a204bb67fff",
+   "lat": 25.795336,
+   "lon": -100.41759,
+   "score": 1.0,
+   "location": "Calle Unidad Política, General Escobedo",
+   "why": [
+    "7,325 residents within a 5-min walk (top 5% citywide)",
+    "205 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a48a200805ffff",
+   "lat": 25.677822,
+   "lon": -100.26094,
+   "score": 1.0,
+   "location": "Calle Josefa Ortiz De Domínguez, Guadalupe",
+   "why": [
+    "271 retail businesses within 10 min (top 20% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "8 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a48a2075b9ffff",
+   "lat": 25.659041,
+   "lon": -100.35847,
+   "score": 1.0,
+   "location": "Calle Río Guadalquivir, San Pedro Garza García",
+   "why": [
+    "398 retail businesses within 10 min (top 5% citywide)",
+    "6 clinics/consultorios within 5 min (top 5% citywide)",
+    "24 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a48a207576ffff",
+   "lat": 25.667274,
+   "lon": -100.352735,
+   "score": 1.0,
+   "location": "Doctor José Martínez, Monterrey",
+   "why": [
+    "8 clinics/consultorios within 5 min (top 5% citywide)",
+    "243 hospitals within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a48a20502cffff",
+   "lat": 25.738931,
+   "lon": -100.303748,
+   "score": 1.0,
+   "location": "Avenida Lope de Vega, San Nicolás de los Garza",
+   "why": [
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "15 hospitals within 5 min (top 5% citywide)",
+    "3 transit stops within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a48a205a66ffff",
+   "lat": 25.798887,
+   "lon": -100.312972,
+   "score": 1.0,
+   "location": "Avenida Benito Juárez, General Escobedo",
+   "why": [
+    "185 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "4 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a48a20e5947fff",
+   "lat": 25.712633,
+   "lon": -100.260231,
+   "score": 1.0,
+   "location": "Avenida Rómulo Garza, San Nicolás de los Garza",
+   "why": [
+    "3,936 residents within a 5-min walk (top 20% citywide)",
+    "289 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a48a200bc2ffff",
+   "lat": 25.69079,
+   "lon": -100.251313,
+   "score": 0.984,
+   "location": "Avenida Miguel Alemán, Guadalupe",
+   "why": [
+    "6 clinics/consultorios within 5 min (top 5% citywide)",
+    "26 hospitals within 5 min (top 5% citywide)",
+    "1 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a48a2075b6ffff",
+   "lat": 25.658476,
+   "lon": -100.366978,
+   "score": 0.98,
+   "location": "Calle Río Mississippi, San Pedro Garza García",
+   "why": [
+    "349 retail businesses within 10 min (top 5% citywide)",
+    "5 clinics/consultorios within 5 min (top 5% citywide)",
+    "34 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a48a23a45affff",
+   "lat": 25.806486,
+   "lon": -100.367838,
+   "score": 0.98,
+   "location": "Calle Loma La Paz, General Escobedo",
+   "why": [
+    "8,061 residents within a 5-min walk (top 5% citywide)",
+    "335 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a48a20716d7fff",
+   "lat": 25.695963,
+   "lon": -100.342988,
+   "score": 0.98,
+   "location": "Calle Matehuala, Monterrey",
+   "why": [
+    "200 retail businesses within 10 min (top 20% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a48a20c6acffff",
+   "lat": 25.777955,
+   "lon": -100.187147,
+   "score": 0.98,
+   "location": "Calle Mariano Abasolo, Apodaca",
+   "why": [
+    "190 retail businesses within 10 min (top 20% citywide)",
+    "7 clinics/consultorios within 5 min (top 5% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a48a20e0937fff",
+   "lat": 25.718953,
+   "lon": -100.232235,
+   "score": 0.98,
+   "location": "Alamillo, San Nicolás de los Garza",
+   "why": [
+    "4,318 residents within a 5-min walk (top 20% citywide)",
+    "222 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a48a20a3067fff",
+   "lat": 25.655901,
+   "lon": -100.081079,
+   "score": 0.98,
+   "location": "Calle Real De San José, Benito Juárez",
+   "why": [
+    "5,112 residents within a 5-min walk (top 20% citywide)",
+    "238 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a48a232ca9ffff",
+   "lat": 25.795847,
+   "lon": -100.594023,
+   "score": 0.98,
+   "location": "Sor Juana Inés de la Cruz, Villa de los Nogales, García",
+   "why": [
+    "5,236 residents within a 5-min walk (top 20% citywide)",
+    "379 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a48a2053047fff",
+   "lat": 25.752784,
+   "lon": -100.297757,
+   "score": 0.98,
+   "location": "Avenida Universidad, San Nicolás de los Garza",
+   "why": [
+    "381 retail businesses within 10 min (top 5% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "12 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a48a20756dffff",
+   "lat": 25.673275,
+   "lon": -100.346815,
+   "score": 0.955,
+   "location": "Calle Belisario Domínguez, Monterrey",
+   "why": [
+    "16 clinics/consultorios within 5 min (top 5% citywide)",
+    "375 hospitals within 5 min (top 5% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a48a20432cffff",
+   "lat": 25.758094,
+   "lon": -100.370245,
+   "score": 0.948,
+   "location": "Calle Membrillos, Monterrey",
+   "why": [
+    "6,095 residents within a 5-min walk (top 5% citywide)",
+    "252 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a48a20f52effff",
+   "lat": 25.737436,
+   "lon": -100.18955,
+   "score": 0.948,
+   "location": "Avenida Estado de Jalisco, Apodaca",
+   "why": [
+    "6,470 residents within a 5-min walk (top 5% citywide)",
+    "272 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a48a2046637fff",
+   "lat": 25.715162,
+   "lon": -100.34101,
+   "score": 0.948,
+   "location": "Avenida Alfonso Reyes, Monterrey",
+   "why": [
+    "188 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "5 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a48a20ec6d7fff",
+   "lat": 25.771797,
+   "lon": -100.264373,
+   "score": 0.948,
+   "location": "Calle Luxemburgo, Apodaca",
+   "why": [
+    "5,133 residents within a 5-min walk (top 20% citywide)",
+    "297 retail businesses within 10 min (top 20% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a48a20ec367fff",
+   "lat": 25.76515,
+   "lon": -100.280231,
+   "score": 0.948,
+   "location": "Avenida Morenita Mía, San Nicolás de los Garza",
+   "why": [
+    "5,788 residents within a 5-min walk (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "7 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a48a204cc57fff",
+   "lat": 25.745652,
+   "lon": -100.4056,
+   "score": 0.948,
+   "location": "Calle Villa Portuguesa, Monterrey",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "0 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a48a205ab97fff",
+   "lat": 25.786197,
+   "lon": -100.318346,
+   "score": 0.948,
+   "location": "Cerro de la Popa, General Escobedo",
+   "why": [
+    "5,211 residents within a 5-min walk (top 20% citywide)",
+    "300 retail businesses within 10 min (top 5% citywide)",
+    "0 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a48a20f3a17fff",
+   "lat": 25.759261,
+   "lon": -100.164239,
+   "score": 0.948,
+   "location": "Rio Yuma, Apodaca",
+   "why": [
+    "5,230 residents within a 5-min walk (top 20% citywide)",
+    "359 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  }
+ ]
+}

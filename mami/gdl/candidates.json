@@ -1,0 +1,1464 @@
+{
+ "m": [
+  {
+   "rank": 1,
+   "hex_id": "8a498c940097fff",
+   "lat": 20.68977,
+   "lon": -103.305712,
+   "score": 0.988,
+   "location": "Calle San Ismael, Circunvalación Oblatos, Guadalajara",
+   "why": [
+    "6,354 residents within a 5-min walk (top 20% citywide)",
+    "483 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a498c968677fff",
+   "lat": 20.69091,
+   "lon": -103.375905,
+   "score": 0.969,
+   "location": "Calle Aurelio Luis Gallardo, Italia, Guadalajara",
+   "why": [
+    "5 clinics/consultorios within 5 min (top 5% citywide)",
+    "18 hospitals within 5 min (top 5% citywide)",
+    "12 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a498c971277fff",
+   "lat": 20.658861,
+   "lon": -103.299737,
+   "score": 0.969,
+   "location": "Avenida del Parque, Guadalajara",
+   "why": [
+    "4,943 residents within a 5-min walk (top 20% citywide)",
+    "556 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a49ab4b0467fff",
+   "lat": 20.734768,
+   "lon": -103.411016,
+   "score": 0.963,
+   "location": "Calle Arrayanes, La Tuzanía, Zapopan",
+   "why": [
+    "8,013 residents within a 5-min walk (top 5% citywide)",
+    "454 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a498c971d77fff",
+   "lat": 20.640791,
+   "lon": -103.288852,
+   "score": 0.963,
+   "location": "Calle Zalatitán, Tlaquepaque",
+   "why": [
+    "7,674 residents within a 5-min walk (top 5% citywide)",
+    "383 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a498c96a867fff",
+   "lat": 20.68437,
+   "lon": -103.362041,
+   "score": 0.955,
+   "location": "Calle Nicolás Romero, Mezquitán Country, Guadalajara",
+   "why": [
+    "5,273 residents within a 5-min walk (top 20% citywide)",
+    "981 retail businesses within 10 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a498c96aa57fff",
+   "lat": 20.693013,
+   "lon": -103.365716,
+   "score": 0.955,
+   "location": "Calle José Clemente Orozco, Villaseñor, Guadalajara",
+   "why": [
+    "5,911 residents within a 5-min walk (top 20% citywide)",
+    "364 retail businesses within 10 min (top 20% citywide)",
+    "14 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a49ab596297fff",
+   "lat": 20.619122,
+   "lon": -103.38577,
+   "score": 0.954,
+   "location": "Calle Martín Castrejón, El Carmen, Guadalajara",
+   "why": [
+    "6,664 residents within a 5-min walk (top 20% citywide)",
+    "364 retail businesses within 10 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a498c955b67fff",
+   "lat": 20.681002,
+   "lon": -103.279833,
+   "score": 0.947,
+   "location": "Calle Margarita Gutiérrez Nájera, Guadalajara",
+   "why": [
+    "7,237 residents within a 5-min walk (top 20% citywide)",
+    "439 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a49ab5922c7fff",
+   "lat": 20.644792,
+   "lon": -103.387751,
+   "score": 0.947,
+   "location": "Calle Cuarzo, Valle Verde 2a Sección, Guadalajara",
+   "why": [
+    "413 retail businesses within 10 min (top 20% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)",
+    "10 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a498c971b5ffff",
+   "lat": 20.64943,
+   "lon": -103.304309,
+   "score": 0.947,
+   "location": "Avenida San Rafaél, Guadalajara",
+   "why": [
+    "4,926 residents within a 5-min walk (top 20% citywide)",
+    "495 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a498c94d6dffff",
+   "lat": 20.742268,
+   "lon": -103.368066,
+   "score": 0.947,
+   "location": "Calle Paseo de los Chopos, Fraccionamiento Tabachines, Zapopan",
+   "why": [
+    "330 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a498c96dc57fff",
+   "lat": 20.666397,
+   "lon": -103.396941,
+   "score": 0.932,
+   "location": "Avenida Guadalupe, Chapalita, Guadalajara",
+   "why": [
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "13 hospitals within 5 min (top 5% citywide)",
+    "7 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a498c9620f7fff",
+   "lat": 20.642877,
+   "lon": -103.314033,
+   "score": 0.932,
+   "location": "Calle Florida, Tlaquepaque",
+   "why": [
+    "871 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a498c96e55ffff",
+   "lat": 20.66866,
+   "lon": -103.350001,
+   "score": 0.932,
+   "location": "Calle Cristóbal Colón, Mexicaltzingo, Guadalajara",
+   "why": [
+    "1678 retail businesses within 10 min (top 5% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "23 transit stops within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a498c96d14ffff",
+   "lat": 20.671236,
+   "lon": -103.405078,
+   "score": 0.932,
+   "location": "Calzada Lázaro Cárdenas, Jardines de San Ignacio, Zapopan",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "7 hospitals within 5 min (top 5% citywide)",
+    "6 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a49ab5926dffff",
+   "lat": 20.646897,
+   "lon": -103.377565,
+   "score": 0.915,
+   "location": "Calle Isla Trinidad, Jardines de la Cruz 3a Sección, Guadalajara",
+   "why": [
+    "5,924 residents within a 5-min walk (top 20% citywide)",
+    "711 retail businesses within 10 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a498c9754effff",
+   "lat": 20.63097,
+   "lon": -103.285757,
+   "score": 0.915,
+   "location": "Avenida Patria Oriente, Tlaquepaque",
+   "why": [
+    "7,209 residents within a 5-min walk (top 20% citywide)",
+    "389 retail businesses within 10 min (top 20% citywide)",
+    "8 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a49ab59254ffff",
+   "lat": 20.634585,
+   "lon": -103.376977,
+   "score": 0.915,
+   "location": "Calle Natividad Macías, Lomas de Polanco, Guadalajara",
+   "why": [
+    "5,516 residents within a 5-min walk (top 20% citywide)",
+    "493 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a498c9448a7fff",
+   "lat": 20.656367,
+   "lon": -103.314044,
+   "score": 0.913,
+   "location": "Calle Europa, Guadalajara",
+   "why": [
+    "1151 retail businesses within 10 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)",
+    "6 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a498c96cc9ffff",
+   "lat": 20.653189,
+   "lon": -103.37059,
+   "score": 0.913,
+   "location": "Calle Ruiseñor, Guadalajara",
+   "why": [
+    "5,396 residents within a 5-min walk (top 20% citywide)",
+    "564 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a498c948d67fff",
+   "lat": 20.729573,
+   "lon": -103.348005,
+   "score": 0.913,
+   "location": "Anillo Periférico Norte Manuel Gómez Morín, Hogares del Batán, Zapopan",
+   "why": [
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a498c964a77fff",
+   "lat": 20.606576,
+   "lon": -103.352566,
+   "score": 0.895,
+   "location": "Calle Zapotlán, Tlaquepaque",
+   "why": [
+    "5,717 residents within a 5-min walk (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "12 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a498c968007fff",
+   "lat": 20.681739,
+   "lon": -103.377725,
+   "score": 0.892,
+   "location": "Calle Carlos F. de Landeros, Rojas Ladrón de Guevara, Guadalajara",
+   "why": [
+    "326 retail businesses within 10 min (top 20% citywide)",
+    "9 clinics/consultorios within 5 min (top 5% citywide)",
+    "75 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a49ab5916cffff",
+   "lat": 20.65039,
+   "lon": -103.423021,
+   "score": 0.892,
+   "location": "Avenida Moctezuma, Santa Catalina, Zapopan",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "4 hospitals within 5 min (top 20% citywide)",
+    "11 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a498c969c9ffff",
+   "lat": 20.690769,
+   "lon": -103.389074,
+   "score": 0.892,
+   "location": "Calle Palermo, Prados Providencia, Guadalajara",
+   "why": [
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "57 hospitals within 5 min (top 5% citywide)",
+    "6 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a498c9415affff",
+   "lat": 20.700767,
+   "lon": -103.320034,
+   "score": 0.892,
+   "location": "Calle Paseo Bohemio, Monumental, Guadalajara",
+   "why": [
+    "5,973 residents within a 5-min walk (top 20% citywide)",
+    "604 retail businesses within 10 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a49ab59e657fff",
+   "lat": 20.671874,
+   "lon": -103.421797,
+   "score": 0.892,
+   "location": "Calle Doctores, Lomas del Seminario, Zapopan",
+   "why": [
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "7 hospitals within 5 min (top 5% citywide)",
+    "8 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a498c96a6b7fff",
+   "lat": 20.700492,
+   "lon": -103.346371,
+   "score": 0.892,
+   "location": "Avenida de los Científicos, Miraflores, Guadalajara",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)",
+    "7 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a49ab4b321ffff",
+   "lat": 20.765418,
+   "lon": -103.419773,
+   "score": 0.878,
+   "location": "Avenida Fresnos, Colinas de Los Robles, Nuevo México",
+   "why": [
+    "3 hospitals within 5 min (top 20% citywide)",
+    "8 transit stops within 5 min (top 20% citywide)"
+   ]
+  }
+ ],
+ "m1": [
+  {
+   "rank": 1,
+   "hex_id": "8a498c94689ffff",
+   "lat": 20.668818,
+   "lon": -103.289671,
+   "score": 0.994,
+   "location": "Calle Jardines Japoneses, Guadalajara",
+   "why": [
+    "9,133 residents within a 5-min walk (top 5% citywide)",
+    "636 retail businesses within 10 min (top 5% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a498c965b4ffff",
+   "lat": 20.619,
+   "lon": -103.375355,
+   "score": 0.994,
+   "location": "Avenida Jesús Reyes Heroles, Loma Linda, Guadalajara",
+   "why": [
+    "8,566 residents within a 5-min walk (top 5% citywide)",
+    "610 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a498c946937fff",
+   "lat": 20.661745,
+   "lon": -103.2931,
+   "score": 0.992,
+   "location": "Gigantes, Revolucion, Guadalajara",
+   "why": [
+    "6,547 residents within a 5-min walk (top 20% citywide)",
+    "833 retail businesses within 10 min (top 5% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a498c940787fff",
+   "lat": 20.694486,
+   "lon": -103.303426,
+   "score": 0.992,
+   "location": "Calzada Juan Pablo II, Guadalajara",
+   "why": [
+    "7,539 residents within a 5-min walk (top 5% citywide)",
+    "650 retail businesses within 10 min (top 5% citywide)",
+    "8 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a49ab4b234ffff",
+   "lat": 20.750103,
+   "lon": -103.403593,
+   "score": 0.992,
+   "location": "Calle Paseo Bravo, Colinas del Rey, Zapopan",
+   "why": [
+    "6,368 residents within a 5-min walk (top 20% citywide)",
+    "4 hospitals within 5 min (top 20% citywide)",
+    "8 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a49ab4b019ffff",
+   "lat": 20.732276,
+   "lon": -103.413533,
+   "score": 0.992,
+   "location": "Calle del Nogal, La Tuzanía Ejidal, Zapopan",
+   "why": [
+    "7,488 residents within a 5-min walk (top 5% citywide)",
+    "561 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a498c943807fff",
+   "lat": 20.703783,
+   "lon": -103.312021,
+   "score": 0.992,
+   "location": "Calle Santa Clara, Guadalajara",
+   "why": [
+    "9,752 residents within a 5-min walk (top 5% citywide)",
+    "624 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a498c94239ffff",
+   "lat": 20.704838,
+   "lon": -103.289235,
+   "score": 0.988,
+   "location": "Avenida Paseo de la Selva Norte, Pueblo Abandonado Las Juntas",
+   "why": [
+    "7,729 residents within a 5-min walk (top 5% citywide)",
+    "452 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a498c940d37fff",
+   "lat": 20.67641,
+   "lon": -103.304329,
+   "score": 0.988,
+   "location": "Calle Pánfilo Pérez, Circunvalación Oblatos, Guadalajara",
+   "why": [
+    "5,919 residents within a 5-min walk (top 20% citywide)",
+    "1079 retail businesses within 10 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a498c946337fff",
+   "lat": 20.67733,
+   "lon": -103.294713,
+   "score": 0.986,
+   "location": "Avenida Plutarco Elías Calles, Guadalajara",
+   "why": [
+    "8,011 residents within a 5-min walk (top 5% citywide)",
+    "551 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a49aa2db35ffff",
+   "lat": 20.610009,
+   "lon": -103.305081,
+   "score": 0.986,
+   "location": "Calle Sidra, Tlaquepaque",
+   "why": [
+    "7,297 residents within a 5-min walk (top 5% citywide)",
+    "419 retail businesses within 10 min (top 20% citywide)",
+    "7 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a49aa20a897fff",
+   "lat": 20.409253,
+   "lon": -103.359089,
+   "score": 0.986,
+   "location": "San Juan Evangelista",
+   "why": []
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a498c9754cffff",
+   "lat": 20.632149,
+   "lon": -103.285185,
+   "score": 0.986,
+   "location": "Avenida Patria Oriente, Tlaquepaque",
+   "why": [
+    "7,786 residents within a 5-min walk (top 5% citywide)",
+    "437 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a498c97180ffff",
+   "lat": 20.643408,
+   "lon": -103.296751,
+   "score": 0.986,
+   "location": "Calle Diego Durán, Guadalajara",
+   "why": [
+    "6,516 residents within a 5-min walk (top 20% citywide)",
+    "495 retail businesses within 10 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a498c942857fff",
+   "lat": 20.692132,
+   "lon": -103.292776,
+   "score": 0.986,
+   "location": "Avenida General Joaquín Amaro, Guadalajara",
+   "why": [
+    "7,480 residents within a 5-min walk (top 5% citywide)",
+    "664 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a498c94eba7fff",
+   "lat": 20.721719,
+   "lon": -103.336086,
+   "score": 0.986,
+   "location": "Calle San Martín, División del Norte, Guadalajara",
+   "why": [
+    "5,296 residents within a 5-min walk (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)",
+    "10 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a498c968657fff",
+   "lat": 20.692089,
+   "lon": -103.375334,
+   "score": 0.986,
+   "location": "Avenida Adolfo López Mateos Norte, Italia, Guadalajara",
+   "why": [
+    "324 retail businesses within 10 min (top 20% citywide)",
+    "5 clinics/consultorios within 5 min (top 5% citywide)",
+    "22 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a498c942517fff",
+   "lat": 20.695934,
+   "lon": -103.276521,
+   "score": 0.986,
+   "location": "Calle José María Martínez, Pueblo Abandonado Las Juntas",
+   "why": [
+    "9,337 residents within a 5-min walk (top 5% citywide)",
+    "577 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a498c945947fff",
+   "lat": 20.668403,
+   "lon": -103.340956,
+   "score": 0.986,
+   "location": "Calle Constitución, Guadalajara",
+   "why": [
+    "1977 retail businesses within 10 min (top 5% citywide)",
+    "7 transit stops within 5 min (top 20% citywide)",
+    "11 schools within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a49aa2dd307fff",
+   "lat": 20.572936,
+   "lon": -103.328276,
+   "score": 0.977,
+   "location": "Calle Martínez, Las Pintas, Las Pintitas",
+   "why": [
+    "360 retail businesses within 10 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a49aa2582dffff",
+   "lat": 20.520278,
+   "lon": -103.466272,
+   "score": 0.974,
+   "location": "Loma Central, Lomas de San Agustín, San Agustín",
+   "why": [
+    "6,320 residents within a 5-min walk (top 20% citywide)",
+    "6 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a498c955a17fff",
+   "lat": 20.683753,
+   "lon": -103.274568,
+   "score": 0.974,
+   "location": "Andador Severo Amador, Guadalajara",
+   "why": [
+    "9,694 residents within a 5-min walk (top 5% citywide)",
+    "542 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a49ab5922affff",
+   "lat": 20.642698,
+   "lon": -103.386146,
+   "score": 0.969,
+   "location": "Calle Islas Filipinas, Jardines de la Cruz 2a Sección, Guadalajara",
+   "why": [
+    "455 retail businesses within 10 min (top 20% citywide)",
+    "19 hospitals within 5 min (top 5% citywide)",
+    "8 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a498c9408dffff",
+   "lat": 20.684528,
+   "lon": -103.313494,
+   "score": 0.969,
+   "location": "Calle San Ildefonso, Guadalajara",
+   "why": [
+    "5,885 residents within a 5-min walk (top 20% citywide)",
+    "456 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a498c96e0dffff",
+   "lat": 20.672585,
+   "lon": -103.355959,
+   "score": 0.969,
+   "location": "Calle Prisciliano Sánchez, Guadalajara",
+   "why": [
+    "1325 retail businesses within 10 min (top 5% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)",
+    "8 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a49ab592c57fff",
+   "lat": 20.628821,
+   "lon": -103.378458,
+   "score": 0.969,
+   "location": "Privada Cruz Gálvez, López Portillo 1a Sección, Guadalajara",
+   "why": [
+    "5,634 residents within a 5-min walk (top 20% citywide)",
+    "640 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a498c96a877fff",
+   "lat": 20.684502,
+   "lon": -103.360667,
+   "score": 0.969,
+   "location": "Calle Juan Álvarez, Santa Tere, Guadalajara",
+   "why": [
+    "5,460 residents within a 5-min walk (top 20% citywide)",
+    "852 retail businesses within 10 min (top 5% citywide)",
+    "6 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a498c945ac7fff",
+   "lat": 20.680584,
+   "lon": -103.342915,
+   "score": 0.969,
+   "location": "Calle Humboldt, Centro Barranquitas, Guadalajara",
+   "why": [
+    "4694 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a49ab4b202ffff",
+   "lat": 20.743035,
+   "lon": -103.395219,
+   "score": 0.963,
+   "location": "Calle El Ferrol, Altagracia, Zapopan",
+   "why": [
+    "7,278 residents within a 5-min walk (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a498c96eaa7fff",
+   "lat": 20.667341,
+   "lon": -103.363738,
+   "score": 0.963,
+   "location": "Calle Vidrio, Moderna, Guadalajara",
+   "why": [
+    "527 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "9 hospitals within 5 min (top 5% citywide)"
+   ]
+  }
+ ],
+ "d10": [
+  {
+   "rank": 1,
+   "hex_id": "8a49ab4b2147fff",
+   "lat": 20.741723,
+   "lon": -103.397165,
+   "score": 0.619,
+   "location": "Calle Covadonga, Altagracia, Zapopan",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "5 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a498c9609affff",
+   "lat": 20.620074,
+   "lon": -103.340793,
+   "score": 0.619,
+   "location": "Calle del Mural, El Manantial, Guadalajara",
+   "why": []
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a49aa2506dffff",
+   "lat": 20.469932,
+   "lon": -103.41735,
+   "score": 0.574,
+   "location": "Avenida del Almendro, Cima del Sol",
+   "why": [
+    "7 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a49ab481ca7fff",
+   "lat": 20.79105,
+   "lon": -103.468989,
+   "score": 0.574,
+   "location": "Arboledas de Tesistán, Tesistán",
+   "why": [
+    "4,331 residents within a 5-min walk (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a498c90bb27fff",
+   "lat": 20.661621,
+   "lon": -103.211953,
+   "score": 0.568,
+   "location": "Fraccionamiento Villas de Santiago, Coyula",
+   "why": []
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a49ab4b6c67fff",
+   "lat": 20.712773,
+   "lon": -103.394144,
+   "score": 0.511,
+   "location": "Calle Guadalupe Victoria, Santa Fe, Zapopan",
+   "why": [
+    "5 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a498c96b1a7fff",
+   "lat": 20.70244,
+   "lon": -103.372942,
+   "score": 0.511,
+   "location": "Calle Mar Tirreno, Providencia 1a Sección, Guadalajara",
+   "why": []
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a49ab5b0b67fff",
+   "lat": 20.562605,
+   "lon": -103.447133,
+   "score": 0.497,
+   "location": "Antiguo Camino Real a Colima, Condominio Santa Anita, San Agustín",
+   "why": []
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a49ab582d0ffff",
+   "lat": 20.617879,
+   "lon": -103.445288,
+   "score": 0.473,
+   "location": "Camino a Santa Ana Tepetitlán, Francisco Sarabia, Santa Ana Tepetitlán",
+   "why": []
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a49ab4b335ffff",
+   "lat": 20.763974,
+   "lon": -103.423094,
+   "score": 0.473,
+   "location": "Calle Guamúchil, Colinas de Los Robles, Nuevo México",
+   "why": []
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a49aa2c38f7fff",
+   "lat": 20.539284,
+   "lon": -103.327559,
+   "score": 0.433,
+   "location": "Valparaiso, Santa Cruz del Valle",
+   "why": [
+    "5,441 residents within a 5-min walk (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a49ab4a2917fff",
+   "lat": 20.725147,
+   "lon": -103.464159,
+   "score": 0.416,
+   "location": "Coto 7 Sendeira, San Juan de Ocotán",
+   "why": []
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a49aa2e86affff",
+   "lat": 20.524436,
+   "lon": -103.388386,
+   "score": 0.396,
+   "location": "Camino a Unión del Cuatro, Coto del Sol, San Sebastián El Grande",
+   "why": []
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a49ab4b114ffff",
+   "lat": 20.746398,
+   "lon": -103.442086,
+   "score": 0.396,
+   "location": "Calle Tuxpan, Flores del Valle, Nuevo México",
+   "why": []
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a49ab59380ffff",
+   "lat": 20.640581,
+   "lon": -103.408122,
+   "score": 0.385,
+   "location": "Avenida Montemorelos, La Giralda, Zapopan",
+   "why": [
+    "1 clinics/consultorios within 5 min (top 20% citywide)",
+    "8 transit stops within 5 min (top 20% citywide)",
+    "5 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a49aa2ea8f7fff",
+   "lat": 20.519081,
+   "lon": -103.373969,
+   "score": 0.385,
+   "location": "Calle Condominio Laguna del Carmen, Geovillas La Arbolada",
+   "why": []
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a498c974c2ffff",
+   "lat": 20.605569,
+   "lon": -103.269267,
+   "score": 0.385,
+   "location": "Calle 1, San Martín de Las Flores",
+   "why": []
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a49aa25560ffff",
+   "lat": 20.456281,
+   "lon": -103.44225,
+   "score": 0.385,
+   "location": "Avenida Campo Sur, Tlajomulco",
+   "why": []
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a49ab586707fff",
+   "lat": 20.608575,
+   "lon": -103.448476,
+   "score": 0.368,
+   "location": "Avenida Lorenzo Barcelata, La Loma, Santa Ana Tepetitlán",
+   "why": []
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a498c969a5ffff",
+   "lat": 20.697692,
+   "lon": -103.410615,
+   "score": 0.35,
+   "location": "San Wenceslao, Zapopan",
+   "why": []
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a498c954d07fff",
+   "lat": 20.660051,
+   "lon": -103.240221,
+   "score": 0.35,
+   "location": "Calle Coyula, Coyula",
+   "why": []
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a49ab49b95ffff",
+   "lat": 20.857528,
+   "lon": -103.432882,
+   "score": 0.35,
+   "location": "Valle de los Molinos",
+   "why": []
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a498c9604cffff",
+   "lat": 20.635797,
+   "lon": -103.329249,
+   "score": 0.329,
+   "location": "Calle Río Conchos, Guadalajara",
+   "why": [
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a49ab4ac3a7fff",
+   "lat": 20.758207,
+   "lon": -103.529437,
+   "score": 0.329,
+   "location": "Privada Zenzontle",
+   "why": []
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a49ab594a6ffff",
+   "lat": 20.601011,
+   "lon": -103.422024,
+   "score": 0.329,
+   "location": "Calle Porfirio Díaz, Agua Blanca Industrial, Santa Ana Tepetitlán",
+   "why": []
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a49ab4860e7fff",
+   "lat": 20.772871,
+   "lon": -103.43583,
+   "score": 0.312,
+   "location": "Calle San Isidro, La Cantera, Nuevo México",
+   "why": []
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a498c95dd2ffff",
+   "lat": 20.725007,
+   "lon": -103.30173,
+   "score": 0.312,
+   "location": "Calle José Ramón, Antiguo Pueblo de Arcediano",
+   "why": [
+    "10 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a49aa25a717fff",
+   "lat": 20.523467,
+   "lon": -103.433334,
+   "score": 0.312,
+   "location": "San Nicolás, Jardines de San Sebastián, San Sebastián El Grande",
+   "why": []
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a49ab5b08a7fff",
+   "lat": 20.558168,
+   "lon": -103.434882,
+   "score": 0.312,
+   "location": "Privada de Agua Dulce, Santa Anita, Tlaquepaque",
+   "why": [
+    "5 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a49ab59c2effff",
+   "lat": 20.662012,
+   "lon": -103.454072,
+   "score": 0.312,
+   "location": "Calle Culiacán, Volcán del Colli, Zapopan",
+   "why": []
+  }
+ ],
+ "s": [
+  {
+   "rank": 1,
+   "hex_id": "8a498c942cf7fff",
+   "lat": 20.693313,
+   "lon": -103.280412,
+   "score": 1.0,
+   "location": "Calle Luis Aguirre, Pueblo Abandonado Las Juntas",
+   "why": [
+    "10,737 residents within a 5-min walk (top 5% citywide)",
+    "759 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 2,
+   "hex_id": "8a498c94231ffff",
+   "lat": 20.703396,
+   "lon": -103.292555,
+   "score": 1.0,
+   "location": "Calle Abundio Martínez, Pueblo Abandonado Las Juntas",
+   "why": [
+    "11,415 residents within a 5-min walk (top 5% citywide)",
+    "576 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 3,
+   "hex_id": "8a498c965347fff",
+   "lat": 20.626208,
+   "lon": -103.370557,
+   "score": 1.0,
+   "location": "Calle Carlos Arturo Carrillo, Polanco Oriente, Guadalajara",
+   "why": [
+    "8,572 residents within a 5-min walk (top 5% citywide)",
+    "814 retail businesses within 10 min (top 5% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 4,
+   "hex_id": "8a498c973ceffff",
+   "lat": 20.656644,
+   "lon": -103.26414,
+   "score": 1.0,
+   "location": "Calle Galeana, Zalatitan Centro, Tonalá",
+   "why": [
+    "6,631 residents within a 5-min walk (top 20% citywide)",
+    "493 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 5,
+   "hex_id": "8a498c964727fff",
+   "lat": 20.610253,
+   "lon": -103.337693,
+   "score": 0.997,
+   "location": "Calle San Antonio, Las Juntas, Tlaquepaque",
+   "why": [
+    "6,647 residents within a 5-min walk (top 20% citywide)",
+    "432 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 6,
+   "hex_id": "8a498c97641ffff",
+   "lat": 20.625216,
+   "lon": -103.240098,
+   "score": 0.997,
+   "location": "Calle Ramón Corona, Tonalá",
+   "why": [
+    "5,390 residents within a 5-min walk (top 20% citywide)",
+    "1377 retail businesses within 10 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 7,
+   "hex_id": "8a49ab4b2277fff",
+   "lat": 20.751415,
+   "lon": -103.401647,
+   "score": 0.997,
+   "location": "Avenida Torremolinos, Villas Torremolinos, Zapopan",
+   "why": [
+    "7,529 residents within a 5-min walk (top 5% citywide)",
+    "4 hospitals within 5 min (top 20% citywide)",
+    "9 schools within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 8,
+   "hex_id": "8a498c972217fff",
+   "lat": 20.654419,
+   "lon": -103.252122,
+   "score": 0.997,
+   "location": "Calle Nicolás Bravo, Loma Bonita 1ra Seccion, Tonalá",
+   "why": [
+    "9,617 residents within a 5-min walk (top 5% citywide)",
+    "495 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 9,
+   "hex_id": "8a498c94d19ffff",
+   "lat": 20.728643,
+   "lon": -103.369424,
+   "score": 0.997,
+   "location": "Calle General Agustín Olachea, Constitución, Zapopan",
+   "why": [
+    "8,396 residents within a 5-min walk (top 5% citywide)",
+    "604 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 10,
+   "hex_id": "8a498c97165ffff",
+   "lat": 20.662008,
+   "lon": -103.290353,
+   "score": 0.997,
+   "location": "Calle Pitágoras, Guadalajara",
+   "why": [
+    "6,009 residents within a 5-min walk (top 20% citywide)",
+    "781 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 11,
+   "hex_id": "8a49ab5921b7fff",
+   "lat": 20.631047,
+   "lon": -103.378689,
+   "score": 0.997,
+   "location": "Calle Anselmo Camacho, López Portillo 1a Sección, Guadalajara",
+   "why": [
+    "6,895 residents within a 5-min walk (top 20% citywide)",
+    "678 retail businesses within 10 min (top 5% citywide)",
+    "2 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 12,
+   "hex_id": "8a498c946197fff",
+   "lat": 20.672618,
+   "lon": -103.285209,
+   "score": 0.997,
+   "location": "Calle Arquímedes, Guadalajara",
+   "why": [
+    "8,940 residents within a 5-min walk (top 5% citywide)",
+    "664 retail businesses within 10 min (top 5% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 13,
+   "hex_id": "8a49aa25104ffff",
+   "lat": 20.47382,
+   "lon": -103.446855,
+   "score": 0.997,
+   "location": "Juárez Eje Norte, Tlajomulco",
+   "why": [
+    "701 retail businesses within 10 min (top 5% citywide)",
+    "5 clinics/consultorios within 5 min (top 5% citywide)",
+    "14 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 14,
+   "hex_id": "8a498c94045ffff",
+   "lat": 20.692259,
+   "lon": -103.303195,
+   "score": 0.997,
+   "location": "Calle San Eugenio, Circunvalación Oblatos, Guadalajara",
+   "why": [
+    "7,458 residents within a 5-min walk (top 5% citywide)",
+    "725 retail businesses within 10 min (top 5% citywide)",
+    "4 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 15,
+   "hex_id": "8a498c94380ffff",
+   "lat": 20.704831,
+   "lon": -103.312823,
+   "score": 0.997,
+   "location": "Avenida de la Cruz, Guadalajara",
+   "why": [
+    "8,912 residents within a 5-min walk (top 5% citywide)",
+    "620 retail businesses within 10 min (top 5% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 16,
+   "hex_id": "8a498c9650cffff",
+   "lat": 20.624774,
+   "lon": -103.362085,
+   "score": 0.997,
+   "location": "Calle María C. Bancalari, Echeverría 2a Sección, Guadalajara",
+   "why": [
+    "8,892 residents within a 5-min walk (top 5% citywide)",
+    "699 retail businesses within 10 min (top 5% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 17,
+   "hex_id": "8a49ab583d97fff",
+   "lat": 20.632137,
+   "lon": -103.460655,
+   "score": 0.997,
+   "location": "Prolongación Avenida Guadalupe, Valle de San Nicolás, Santa Ana Tepetitlán",
+   "why": [
+    "7,977 residents within a 5-min walk (top 5% citywide)",
+    "505 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 18,
+   "hex_id": "8a49ab59660ffff",
+   "lat": 20.619519,
+   "lon": -103.38165,
+   "score": 0.996,
+   "location": "Calle Manuel González, Lázaro Cárdenas, Guadalajara",
+   "why": [
+    "7,326 residents within a 5-min walk (top 5% citywide)",
+    "510 retail businesses within 10 min (top 20% citywide)",
+    "4 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 19,
+   "hex_id": "8a498c970877fff",
+   "lat": 20.629532,
+   "lon": -103.277288,
+   "score": 0.994,
+   "location": "Calle Vegetación Poniente, Tonalá",
+   "why": [
+    "8,717 residents within a 5-min walk (top 5% citywide)",
+    "459 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 20,
+   "hex_id": "8a498c942ba7fff",
+   "lat": 20.694227,
+   "lon": -103.294381,
+   "score": 0.994,
+   "location": "Avenida Artesanos, Guadalajara",
+   "why": [
+    "8,959 residents within a 5-min walk (top 5% citywide)",
+    "840 retail businesses within 10 min (top 5% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 21,
+   "hex_id": "8a498c94952ffff",
+   "lat": 20.750657,
+   "lon": -103.362692,
+   "score": 0.994,
+   "location": "Calle Venustiano Carranza, Emiliano Zapata, Zapopan",
+   "why": [
+    "7,820 residents within a 5-min walk (top 5% citywide)",
+    "444 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 22,
+   "hex_id": "8a498c940a1ffff",
+   "lat": 20.688455,
+   "lon": -103.319451,
+   "score": 0.994,
+   "location": "Calzada Juan Pablo II, Guadalajara",
+   "why": [
+    "6,723 residents within a 5-min walk (top 20% citywide)",
+    "465 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 23,
+   "hex_id": "8a49aa2dd3affff",
+   "lat": 20.574247,
+   "lon": -103.326332,
+   "score": 0.994,
+   "location": "Avenida Las Torres Poniente, Las Pintas, Las Pintitas",
+   "why": [
+    "362 retail businesses within 10 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)",
+    "8 transit stops within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 24,
+   "hex_id": "8a49ab4aa677fff",
+   "lat": 20.797171,
+   "lon": -103.498808,
+   "score": 0.994,
+   "location": "Calle Juan Manuel Ruvalcaba",
+   "why": [
+    "6,142 residents within a 5-min walk (top 20% citywide)",
+    "334 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 25,
+   "hex_id": "8a49aa2da25ffff",
+   "lat": 20.599672,
+   "lon": -103.283908,
+   "score": 0.994,
+   "location": "Calle Independencia, San Martín de Las Flores",
+   "why": [
+    "6,093 residents within a 5-min walk (top 20% citywide)",
+    "319 retail businesses within 10 min (top 20% citywide)",
+    "3 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 26,
+   "hex_id": "8a498c974a4ffff",
+   "lat": 20.615124,
+   "lon": -103.286892,
+   "score": 0.994,
+   "location": "Calle Ciudad Pemex, Tlaquepaque",
+   "why": [
+    "4,658 residents within a 5-min walk (top 20% citywide)",
+    "509 retail businesses within 10 min (top 20% citywide)",
+    "2 clinics/consultorios within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 27,
+   "hex_id": "8a498c944697fff",
+   "lat": 20.674184,
+   "lon": -103.304098,
+   "score": 0.994,
+   "location": "Calle Francisco Sarabia, Guadalajara",
+   "why": [
+    "5,387 residents within a 5-min walk (top 20% citywide)",
+    "1154 retail businesses within 10 min (top 5% citywide)",
+    "5 hospitals within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 28,
+   "hex_id": "8a498c94e54ffff",
+   "lat": 20.72631,
+   "lon": -103.323377,
+   "score": 0.992,
+   "location": "Calle Lino Morales, Praderas del Paraíso, Ex Hacienda de los Ibarra",
+   "why": [
+    "9,102 residents within a 5-min walk (top 5% citywide)",
+    "348 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  },
+  {
+   "rank": 29,
+   "hex_id": "8a49ab5a6587fff",
+   "lat": 20.544897,
+   "lon": -103.467465,
+   "score": 0.992,
+   "location": "Pedro Loza, Lomas de San Agustín, San Agustín",
+   "why": [
+    "356 retail businesses within 10 min (top 20% citywide)",
+    "3 clinics/consultorios within 5 min (top 5% citywide)",
+    "9 hospitals within 5 min (top 5% citywide)"
+   ]
+  },
+  {
+   "rank": 30,
+   "hex_id": "8a498c94630ffff",
+   "lat": 20.679426,
+   "lon": -103.296317,
+   "score": 0.992,
+   "location": "Calle Vergel, Guadalajara",
+   "why": [
+    "7,458 residents within a 5-min walk (top 5% citywide)",
+    "467 retail businesses within 10 min (top 20% citywide)",
+    "1 clinics/consultorios within 5 min (top 20% citywide)"
+   ]
+  }
+ ]
+}

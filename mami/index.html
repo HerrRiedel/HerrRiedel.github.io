@@ -25,6 +25,12 @@
   .legend .ticks { display: flex; justify-content: space-between; font-size: 10px; color: #9a9aa8; }
   .threshold { margin: 0 0 16px; font-size: 12px; color: #c9c9d4; }
   .threshold input { accent-color: #de4968; margin-top: 4px; }
+  .citypick { display: flex; gap: 6px; margin-bottom: 14px; }
+  .citypick button {
+    flex: 1; padding: 7px 0; border-radius: 8px; border: 1px solid #2d2d3d;
+    background: #1f1f2a; color: #c9c9d4; font-size: 13px; cursor: pointer;
+  }
+  .citypick button.active { background: #de4968; border-color: #de4968; color: #fff; font-weight: 600; }
   h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
        color: #9a9aa8; margin: 12px 0 8px; }
   .cand { padding: 8px 10px; border-radius: 8px; cursor: pointer; margin-bottom: 6px;
@@ -47,8 +53,13 @@
 </head>
 <body>
 <div id="panel">
-  <h1>Pharmacy Site Selection — Guadalajara Metro</h1>
+  <h1 id="title">Pharmacy Site Selection</h1>
   <div class="sub">Survival-based viability model · MaMi v2 · DENUE 2016–2026, Censo 2010/2020, OSM</div>
+
+  <div class="citypick" id="citypick">
+    <button data-city="gdl" class="active">Guadalajara</button>
+    <button data-city="mty">Monterrey</button>
+  </div>
 
   <div class="layerpick" id="layers">
     <label><input type="radio" name="layer" value="m" checked>
@@ -109,14 +120,37 @@ function updateLegend() {
   document.getElementById("legendmin").textContent = threshold.toFixed(2);
 }
 
+const CITIES = {
+  gdl: { label: "Guadalajara Metro", center: [-103.36, 20.66], zoom: 10.7 },
+  mty: { label: "Monterrey Metro",   center: [-100.31, 25.68], zoom: 10.7 },
+};
+let city = location.hash.slice(1);
+if (!CITIES[city]) city = "gdl";
+
 const map = new maplibregl.Map({
   container: "map",
   style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-  center: [-103.36, 20.66],
-  zoom: 10.7,
+  center: CITIES[city].center,
+  zoom: CITIES[city].zoom,
   attributionControl: true,
 });
 map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+function switchCity(c) {
+  if (!CITIES[c] || c === city) return;
+  city = c;
+  location.hash = c;
+  document.querySelectorAll("#citypick button").forEach(b =>
+    b.classList.toggle("active", b.dataset.city === c));
+  document.getElementById("title").textContent =
+    "Pharmacy Site Selection";
+  if (activeMarker) { activeMarker.remove(); activeMarker = null; }
+  map.getSource("hexes").setData(`${c}/hexes.json`);
+  candidatesByLayer = null;
+  document.getElementById("cands").textContent = "Loading…";
+  loadCandidates();
+  map.flyTo({ center: CITIES[c].center, zoom: CITIES[c].zoom, speed: 1.6 });
+}
 
 let activeMarker = null;
 // Per-layer viability floors. The desert layer's scores top out lower (true
@@ -131,7 +165,11 @@ function opacityExpr(key) {
 }
 
 map.on("load", () => {
-  map.addSource("hexes", { type: "geojson", data: "hexes.json" });
+  document.querySelectorAll("#citypick button").forEach(b => {
+    b.classList.toggle("active", b.dataset.city === city);
+    b.addEventListener("click", () => switchCity(b.dataset.city));
+  });
+  map.addSource("hexes", { type: "geojson", data: `${city}/hexes.json` });
   map.addLayer({
     id: "hexfill", type: "fill", source: "hexes",
     paint: {
@@ -180,7 +218,7 @@ async function loadCandidates() {
   try {
     // no-cache = always revalidate with the server (304 when unchanged), so a
     // stale cached copy can never shadow an updated data file.
-    candidatesByLayer = await (await fetch("candidates.json", {cache: "no-cache"})).json();
+    candidatesByLayer = await (await fetch(`${city}/candidates.json`, {cache: "no-cache"})).json();
     renderCandidates(document.querySelector('input[name="layer"]:checked').value);
   } catch (err) {
     document.getElementById("cands").textContent =
