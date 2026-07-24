@@ -31,6 +31,14 @@
     background: #1f1f2a; color: #c9c9d4; font-size: 13px; cursor: pointer;
   }
   .citypick button.active { background: #de4968; border-color: #de4968; color: #fff; font-weight: 600; }
+  .modepick { display: flex; gap: 6px; margin: 14px 0 8px; }
+  .modepick button {
+    flex: 1; padding: 5px 0; border-radius: 6px; border: 1px solid #2d2d3d;
+    background: #1f1f2a; color: #9a9aa8; font-size: 11px; text-transform: uppercase;
+    letter-spacing: .05em; cursor: pointer;
+  }
+  .modepick button.active { color: #e8e8ee; border-color: #4a4a5e; background: #26263a; }
+  .cand .stats { font-size: 11px; color: #9a9aa8; margin-top: 3px; }
   h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
        color: #9a9aa8; margin: 12px 0 8px; }
   .cand { padding: 8px 10px; border-radius: 8px; cursor: pointer; margin-bottom: 6px;
@@ -79,7 +87,10 @@
 
   <div class="threshold" id="floorcap">Showing hexagons with viability ≥ <b>0.70</b></div>
 
-  <h2>Top suggested locations</h2>
+  <div class="modepick" id="modepick">
+    <button data-mode="locations" class="active">Top locations</button>
+    <button data-mode="areas">Top areas</button>
+  </div>
   <div id="cands">Loading…</div>
 
   <div class="foot">
@@ -144,9 +155,10 @@ function switchCity(c) {
     b.classList.toggle("active", b.dataset.city === c));
   document.getElementById("title").textContent =
     "Pharmacy Site Selection";
-  if (activeMarker) { activeMarker.remove(); activeMarker = null; }
+  clearHighlights();
   map.getSource("hexes").setData(`${c}/hexes.json`);
   candidatesByLayer = null;
+  clustersByLayer = null;
   document.getElementById("cands").textContent = "Loading…";
   loadCandidates();
   map.flyTo({ center: CITIES[c].center, zoom: CITIES[c].zoom, speed: 1.6 });
@@ -173,7 +185,20 @@ map.on("load", () => {
     b.classList.toggle("active", b.dataset.city === city);
     b.addEventListener("click", () => switchCity(b.dataset.city));
   });
+  document.querySelectorAll("#modepick button").forEach(b =>
+    b.addEventListener("click", () => {
+      mode = b.dataset.mode;
+      document.querySelectorAll("#modepick button").forEach(x =>
+        x.classList.toggle("active", x === b));
+      renderPanel(document.querySelector('input[name="layer"]:checked').value);
+    }));
   map.addSource("hexes", { type: "geojson", data: `${city}/hexes.json` });
+  map.addSource("cluster-hl",
+    { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+  map.addLayer({
+    id: "cluster-line", type: "line", source: "cluster-hl",
+    paint: { "line-color": "#00e5ff", "line-width": 2.5 },
+  });
   map.addLayer({
     id: "hexfill", type: "fill", source: "hexes",
     paint: {
@@ -214,28 +239,75 @@ function setLayer(key) {
     ? `Showing hexagons with viability ≥ <b>${threshold.toFixed(2)}</b>`
     : `Showing <b>all</b> values (no floor) — full model output`;
   updateLegend();
-  renderCandidates(key);
+  renderPanel(key);
 }
 
 let candidatesByLayer = null;
+let clustersByLayer = null;
+let mode = "locations";
+
+function clearHighlights() {
+  if (activeMarker) { activeMarker.remove(); activeMarker = null; }
+  const src = map.getSource("cluster-hl");
+  if (src) src.setData({ type: "FeatureCollection", features: [] });
+}
 
 async function loadCandidates() {
   try {
     // no-cache = always revalidate with the server (304 when unchanged), so a
     // stale cached copy can never shadow an updated data file.
     candidatesByLayer = await (await fetch(`${city}/candidates.json`, {cache: "no-cache"})).json();
-    renderCandidates(document.querySelector('input[name="layer"]:checked').value);
+    try {
+      clustersByLayer = await (await fetch(`${city}/clusters.json`, {cache: "no-cache"})).json();
+    } catch (e) { clustersByLayer = null; }
+    renderPanel(document.querySelector('input[name="layer"]:checked').value);
   } catch (err) {
     document.getElementById("cands").textContent =
       "Could not load candidates.json — serve this folder over HTTP.";
   }
 }
 
+function renderPanel(key) {
+  if (mode === "areas" && key !== "s" && clustersByLayer) renderClusters(key);
+  else renderCandidates(key);
+}
+
+function renderClusters(key) {
+  const box = document.getElementById("cands");
+  const items = (clustersByLayer && clustersByLayer[key]) || [];
+  clearHighlights();
+  box.innerHTML = "";
+  for (const c of items) {
+    const div = document.createElement("div");
+    div.className = "cand";
+    div.innerHTML =
+      `<div class="top"><span class="rank">#${c.rank}</span>` +
+      `<span class="score">avg ${c.mean.toFixed(2)} · peak ${c.peak.toFixed(2)}</span></div>` +
+      `<div class="loc">${c.location}</div>` +
+      `<div class="stats">${c.n} contiguous hexes · ≈ ${c.area_ha} ha</div>`;
+    div.onclick = () => {
+      document.querySelectorAll(".cand").forEach(d => d.classList.remove("active"));
+      div.classList.add("active");
+      clearHighlights();
+      map.getSource("cluster-hl").setData({
+        type: "Feature", properties: {},
+        geometry: { type: "MultiPolygon",
+                    coordinates: c.outline.map(ring => [ring]) },
+      });
+      const xs = c.outline.flat().map(p => p[0]), ys = c.outline.flat().map(p => p[1]);
+      map.fitBounds([[Math.min(...xs), Math.min(...ys)],
+                     [Math.max(...xs), Math.max(...ys)]], { padding: 90, maxZoom: 15 });
+    };
+    box.appendChild(div);
+  }
+  if (!items.length) box.textContent = "No areas for this layer.";
+}
+
 function renderCandidates(key) {
   const box = document.getElementById("cands");
   if (!candidatesByLayer) return;
   const items = candidatesByLayer[key] || [];
-  if (activeMarker) { activeMarker.remove(); activeMarker = null; }
+  clearHighlights();
   box.innerHTML = "";
   for (const c of items) {
       const div = document.createElement("div");
@@ -249,7 +321,7 @@ function renderCandidates(key) {
         document.querySelectorAll(".cand").forEach(d => d.classList.remove("active"));
         div.classList.add("active");
         map.flyTo({ center: [c.lon, c.lat], zoom: 14.5, speed: 1.4 });
-        if (activeMarker) activeMarker.remove();
+        clearHighlights();
         activeMarker = new maplibregl.Marker({ color: "#de4968" })
           .setLngLat([c.lon, c.lat]).addTo(map);
       };
