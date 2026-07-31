@@ -46,12 +46,24 @@
   .cand:hover, .cand.active { background: #2d2d3d; }
   .cand .top { display: flex; justify-content: space-between; align-items: baseline; }
   .cand .rank { font-weight: 600; font-size: 13px; }
-  .cand .score { font-size: 12px; color: #fe9f6d; font-variant-numeric: tabular-nums; }
+  .cand .score { font-size: 12px; color: #9dc47a; font-variant-numeric: tabular-nums; }
   .cand .loc { font-size: 12px; color: #c9c9d4; margin-top: 2px; }
   .cand .why { font-size: 11px; color: #9a9aa8; margin-top: 4px; }
-  .cand .why li { margin-left: 14px; }
+  .cand .why ul { margin: 0; padding-left: 4px; list-style: none; }
+  .cand .why li { margin-bottom: 1px; }
+  .cand .why .up { color: #9dc47a; font-weight: 700; }
+  .cand .why .down { color: #e0876a; font-weight: 700; }
   .foot { font-size: 10px; color: #6a6a78; margin-top: 16px; line-height: 1.5; }
-  .maplibregl-popup-content { font-family: inherit; font-size: 12px; color: #222; }
+  .maplibregl-popup-content { font-family: inherit; font-size: 12px; color: #222; line-height: 1.45; }
+  .pop-rank { margin-top: 6px; padding: 3px 7px; border-radius: 5px;
+              background: #14401f; color: #fff; display: inline-block; font-size: 11px; }
+  .pop-why { margin-top: 7px; border-top: 1px solid #e3e3e8; padding-top: 5px; }
+  .pop-why ul { margin: 3px 0 0; padding-left: 4px; list-style: none; }
+  .pop-why li { font-size: 11px; margin-bottom: 1px; }
+  .pop-why .up { color: #3d7238; font-weight: 700; }
+  .pop-why .down { color: #b3543a; font-weight: 700; }
+  .pop-links { margin-top: 7px; font-size: 11px; }
+  .pop-links a { color: #3d7238; text-decoration: underline; }
   @media (max-width: 760px) {
     :root { --panel-w: 0px; }
     #panel { position: relative; width: auto; height: 40vh; }
@@ -96,14 +108,79 @@
   <div class="foot">
     Scores are calibrated survival probabilities from a gradient-boosted model
     trained on 8 generations of establishment survival (2016–2026), validated on
-    spatially held-out blocks (PR-AUC 0.93). Hexagons ≈ 130 m.
+    spatially held-out blocks (held-out PR-AUC 0.85, ROC-AUC 0.93). Catchments
+    are walk-network reachability, not radii. Hexagons ≈ 165 m across (1.8 ha).
     Basemap © CARTO © OpenStreetMap contributors.
   </div>
 </div>
 <div id="map"></div>
 
 <script>
-const MAGMA = [0.0,"#000004",0.25,"#3b0f70",0.5,"#8c2981",0.7,"#de4968",0.85,"#fe9f6d",1.0,"#fcfdbf"];
+// Biome+ ramp: sand -> grassland -> forest -> deep lagoon at the top,
+// so the crowded top of the range still separates by hue as well as lightness.
+const MAGMA = [0.0,"#F2E7C9",0.30,"#D9CE94",0.55,"#9DB455",0.75,"#4E8C46",0.90,"#1C6B5A",1.0,"#07323F"];
+
+// The Positron basemap paints parks/woodland pale green, which would collide
+// with the score ramp — recolour those layers to slate.
+// Parse "#rgb", "#rrggbb" or "rgb()/rgba()" into [r,g,b] 0-255; null otherwise
+// (paint values can also be data-driven expressions — those we leave alone).
+function parseColor(c) {
+  if (typeof c !== "string") return null;
+  let m = c.match(/^#([0-9a-f]{3})$/i);
+  if (m) return [...[...m[1]].map(h => parseInt(h + h, 16)), 1];
+  m = c.match(/^#([0-9a-f]{6})/i);
+  if (m) return [...[0, 2, 4].map(i => parseInt(m[1].substr(i, 2), 16)), 1];
+  m = c.match(/^rgba?\(([^)]+)\)/i);
+  if (m) {
+    const v = m[1].split(",").map(parseFloat);
+    return [Math.round(v[0]), Math.round(v[1]), Math.round(v[2]),
+            v.length > 3 ? v[3] : 1];
+  }
+  return null;
+}
+
+// Returns a de-greened colour string, or null if the colour isn't green.
+function deGreenColor(c) {
+  const p = parseColor(c);
+  if (!p) return null;
+  const [r, g, b, a] = p;
+  if (!(g > r + 3 && g > b + 3)) return null;      // not a green hue
+  const lum = 0.299 * r + 0.587 * g + 0.114 * b;   // keep its lightness
+  return `rgba(${Math.round(lum * 0.98)},${Math.round(lum)},` +
+         `${Math.round(Math.min(255, lum * 1.04))},${a})`;
+}
+
+// Paint values come as plain strings OR as {stops:[[zoom, colour], ...]}.
+function deGreenValue(v) {
+  if (typeof v === "string") return deGreenColor(v);
+  if (v && typeof v === "object" && Array.isArray(v.stops)) {
+    let changed = false;
+    const stops = v.stops.map(([z, c]) => {
+      const nc = typeof c === "string" ? deGreenColor(c) : null;
+      if (nc) changed = true;
+      return [z, nc || c];
+    });
+    return changed ? Object.assign({}, v, { stops }) : null;
+  }
+  return null;   // data-driven expression: leave alone
+}
+
+// Recolour only fills that are ACTUALLY green (parks, woodland), keeping their
+// lightness. Matching on layer names was wrong: "landuse" also covers
+// residential/industrial areas, which turned large parts of Monterrey slate.
+function deGreenBasemap() {
+  for (const l of map.getStyle().layers) {
+    const prop = l.type === "fill" ? "fill-color"
+               : l.type === "background" ? "background-color"
+               : l.type === "line" ? "line-color" : null;
+    if (!prop) continue;
+    let cur;
+    try { cur = map.getPaintProperty(l.id, prop); } catch (e) { continue; }
+    const next = deGreenValue(cur);
+    if (!next) continue;
+    try { map.setPaintProperty(l.id, prop, next); } catch (e) { /* ignore */ }
+  }
+}
 
 // Sample the magma ramp at an arbitrary t ∈ [0,1] (linear hex interpolation)
 function magmaAt(t) {
@@ -131,6 +208,14 @@ function updateLegend() {
   document.getElementById("legendmin").textContent = threshold.toFixed(2);
 }
 
+// Data build stamp — bump on every data deploy. Appended to every data URL so a
+// new build is a NEW URL: browsers can never pair a cached hex layer from one
+// vintage with fresh panel lists from another (which is exactly what happened
+// with v2.0 hexes + v2.1 candidates: heuristic caching kept the 12.7 MB hex file
+// stale through a hard refresh, because MapLibre fetches it after the reload's
+// cache-bypass window closes).
+const DATA_V = "v21-20260730b";
+
 const CITIES = {
   gdl: { label: "Guadalajara Metro", center: [-103.36, 20.66], zoom: 10.7 },
   mty: { label: "Monterrey Metro",   center: [-100.31, 25.68], zoom: 10.7 },
@@ -156,9 +241,10 @@ function switchCity(c) {
   document.getElementById("title").textContent =
     "Pharmacy Site Selection";
   clearHighlights();
-  map.getSource("hexes").setData(`${c}/hexes.json`);
+  map.getSource("hexes").setData(`${c}/hexes.json?${DATA_V}`);
   candidatesByLayer = null;
   clustersByLayer = null;
+  driversData = null;
   document.getElementById("cands").textContent = "Loading…";
   loadCandidates();
   map.flyTo({ center: CITIES[c].center, zoom: CITIES[c].zoom, speed: 1.6 });
@@ -192,7 +278,8 @@ map.on("load", () => {
         x.classList.toggle("active", x === b));
       renderPanel(document.querySelector('input[name="layer"]:checked').value);
     }));
-  map.addSource("hexes", { type: "geojson", data: `${city}/hexes.json` });
+  deGreenBasemap();
+  map.addSource("hexes", { type: "geojson", data: `${city}/hexes.json?${DATA_V}` });
   map.addSource("cluster-hl",
     { type: "geojson", data: { type: "FeatureCollection", features: [] } });
   map.addLayer({
@@ -215,14 +302,30 @@ map.on("load", () => {
   map.on("click", "hexfill", e => {
     const p = e.features[0].properties;
     const cur = document.querySelector('input[name="layer"]:checked').value;
-    new maplibregl.Popup({ closeButton: false })
-      .setLngLat(e.lngLat)
-      .setHTML(
-        `<b>Viability: ${Number(p[cur]).toFixed(2)}</b><br>` +
-        `Raw score: ${Number(p.s).toFixed(2)}<br>` +
-        `Pharmacies within 5-min walk: ${p.cc}<br>` +
-        `Pharmacies within 10-min walk: ${p.cc10 ?? "—"}`)
-      .addTo(map);
+    const { lng, lat } = e.lngLat;
+
+    let html =
+      `<b>${L.viab}: ${Number(p[cur]).toFixed(2)}</b><br>` +
+      `${L.raw}: ${Number(p.s).toFixed(2)}<br>` +
+      `${L.ph5}: ${p.cc}<br>${L.ph10}: ${p.cc10 ?? "—"}`;
+
+    const badge = rankingFor(p.id, cur, lng, lat);
+    if (badge) html += `<div class="pop-rank">${badge.text}</div>`;
+
+    const why = driversFor(p.id);
+    if (why) html += `<div class="pop-why"><b>${L.why}</b>${why}</div>`;
+
+    html +=
+      `<div class="pop-links">` +
+      `<a target="_blank" rel="noopener" href="https://www.google.com/maps/@?api=1` +
+      `&map_action=pano&viewpoint=${lat.toFixed(6)},${lng.toFixed(6)}">${L.sv}</a> · ` +
+      `<a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1` +
+      `&query=${lat.toFixed(6)},${lng.toFixed(6)}">${L.gm}</a></div>`;
+
+    new maplibregl.Popup({ closeButton: true, maxWidth: "300px" })
+      .setLngLat(e.lngLat).setHTML(html).addTo(map);
+
+    if (badge) selectInPanel(badge.rank);
   });
   map.on("mouseenter", "hexfill", () => map.getCanvas().style.cursor = "pointer");
   map.on("mouseleave", "hexfill", () => map.getCanvas().style.cursor = "");
@@ -244,7 +347,86 @@ function setLayer(key) {
 
 let candidatesByLayer = null;
 let clustersByLayer = null;
+let driversData = null;
 let mode = "locations";
+
+// Popup copy (English UI; the Spanish deck is separate)
+const L = {
+  viab: "Viability", raw: "Raw score",
+  ph5: "Pharmacies within 5-min walk", ph10: "Pharmacies within 10-min walk",
+  why: "Why this score", sv: "Street View", gm: "Google Maps",
+  inList: n => `Ranked #${n} in the list on the left`,
+  inArea: n => `Inside area #${n} on the left`,
+};
+
+async function loadDrivers() {
+  // Lazy: fetched after the map paints, so the first render stays fast.
+  try {
+    driversData = await (await fetch(`${city}/drivers.json?${DATA_V}`, {cache: "no-cache"})).json();
+    renderPanel(document.querySelector('input[name="layer"]:checked').value);
+  } catch (e) { driversData = null; }
+}
+
+function driversFor(hexId, maxN = 5) {
+  if (!driversData || !hexId) return null;
+  const row = driversData.h[hexId];
+  if (!row) return null;
+  let out = "<ul>";
+  for (let i = 0; i < Math.min(row.length, maxN * 3); i += 3) {
+    const label = driversData.labels[row[i]];
+    const shap = row[i + 1], val = row[i + 2];
+    const sign = shap >= 0 ? "▲" : "▼";
+    const cls = shap >= 0 ? "up" : "down";
+    // null = the census suppressed this value here; show it as unknown rather
+    // than printing "null" or implying a measured zero.
+    const shown = (val === null || val === undefined) ? "—" : val;
+    out += `<li><span class="${cls}">${sign}</span> ${label}: <b>${shown}</b></li>`;
+  }
+  return out + "</ul>";
+}
+
+// Is this hexagon one of the ranked locations / inside a ranked area?
+function rankingFor(hexId, layerKey, lng, lat) {
+  if (mode === "areas" && clustersByLayer && clustersByLayer[layerKey]) {
+    for (const c of clustersByLayer[layerKey]) {
+      if ((c.members && c.members.includes(hexId)) || pointInOutline(lng, lat, c.outline))
+        return { rank: c.rank, text: L.inArea(c.rank) };
+    }
+    return null;
+  }
+  const list = (candidatesByLayer && candidatesByLayer[layerKey]) || [];
+  const hit = list.find(c => c.hex_id === hexId);
+  return hit ? { rank: hit.rank, text: L.inList(hit.rank) } : null;
+}
+
+function pointInOutline(x, y, outline) {
+  // outline = [polygon][ring][vertex]; ring 0 is the exterior, the rest holes.
+  // Even-odd parity across ALL rings of one polygon: a point inside a hole
+  // crosses twice and counts as outside.
+  if (!outline) return false;
+  for (const poly of outline) {
+    let inside = false;
+    for (const ring of poly) {
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const [xi, yi] = ring[i], [xj, yj] = ring[j];
+        if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi)
+          inside = !inside;
+      }
+    }
+    if (inside) return true;
+  }
+  return false;
+}
+
+// Scroll the side list to the matching entry and select it.
+function selectInPanel(rank) {
+  const cards = document.querySelectorAll("#cands .cand");
+  const card = cards[rank - 1];
+  if (!card) return;
+  document.querySelectorAll(".cand").forEach(d => d.classList.remove("active"));
+  card.classList.add("active");
+  card.scrollIntoView({ behavior: "smooth", block: "center" });
+}
 
 function clearHighlights() {
   if (activeMarker) { activeMarker.remove(); activeMarker = null; }
@@ -256,11 +438,12 @@ async function loadCandidates() {
   try {
     // no-cache = always revalidate with the server (304 when unchanged), so a
     // stale cached copy can never shadow an updated data file.
-    candidatesByLayer = await (await fetch(`${city}/candidates.json`, {cache: "no-cache"})).json();
+    candidatesByLayer = await (await fetch(`${city}/candidates.json?${DATA_V}`, {cache: "no-cache"})).json();
     try {
-      clustersByLayer = await (await fetch(`${city}/clusters.json`, {cache: "no-cache"})).json();
+      clustersByLayer = await (await fetch(`${city}/clusters.json?${DATA_V}`, {cache: "no-cache"})).json();
     } catch (e) { clustersByLayer = null; }
     renderPanel(document.querySelector('input[name="layer"]:checked').value);
+    loadDrivers();
   } catch (err) {
     document.getElementById("cands").textContent =
       "Could not load candidates.json — serve this folder over HTTP.";
@@ -292,9 +475,10 @@ function renderClusters(key) {
       map.getSource("cluster-hl").setData({
         type: "Feature", properties: {},
         geometry: { type: "MultiPolygon",
-                    coordinates: c.outline.map(ring => [ring]) },
+                    coordinates: c.outline },
       });
-      const xs = c.outline.flat().map(p => p[0]), ys = c.outline.flat().map(p => p[1]);
+      const vs = c.outline.flat(2);
+      const xs = vs.map(p => p[0]), ys = vs.map(p => p[1]);
       map.fitBounds([[Math.min(...xs), Math.min(...ys)],
                      [Math.max(...xs), Math.max(...ys)]], { padding: 90, maxZoom: 15 });
     };
@@ -312,11 +496,15 @@ function renderCandidates(key) {
   for (const c of items) {
       const div = document.createElement("div");
       div.className = "cand";
+      // Same explanation system as the hexagon popup (SHAP, top 3): one source
+      // of truth for "why", per Gabriel's rule — the old hand-picked percentile
+      // list (candidates.json .why) is no longer rendered.
+      const why = driversFor(c.hex_id, 3);
       div.innerHTML =
         `<div class="top"><span class="rank">#${c.rank}</span>` +
         `<span class="score">${c.score.toFixed(2)}</span></div>` +
         `<div class="loc">${c.location}</div>` +
-        (c.why.length ? `<ul class="why">` + c.why.map(w => `<li>${w}</li>`).join("") + `</ul>` : "");
+        (why ? `<div class="why">${why}</div>` : "");
       div.onclick = () => {
         document.querySelectorAll(".cand").forEach(d => d.classList.remove("active"));
         div.classList.add("active");
