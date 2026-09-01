@@ -32,7 +32,7 @@ with Cristián Sánchez<br>
 <small>[Draft](/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf)</small>
 <div class="paper-abstract">We study how Chile's targeted voucher (SEP) affects school quality through changes in inputs. Schools receiving SEP funding increase spending on instructional materials and personnel, with modest positive effects on standardized test scores concentrated in lower-income schools.</div>
 
-**Price Effects of a Targeted Voucher Reform**<br>
-with Cristián Sánchez, Francisco Garrido and Emiliano Ramírez<br>
-<small>[Draft](/assets/papers/Price%20Effects%20of%20a%20Targeted%20Voucher%20Reform%20(Draft)%20-%20Cañedo%20Riedel%2C%20Sanchez%2C%20Garrido%20and%20Ramirez.pdf)</small>
+**Price and Market Segmentation Consequences of Targeted Vouchers**<br>
+with Cristián Sánchez and Emiliano Ramírez<br>
+<small>[Draft](/assets/papers/Price%20and%20Market%20Segmentation%20Consequences%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%2C%20Sanchez%20and%20Ramirez.pdf)</small>
 <div class="paper-abstract">We estimate the effect of Chile's SEP voucher on private school tuition. The additional per-student funding is partially passed through to higher fees, suggesting schools capture part of the subsidy increase through pricing.</div>
