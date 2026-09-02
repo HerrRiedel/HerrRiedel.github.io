@@ -89,11 +89,16 @@
     display: block;
     border: 1px solid rgba(181, 115, 90, 0.25);
   }
+  /* The theme puts margin-bottom:1em on any img inside a figure; that plus the
+     caption's own top margin left a ~1.6em gap. Kill the first, shrink the second. */
+  .mami-fig img {
+    margin-bottom: 0;
+  }
   .mami-fig figcaption {
     font-size: 0.8em;
     color: #8a8078;
     line-height: 1.6;
-    margin-top: 0.6em;
+    margin-top: 0.35em;
     padding-left: 0.1em;
   }
 

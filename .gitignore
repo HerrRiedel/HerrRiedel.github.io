@@ -32,3 +32,18 @@ _site
 assets/images/SesionGabriel/
 assets/images/SesionGabriel.zip
 assets/images/__MACOSX/
+
+# LaTeX build artifacts (drafting sources live in _src/)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+_src/*.pdf
+
+# Local backups
+*.bak
