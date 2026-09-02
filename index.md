@@ -7,13 +7,10 @@ title: "About"
 
 <div>
   <p>
-    I am a Ph.D. candidate in Economics at UC San Diego. My research is in macroeconomic theory — I study how regulation shapes market competition and firm dynamics.
+    I am a Ph.D. candidate in Economics at UC San Diego. My research is on how producers react to regulation (in settings like housing, education, and food), and the consequences of regulatory capture: how a regulation can move profit from the least to the most productive firms. I work in macroeconomics and applied theory.
   </p>
   <p>
     I grew up in Guadalajara, did my undergrad and master's at ITAM in Mexico City, and came to San Diego for the Ph.D. Asimov's <em>Foundation</em> is in part why I'm an economist. Outside the work I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
-  </p>
-  <p>
-    I work in theory because it forces you to be honest about your assumptions. That transparency means anyone can engage with them directly. That is what separates a result from an opinion.
   </p>
 </div>
 

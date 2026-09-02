@@ -48,8 +48,8 @@ For each hexagon's surrounding area, the model looks at three things: **who live
 there** (population, ages, schooling, household size, income proxies, how fast
 the area has grown since 2010), **what is already there** (every other business
 by type, hospitals, schools, offices, how mixed the street life is), and **how
-reachable it is** (street layout, main avenues, bus and metro stops, parks and
-markets). That comes to more than 400 signals per hexagon. The model finds the
+reachable it is** (street layout, main avenues, bus and metro stops, and parks
+and markets). That comes to more than 400 signals per hexagon. The model finds the
 habitat by comparing places where pharmacies flourished against places where none
 did.
 
@@ -69,7 +69,7 @@ the pharmacy deserts are.
 
 I built MaMi at **R2**, a market research firm in Guadalajara, and worked with it
 there from 2020 to 2024. Eight successful businesses opened on its
-recommendations, including pharmacies, clinical laboratories and restaurants.
+recommendations, including pharmacies, clinical laboratories, and restaurants.
 
 What a client receives is a score for every location in the metro area; a ranked
 shortlist of addresses, or of zones, when a whole area is promising; the reasons
