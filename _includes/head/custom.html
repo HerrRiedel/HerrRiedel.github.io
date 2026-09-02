@@ -80,6 +80,61 @@
     display: none !important;
   }
 
+  /* CV page: source switch + native PDF viewer */
+  .cv-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0.2em 0 1em 0;
+    flex-wrap: wrap;
+  }
+  .cv-switch button {
+    font-family: inherit;
+    font-size: 0.9em;
+    color: #b8b0a8;
+    background: transparent;
+    border: 1px solid rgba(181, 115, 90, 0.35);
+    padding: 0.45em 1.1em;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .cv-switch button:hover {
+    background-color: rgba(181, 115, 90, 0.10);
+    color: #e8e0d8;
+  }
+  .cv-switch button.active {
+    background-color: #b5735a;
+    border-color: #b5735a;
+    color: #1c1a18;
+    font-weight: 600;
+  }
+  /* Letter portrait is 1:1.294. min() keeps it from running off a short screen. */
+  .cv-viewer {
+    width: 100%;
+    height: min(129.4vw, 82vh);
+    min-height: 520px;
+    border: 1px solid rgba(181, 115, 90, 0.25);
+    background: #1c1a18;
+  }
+  .cv-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  /* Must be .page__content p.cv-fallback, not .cv-fallback: the theme ships
+     `.page__content p, li, dl { font-size: 1em }` and `.page__content p
+     { margin: 0 0 1.3em }`, both at (0,2,1). A bare class selector (0,1,0)
+     loses, and font-size/margin-top are silently ignored while other
+     properties from the same rule still apply. Matching their specificity and
+     coming later in the head is what makes this win. */
+  .page__content p.cv-fallback {
+    font-size: 0.88em;   /* body is 22px here; ~2pt smaller */
+    color: #8a8078;
+    margin-top: 1.7em;
+  }
+  .page__content p.cv-fallback a { color: #b5735a; }
+
   /* Consulting page: figure */
   .mami-fig {
     margin: 1.6em 0 1.8em 0;
