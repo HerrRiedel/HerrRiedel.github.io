@@ -10,7 +10,7 @@ redirect_from:
 
 ## Work in Progress
 
-**Regulatory Capture via Relative Prices (JMP)**<br>
+**Regulatory Capture via Relative Prices** <span class="jmp-tag">(JMP)</span><br>
 <small>[Draft](/assets/papers/Regulatory%20Capture%20via%20Relative%20Prices%20-%20Gabriel%20Cañedo%20Riedel.pdf) &nbsp;·&nbsp; [Slides](/assets/papers/Regulatory%20Capture%20via%20Relative%20Prices%20(Slides)%20-%20Gabriel%20Cañedo%20Riedel.pdf)</small>
 <div class="paper-abstract">Large firms lobby for regulations that raise production costs, their own included. I show when and why this pays. When regulations have asymmetric incidence, every price rises, but the prices of the firms with the least incidence rise least, so they become relatively cheaper; demand reallocates toward them, and they grow, gaining revenue, profit, and market share. I test the mechanism and its consequences through the Food Safety Modernization Act, using Nielsen scanner data. The largest firms in the affected categories lobbied for the act, and are the ones that grew under it.</div>
 
