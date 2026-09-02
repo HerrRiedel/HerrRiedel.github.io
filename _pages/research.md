@@ -28,11 +28,11 @@ with [Philip Hoxie](https://www.philiphoxie.com/)<br>
 ## Education
 
 **Inputs and the School Quality Effects of Targeted Vouchers**<br>
-with Cristián Sánchez<br>
+with [Cristián Sánchez](https://cristsanchez.github.io/)<br>
 <small>[Draft](/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf)</small>
 <div class="paper-abstract">We study how Chile's targeted voucher (SEP) affects school quality through changes in inputs. Schools receiving SEP funding increase spending on instructional materials and personnel, with modest positive effects on standardized test scores concentrated in lower-income schools.</div>
 
 **Price and Market Segmentation Consequences of Targeted Vouchers**<br>
-with Cristián Sánchez and Emiliano Ramírez<br>
+with [Cristián Sánchez](https://cristsanchez.github.io/) and Emiliano Ramírez<br>
 <small>[Draft](/assets/papers/Price%20and%20Market%20Segmentation%20Consequences%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%2C%20Sanchez%20and%20Ramirez.pdf)</small>
 <div class="paper-abstract">Chile's 2008 SEP reform raised per-student funding for disadvantaged pupils, conditional on participating schools charging them no top-up fees. Schools separate: participants cut fees to zero for eligible students, while schools that opt out raise fees and move upmarket. Seen through peer effects, that separation implies substantial willingness to pay to avoid low-income peers.</div>
