@@ -41,7 +41,7 @@ flourishes?
 
 ## How the model sees the city
 
-A city is cut into hexagons, each about 160 meters across. For each hexagon we
+A city is cut into hexagons, each about 165 meters across. For each hexagon we
 ask: what is the surrounding area like? What is the habitat there?
 
 For each hexagon's surrounding area, the model looks at three things: **who lives
