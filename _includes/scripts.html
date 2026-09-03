@@ -21,9 +21,18 @@
 {% include analytics.html %}
 
 <script>
-  document.querySelectorAll('a[href$=".pdf"], a[href$=".pdf"]').forEach(function(link) {
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener');
+  // Open external links and downloadable docs (PDFs) in a new tab.
+  // In-site navigation (same host, non-PDF) stays in the same tab.
+  document.querySelectorAll('a[href]').forEach(function (link) {
+    var url;
+    try { url = new URL(link.href, window.location.href); } catch (e) { return; }
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return; // skip mailto:, tel:, #anchors
+    var external = url.host !== window.location.host;
+    var isPdf = url.pathname.toLowerCase().endsWith('.pdf');
+    if (external || isPdf) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
   });
 </script>
 {% include /comments-providers/scripts.html %}
