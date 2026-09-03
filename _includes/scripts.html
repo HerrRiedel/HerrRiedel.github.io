@@ -21,15 +21,16 @@
 {% include analytics.html %}
 
 <script>
-  // Open external links and downloadable docs (PDFs) in a new tab.
-  // In-site navigation (same host, non-PDF) stays in the same tab.
+  // Open external links, downloadable docs (PDFs), and the MaMi map app
+  // in a new tab. In-site page navigation stays in the same tab.
   document.querySelectorAll('a[href]').forEach(function (link) {
     var url;
     try { url = new URL(link.href, window.location.href); } catch (e) { return; }
     if (url.protocol !== 'http:' && url.protocol !== 'https:') return; // skip mailto:, tel:, #anchors
     var external = url.host !== window.location.host;
     var isPdf = url.pathname.toLowerCase().endsWith('.pdf');
-    if (external || isPdf) {
+    var isMami = /^\/mami(\/|$)/.test(url.pathname); // standalone map app
+    if (external || isPdf || isMami) {
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener noreferrer');
     }
