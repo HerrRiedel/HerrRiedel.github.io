@@ -108,6 +108,10 @@
   }
   .page__content p.cv-fallback a { color: #b5735a; }
 
+  /* CV page: mobile-only "open PDF" button. Hidden on desktop, where the
+     inline iframe viewer is shown instead. Revealed in the mobile block below. */
+  .cv-open-mobile { display: none; }
+
   /* Consulting page: figure */
   .mami-fig {
     margin: 1.6em 0 1.8em 0;
@@ -201,6 +205,44 @@
     color: #b8b0a8;
     line-height: 1.65;
     text-align: justify;
+  }
+
+  /* ===================================================================
+     Mobile only (≤768px). Desktop (≥769px) is unchanged by everything
+     in this block. Phones + portrait tablets; the sidebar already
+     stacks below 925px, so this never touches the computer layout.
+     =================================================================== */
+  @media (max-width: 768px) {
+    /* Justify makes rivers of whitespace in a narrow column — left-align. */
+    .paper-abstract,
+    .demo-card .demo-desc {
+      text-align: left;
+    }
+
+    /* Mobile browsers (iOS Safari especially) won't render a PDF inside an
+       iframe — the viewer shows as an empty box. Hide it and the now-moot
+       "if the viewer does not load" note; offer a direct button instead. */
+    .cv-viewer,
+    .page__content p.cv-fallback {
+      display: none;
+    }
+    .cv-open-mobile {
+      display: block;
+      text-align: center;
+      border: 1px solid rgba(181, 115, 90, 0.3);
+      border-left: 3px solid #b5735a;
+      padding: 0.9em 1.2em;
+      margin: 0.4em 0 1.2em 0;
+      color: #b5735a;
+      font-weight: 600;
+      text-decoration: none !important;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .cv-open-mobile:active,
+    .cv-open-mobile:hover {
+      background-color: rgba(181, 115, 90, 0.07);
+      border-color: rgba(181, 115, 90, 0.6);
+    }
   }
 </style>
 

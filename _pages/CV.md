@@ -9,6 +9,8 @@ redirect_from:
   - /CV.html
 ---
 
+<a class="cv-open-mobile" href="/assets/cv/Gabriel-Canedo-Riedel-Academic-CV.pdf" target="_blank" rel="noopener">Open CV (PDF) &rarr;</a>
+
 <div class="cv-viewer">
   <iframe id="cv-frame" title="Curriculum vitae"
           src="/assets/cv/Gabriel-Canedo-Riedel-Academic-CV.pdf#view=FitH&pagemode=none&navpanes=0"></iframe>
