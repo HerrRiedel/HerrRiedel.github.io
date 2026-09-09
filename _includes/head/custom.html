@@ -298,6 +298,20 @@
       background-color: rgba(181, 115, 90, 0.07);
       border-color: rgba(181, 115, 90, 0.6);
     }
+
+    /* Nav: put every item — About included — behind the hamburger on a phone.
+       The theme's "greedy nav" keeps as many links inline as fit and overflows
+       only the rest into the hamburger, which on a narrow screen leaves "About"
+       sitting next to the toggle. Making each item measure wider than the row
+       makes the greedy-nav script — which parks any item that doesn't fit —
+       move ALL of them into the hamburger, using the theme's own overflow logic
+       (no markup or JS changes). Once moved into .hidden-links (a different
+       selector) the items regain normal width, so the open menu looks normal.
+       visible-links has overflow:hidden, so the oversized items never cause a
+       horizontal scrollbar in the brief moment before the script runs. */
+    .greedy-nav .visible-links .masthead__menu-item {
+      min-width: 100vw;
+    }
   }
 </style>
 

@@ -20,7 +20,7 @@ with [Philip Hoxie](https://www.philiphoxie.com/)<br>
 <div class="paper-abstract">In a difference-in-discontinuities design at the California Coastal Zone boundary, we find that ADU permitting roughly doubles after the state's by-right reforms, though at most 1% of parcels build. The reforms nonetheless create an option value that capitalizes into land prices, which we estimate at 5–10%.</div>
 
 **Across CES**<br>
-<small>[Draft](/assets/papers/Across%20CES%20(Draft)%20-%20Gabriel%20Cañedo%20Riedel.pdf) &nbsp;·&nbsp; [Slides](/assets/papers/Across%20CES%20(Slides)%20-%20Gabriel%20Cañedo%20Riedel.pdf)</small>
+<small>[Notes](/assets/papers/Across%20CES%20(Draft)%20-%20Gabriel%20Cañedo%20Riedel.pdf) &nbsp;·&nbsp; [Slides](/assets/papers/Across%20CES%20(Slides)%20-%20Gabriel%20Cañedo%20Riedel.pdf)</small>
 <div class="paper-abstract">CES demand systems are the workhorse of economic modeling, but their uniform substitution patterns are often at odds with empirical evidence. This paper shows that CES share functions have an exact representation as log-logistic distribution functions in own price, and that any demand system nesting CES inherits a generalization of this structure. It provides a constructive approach to building flexible demand systems beyond CES.</div>
 
 ---
