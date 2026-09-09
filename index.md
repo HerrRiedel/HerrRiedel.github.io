@@ -1,7 +1,7 @@
 ---
 layout: single
 author_profile: true
-classes: wide
+classes: [wide, justify-body]
 title: "About"
 ---
 

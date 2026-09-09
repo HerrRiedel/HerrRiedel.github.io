@@ -207,6 +207,12 @@
     text-align: justify;
   }
 
+  /* Justified body prose on the About and Consulting pages (pages that opt in
+     with the `justify-body` class). Left-aligned again on mobile, below. */
+  .justify-body .page__content p {
+    text-align: justify;
+  }
+
   /* ===================================================================
      Mobile only (≤768px). Desktop (≥769px) is unchanged by everything
      in this block. Phones + portrait tablets; the sidebar already
@@ -215,8 +221,57 @@
   @media (max-width: 768px) {
     /* Justify makes rivers of whitespace in a narrow column — left-align. */
     .paper-abstract,
-    .demo-card .demo-desc {
+    .demo-card .demo-desc,
+    .justify-body .page__content p {
       text-align: left;
+    }
+
+    /* Author profile: stack it (avatar → name → email/X) like the wide-screen
+       sidebar, instead of the theme's cramped avatar | name | Follow row.
+       The avatar grows but stays capped; the Follow toggle is dropped and the
+       links show inline. */
+    .author__avatar {
+      display: block;
+      width: auto;
+      height: auto;
+      text-align: center;
+    }
+    .author__avatar img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 240px;   /* larger than the theme's 180px cell, but held back */
+    }
+    .author__content {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-top: 0.7em;
+      text-align: center;
+    }
+    .author__urls-wrapper {
+      display: block;
+    }
+    .author__urls-wrapper > button {
+      display: none;   /* the "Follow" toggle — email/X are shown directly instead */
+    }
+    .author__urls {
+      display: block;
+      position: relative;
+      margin: 0.4em 0 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+      text-align: center;
+    }
+    .author__urls:before,
+    .author__urls:after {
+      display: none;   /* the dropdown pointer triangle */
+    }
+    .author__urls li {
+      white-space: normal;
     }
 
     /* Mobile browsers (iOS Safari especially) won't render a PDF inside an

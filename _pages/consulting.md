@@ -3,6 +3,7 @@ permalink: /consulting/
 title: "Consulting"
 excerpt: "Consulting"
 author_profile: true
+classes: [wide, justify-body]
 redirect_from:
   - /consulting.html
 ---
