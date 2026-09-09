@@ -7,10 +7,10 @@ title: "About"
 
 <div>
   <p>
-    I am a Ph.D. candidate in Economics at UC San Diego. My research is on how producers react to regulation (in settings like housing, education, and food), and the consequences of regulatory capture: how a regulation can move profit from the least to the most productive firms. I work in macroeconomics and applied theory.
+    I am a Ph.D. candidate in economics at UC San Diego, working in macroeconomics and applied theory. I study how producers respond to regulation in markets such as housing, education, and food. I am particularly interested in regulatory capture and in how regulation can shift profits from less productive to more productive firms.
   </p>
   <p>
-    I grew up in Guadalajara, did my undergrad and master's at ITAM in Mexico City, and came to San Diego for the Ph.D. Asimov's <em>Foundation</em> is in part why I'm an economist. Outside the work I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
+    I grew up in Guadalajara, earned my bachelor's and master's degrees at ITAM in Mexico City, and came to San Diego for my Ph.D. Asimov's <em>Foundation</em> is part of the reason I became an economist. Outside work, I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
   </p>
 </div>
 
