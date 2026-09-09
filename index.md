@@ -18,7 +18,7 @@ title: "About"
 
 ## Education
 
-<table style="border:none; border-collapse:collapse; width:100%; margin-top:-0.5em; font-size:0.95em;">
+<table class="edu-table" style="border:none; border-collapse:collapse; width:100%; margin-top:-0.5em; font-size:0.95em;">
   <tr>
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">Ph.D. Economics</td>
     <td style="border:none; padding:4px 14px 4px 1.5em; white-space:nowrap;">UC San Diego</td>

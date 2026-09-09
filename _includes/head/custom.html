@@ -312,6 +312,32 @@
     .greedy-nav .visible-links .masthead__menu-item {
       min-width: 100vw;
     }
+
+    /* Education table: on desktop it's aligned columns (degree | school | year
+       · descriptor) that run off a phone screen. Reflow each row to two lines —
+       degree + school, then year · descriptor below — by collapsing the table
+       to blocks and turning the (desktop) spacer cell into the line break.
+       Font, colour, and size are inherited from the cells' own inline styles,
+       so they're unchanged; only the flow differs. */
+    .edu-table,
+    .edu-table tbody,
+    .edu-table tr,
+    .edu-table td {
+      display: block;
+    }
+    .edu-table tr {
+      padding: 5px 0;
+    }
+    .edu-table td {
+      display: inline;
+      padding: 0 !important;   /* override the per-cell inline paddings */
+    }
+    .edu-table td:nth-child(2) {
+      margin-left: 0.6em;      /* gap between degree and school */
+    }
+    .edu-table td:nth-child(3) {
+      display: block;          /* the empty spacer cell → forces year onto line 2 */
+    }
   }
 </style>
 
