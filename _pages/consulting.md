@@ -10,80 +10,59 @@ redirect_from:
 
 <div class="lede">“I want to open a retail business. Where should I put it?”</div>
 
-The usual answer to that question is a broker's intuition or an observation that
-a particular corner has a lot of foot traffic. What an owner would rather have is
-every possible location considered, ending in a handful of addresses worth
-visiting.
-
-**MaMi** is the tool I built to do that.
+A good location depends on who lives nearby, what businesses are already there, and how people reach it. **MaMi** is the tool I built to bring those pieces together and turn a citywide search into a shortlist of locations worth visiting.
 
 ---
 
-## An idea borrowed from biology
+### An idea borrowed from biology
 
-How do biologists map where a jaguar could live, without following jaguars around
-the whole country? They take the places where jaguars *are*, ask what those
-places have in common (forest cover, water, prey, elevation, distance from
-roads), and then find every other place that looks like that. They learn the
-jaguar's **habitat**. Ecologists call these species distribution models, and they
-are standard practice in conservation planning and in predicting where an
-invasive species will spread next.
+To map where jaguars could live, ecologists study the places where jaguars are found. They look at forest cover, water, prey, elevation, and distance from roads, then identify other places with similar conditions. These species distribution models map the jaguar's **habitat**.
 
-A business also has a habitat. Take, for example, pharmacies in Guadalajara,
-Mexico.
+A business also has a habitat. A pharmacy, a café, and a clinical laboratory each depend on a different combination of customers, surrounding businesses, and accessibility. MaMi adapts the ecological approach to identify places with suitable conditions for each business.
 
-Mexico's business census records every establishment in the country twice a year,
-which gives roughly a dozen photographs of the city's commerce between 2016
-and 2026. Following each pharmacy across that decade lets MaMi learn the
-pharmacy's environment: which socioeconomic variables determine where a pharmacy
-flourishes?
+Take pharmacies in Guadalajara, Mexico. Using successive editions of Mexico's national business directory, I follow pharmacies over time and study how their locations relate to the surrounding neighborhoods.
 
 ---
 
-## How the model sees the city
+### How MaMi sees the city
 
-A city is cut into hexagons, each about 165 meters across. For each hexagon we
-ask: what is the surrounding area like? What is the habitat there?
+MaMi divides the city into hexagons, each about 165 meters across. For each hexagon, it characterizes the surrounding area using more than 400 variables:
 
-For each hexagon's surrounding area, the model looks at three things: **who lives
-there** (population, ages, schooling, household size, income proxies, how fast
-the area has grown since 2010), **what is already there** (every other business
-by type, hospitals, schools, offices, how mixed the street life is), and **how
-reachable it is** (street layout, main avenues, bus and metro stops, and parks
-and markets). That comes to more than 400 signals per hexagon. The model finds the
-habitat by comparing places where pharmacies flourished against places where none
-did.
+* **Who lives there:** population, age, education, household size, income proxies, and neighborhood growth.
+* **What is already there:** competitors, other businesses, hospitals, schools, offices, parks, and markets.
+* **How people reach it:** street layout, main roads, and bus and metro stops.
 
-One map answers three different business questions — where there is an open
-opportunity with no pharmacy nearby, where there is room for one more, and where
-the pharmacy deserts are.
+The model learns from the patterns of pharmacy locations over time and uses those patterns to assess other parts of the city. The resulting map helps identify promising locations without a nearby pharmacy, areas that may support another one, and neighborhoods with limited access to pharmacies.
 
 <figure class="mami-fig">
   <a href="/mami/"><img src="/assets/images/mami_habitat_gdl.jpg"
      alt="Habitat suitability map of the Guadalajara metropolitan area, scored hexagon by hexagon for pharmacy viability."></a>
-  <figcaption>The result: a habitat suitability map for pharmacies in Guadalajara.</figcaption>
+  <figcaption>MaMi's pharmacy habitat map for Guadalajara.</figcaption>
 </figure>
 
 ---
 
-## In practice
+### In practice
 
-I built MaMi at **R2**, a market research firm in Guadalajara, and worked with it
-there from 2020 to 2024. Eight successful businesses opened on its
-recommendations, including pharmacies, clinical laboratories, and restaurants.
+I built MaMi at **R2**, a market research firm in Guadalajara, and used it in client projects from 2020 to 2024. Eight businesses opened based on its recommendations, including pharmacies, clinical laboratories, and restaurants.
 
-What a client receives is a score for every location in the metro area; a ranked
-shortlist of addresses, or of zones, when a whole area is promising; the reasons
-behind each score; and an interactive map they can explore. Change the business
-type (a café, a gym, a clinic), and the same machinery re-learns that habitat
-from scratch.
+Clients receive:
+
+* Scores for locations across the metropolitan area.
+* A ranked shortlist of addresses or promising zones.
+* An explanation of the factors behind each score.
+* An interactive map they can explore.
+
+Each analysis is tailored to the business. For a café, a gym, or a clinic, MaMi learns that business's habitat from its own pattern of locations.
 
 ---
 
-## See it
+### See it
 
 <a class="demo-card" href="/mami/">
   <span class="demo-title">MaMi — Pharmacy site selection &rarr;</span>
-  <span class="demo-desc">The pharmacy habitat map for Guadalajara and Monterrey.</span>
-  <span class="demo-meta">This is a sample. It uses only a subset of the model's variables. It is meant to show the method, not to site a business.</span>
+  <span class="demo-desc">Explore the pharmacy habitat maps for Guadalajara and Monterrey.</span>
+  <span class="demo-meta">This demonstration uses a subset of the model's variables. It illustrates the method and is not a complete site-selection assessment.</span>
 </a>
+
+To discuss a location study, [get in touch](mailto:gabrielcr@ucsd.edu).
