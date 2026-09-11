@@ -44,7 +44,7 @@ The model learns from the patterns of pharmacy locations over time and uses thos
 
 ### In practice
 
-I built MaMi at **R2**, a market research firm in Guadalajara, and used it in client projects from 2020 to 2024. Eight businesses opened based on its recommendations, including pharmacies, clinical laboratories, and restaurants.
+I built MaMi at **R2**, a market research firm in Guadalajara, and used it in client projects from 2020 to 2024.
 
 Clients receive:
 
