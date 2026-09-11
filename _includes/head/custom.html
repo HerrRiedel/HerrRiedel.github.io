@@ -1,5 +1,11 @@
 <!-- start custom head snippets -->
 
+<!-- Palette mode: /green sets localStorage palette=green, /terra clears it.
+     Read it here (synchronously, before first paint) so there's no flash. -->
+<script>
+  try { if (localStorage.getItem('palette') === 'green') document.documentElement.classList.add('green'); } catch (e) {}
+</script>
+
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!--
@@ -467,5 +473,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <!-- end crow easter egg ---------------------------------------------------- -->
+
+<!-- Green palette (slate + green), active only when <html class="green">.
+     Colors sampled from the profile photo: slate from the suit, green from the
+     trees. Changes ONLY backgrounds and the elements that are terracotta in the
+     default palette; text, headings, and nav links are untouched.
+     Entered at /green, reverted at /terra. -->
+<style>
+  html.green body,
+  html.green .initial-content,
+  html.green .search-content,
+  html.green .masthead,
+  html.green nav.greedy-nav,
+  html.green #main            { background-color: #1e2126; }
+  html.green .page__footer    { background-color: #16181c; }
+  html.green article.page     { background-color: #272b31; }
+
+  /* terracotta accents -> green */
+  html.green .search__toggle                        { color: #74a23e; }
+  html.green .greedy-nav .visible-links a:before    { background: #74a23e; }
+  html.green .page__content .jmp-tag                { background-color: #74a23e; color: #272b31; }
+  html.green .lede,
+  html.green .paper-abstract,
+  html.green .demo-card                             { border-left-color: #74a23e; }
+  html.green .demo-card,
+  html.green .cv-viewer,
+  html.green .mami-fig img,
+  html.green .cv-open-mobile                        { border-color: rgba(116, 162, 62, 0.40); }
+  html.green .page__content hr                      { border-top-color: rgba(116, 162, 62, 0.40); }
+  html.green .demo-card .demo-title,
+  html.green .page__content p.cv-fallback a,
+  html.green .cv-open-mobile                        { color: #74a23e; }
+  html.green .demo-card:hover                       { background-color: rgba(116, 162, 62, 0.07); border-color: rgba(116, 162, 62, 0.6); }
+
+  /* content links were a lightened terracotta -> lightened green */
+  html.green .page__content a       { color: #bdcc9f; }
+  html.green .page__content a:hover { color: #d4e0ba; }
+</style>
 
 <!-- end custom head snippets -->
