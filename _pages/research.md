@@ -34,5 +34,5 @@ with [Cristián Sánchez](https://cristsanchez.github.io/)<br>
 
 **Price and Market Segmentation Consequences of Targeted Vouchers**<br>
 with Emiliano Ramírez and [Cristián Sánchez](https://cristsanchez.github.io/)<br>
-<small>[Draft](/assets/papers/Price%20and%20Market%20Segmentation%20Consequences%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%2C%20Sanchez%20and%20Ramirez.pdf)</small>
+<small>[Draft](/assets/papers/Price%20and%20Market%20Segmentation%20Consequences%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%2C%20Ramirez%20and%20Sanchez.pdf)</small>
 <div class="paper-abstract">We study how Chile's targeted voucher reform reshaped tuition-setting incentives and market segmentation. Participating schools received additional funding for disadvantaged students while being prohibited from charging them top-up fees. Using variation in pre-reform eligibility across municipalities, we find that fees faced by non-eligible students also fell on average in more exposed markets, while private voucher schools that opted out raised fees, moving upmarket. We interpret these patterns through models of school competition with peer effects and sorting. Estimates from a pre-reform school choice model indicate an economically meaningful willingness to pay to avoid low-income peers.</div>
