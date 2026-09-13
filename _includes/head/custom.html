@@ -1,10 +1,13 @@
 <!-- start custom head snippets -->
 
-<!-- Palette mode: green is the default (the :root palette tokens). /terra opts
-     into terracotta by adding class="terra" to <html> (which only redefines the
-     tokens); /green clears it. Read synchronously before first paint, no flash. -->
+<!-- Palette + mode, read synchronously before first paint (no flash):
+     - palette (green default / terra) set by /green /terra, key "palette".
+     - light/dark set by the masthead sun-moon toggle, key "mode". -->
 <script>
-  try { if (localStorage.getItem('palette') === 'terra') document.documentElement.classList.add('terra'); } catch (e) {}
+  try {
+    if (localStorage.getItem('palette') === 'terra') document.documentElement.classList.add('terra');
+    if (localStorage.getItem('mode') === 'light') document.documentElement.classList.add('light');
+  } catch (e) {}
 </script>
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
@@ -44,6 +47,11 @@
     --accent-hover-border: rgba(116, 162, 62, 0.6);
     --link: #bdcc9f;                          /* content links            */
     --link-hover: #d4e0ba;
+    --text: #ede8e0;                          /* primary text             */
+    --text-muted: #b8b0a8;                    /* abstracts, card desc     */
+    --text-dim: #8a8078;                      /* captions, meta, CV years */
+    --text-soft: #d8d0c8;                     /* lede                     */
+    --icon: #ede8e0;                          /* crow, masthead icons     */
   }
   html.terra {
     --bg: #231f1c;                            /* original warm charcoal   */
@@ -56,20 +64,77 @@
     --link: #d7b9aa;                          /* champagne                */
     --link-hover: #e1cbbf;
   }
+  /* Light mode — toggled by the sun/moon button. A light ground with the green
+     deepened for contrast and text flipped dark. Declared after html.terra so
+     it wins if both are ever set (light is always light-green). */
+  html.light {
+    --bg: #f4f3ef;                            /* warm paper               */
+    --surface: #ffffff;
+    --footer: #ebe9e3;
+    --accent: #4f7328;                        /* deeper green             */
+    --accent-soft: rgba(79, 115, 40, 0.30);
+    --accent-hover-bg: rgba(79, 115, 40, 0.08);
+    --accent-hover-border: rgba(79, 115, 40, 0.5);
+    --link: #4f7328;
+    --link-hover: #385218;
+    --text: #22262b;                          /* dark slate               */
+    --text-muted: #5f6670;
+    --text-dim: #6b727a;
+    --text-soft: #55606a;
+    --icon: #22262b;
+  }
 
   /* Palette applied to theme surfaces + links (these override the compiled
-     terracotta skin; both palettes read the tokens above). */
+     terracotta skin; all palettes read the tokens above). */
   body, .initial-content, .search-content, .masthead, nav.greedy-nav, #main {
     background-color: var(--bg);
   }
   .page__footer { background-color: var(--footer); }
   .page__content a { color: var(--link); }
   .page__content a:hover { color: var(--link-hover); }
-  .search__toggle { color: var(--accent); }
   .greedy-nav .visible-links a:before { background: var(--accent); }
   .greedy-nav__toggle .navicon,
   .greedy-nav__toggle .navicon:before,
   .greedy-nav__toggle .navicon:after { background: var(--accent); }
+
+  /* Text — flips to dark in light mode via the --text token. */
+  body,
+  .page__content,
+  .page__title, .page__title a,
+  .page__content h1, .page__content h2, .page__content h3, .page__content h4,
+  .sidebar .author__name, .author__urls a,
+  .greedy-nav .site-title, .greedy-nav .visible-links a, .greedy-nav .hidden-links a {
+    color: var(--text);
+  }
+  .page__footer, .page__footer a { color: var(--text-dim); }
+  #crow-svg g { fill: var(--icon); }
+  /* hamburger dropdown surface follows the palette too */
+  .greedy-nav .hidden-links { background: var(--surface); }
+
+  /* Light/dark toggle button (replaces the retired search icon). Sun shows in
+     dark mode (click → light), moon shows in light mode (click → dark). */
+  .theme-toggle {
+    align-self: center;
+    flex: none;
+    box-sizing: content-box;
+    width: 1.2em;             /* fixed footprint — sun and moon occupy the same
+                                 space, so toggling never shifts the nav tabs */
+    padding: 0 0.3em;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 1.15em;
+    line-height: 1;
+  }
+  .theme-toggle:hover { color: var(--accent-hover-border); }
+  .theme-toggle:focus:not(:focus-visible) { outline: none; }
+  .theme-toggle svg.theme-icon-sun { height: 1.15em; width: 1.15em; vertical-align: -0.18em; }
+  .theme-toggle .theme-icon-moon { display: none; }
+  html.light .theme-toggle .theme-icon-sun { display: none; }
+  html.light .theme-toggle .theme-icon-moon { display: inline; }
 
   /* Tighten gap between author name and links */
   .author__content {
@@ -152,7 +217,7 @@
      coming later in the head is what makes this win. */
   .page__content p.cv-fallback {
     font-size: 0.88em;   /* body is 22px here; ~2pt smaller */
-    color: #8a8078;
+    color: var(--text-dim);
     margin-top: 1.7em;
   }
   .page__content p.cv-fallback a { color: var(--accent); }
@@ -177,7 +242,7 @@
   }
   .mami-fig figcaption {
     font-size: 0.8em;
-    color: #8a8078;
+    color: var(--text-dim);
     line-height: 1.6;
     margin-top: 0.35em;
     padding-left: 0.1em;
@@ -187,7 +252,7 @@
   .lede {
     font-size: 1.25em;
     line-height: 1.5;
-    color: #d8d0c8;
+    color: var(--text-soft);
     border-left: 3px solid var(--accent);
     padding-left: 0.9em;
     margin: 0.2em 0 1.4em 0;
@@ -218,14 +283,14 @@
   .demo-card .demo-desc {
     display: block;
     font-size: 0.85em;
-    color: #b8b0a8;
+    color: var(--text-muted);
     line-height: 1.65;
     text-align: justify;
   }
   .demo-card .demo-meta {
     display: block;
     font-size: 0.75em;
-    color: #8a8078;
+    color: var(--text-dim);
     margin-top: 0.7em;
     letter-spacing: 0.02em;
   }
@@ -251,7 +316,7 @@
     padding-left: 1em;
     margin: -0.8em 0 2.8em 0;
     font-size: 0.85em;
-    color: #b8b0a8;
+    color: var(--text-muted);
     line-height: 1.65;
     text-align: justify;
   }
@@ -539,5 +604,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <!-- end crow easter egg ---------------------------------------------------- -->
+
+<!-- Light/dark toggle (masthead sun/moon button) -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var t = document.getElementById('theme-toggle');
+  if (!t) return;
+  t.addEventListener('click', function () {
+    var light = document.documentElement.classList.toggle('light');
+    try { if (light) localStorage.setItem('mode', 'light'); else localStorage.removeItem('mode'); } catch (e) {}
+  });
+});
+</script>
 
 <!-- end custom head snippets -->

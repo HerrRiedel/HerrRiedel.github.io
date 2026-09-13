@@ -25,24 +25,24 @@ description: "Ph.D. candidate in Economics at UC San Diego. Research on how prod
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">Ph.D. in Economics</td>
     <td style="border:none; padding:4px 14px 4px 1.5em; white-space:nowrap;">UC San Diego</td>
     <td style="border:none; width:100%;"></td>
-    <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:#a8a09a;">2021–present</td>
-    <td style="border:none; padding:4px 0; color:#a8a09a;">&nbsp;·&nbsp;</td>
-    <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;">Candidate since 2023</td>
+    <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:var(--text-dim);">2021–present</td>
+    <td style="border:none; padding:4px 0; color:var(--text-dim);">&nbsp;·&nbsp;</td>
+    <td style="border:none; padding:4px 0; white-space:nowrap; color:var(--text-dim);">Candidate since 2023</td>
   </tr>
   <tr>
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">M.A. in Economic Theory</td>
     <td style="border:none; padding:4px 14px 4px 1.5em; white-space:nowrap;">ITAM</td>
     <td style="border:none; width:100%;"></td>
-    <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:#a8a09a;">2021</td>
-    <td style="border:none; padding:4px 0; color:#a8a09a;">&nbsp;·&nbsp;</td>
-    <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;"><em>summa cum laude</em></td>
+    <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:var(--text-dim);">2021</td>
+    <td style="border:none; padding:4px 0; color:var(--text-dim);">&nbsp;·&nbsp;</td>
+    <td style="border:none; padding:4px 0; white-space:nowrap; color:var(--text-dim);"><em>summa cum laude</em></td>
   </tr>
   <tr>
     <td style="border:none; padding:4px 14px 4px 0; white-space:nowrap;">B.A. in Economics</td>
     <td style="border:none; padding:4px 14px 4px 1.5em; white-space:nowrap;">ITAM</td>
     <td style="border:none; width:100%;"></td>
-    <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:#a8a09a;">2018</td>
-    <td style="border:none; padding:4px 0; color:#a8a09a;">&nbsp;·&nbsp;</td>
-    <td style="border:none; padding:4px 0; white-space:nowrap; color:#a8a09a;"><em>summa cum laude</em></td>
+    <td style="border:none; padding:4px 4px 4px 0; white-space:nowrap; color:var(--text-dim);">2018</td>
+    <td style="border:none; padding:4px 0; color:var(--text-dim);">&nbsp;·&nbsp;</td>
+    <td style="border:none; padding:4px 0; white-space:nowrap; color:var(--text-dim);"><em>summa cum laude</em></td>
   </tr>
 </table>

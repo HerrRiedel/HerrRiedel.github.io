@@ -26,12 +26,23 @@
             </li>
           {%- endfor -%}
         </ul>
-        {% if site.search == true %}
-        <button class="search__toggle" type="button">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
-          <i class="fas fa-search"></i>
+        <button id="theme-toggle" class="theme-toggle" type="button"
+                aria-label="Toggle light and dark mode" title="Toggle light/dark mode">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.4" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+              <line x1="18.2" y1="12" x2="21.4" y2="12"/>
+              <line x1="16.38" y1="16.38" x2="18.65" y2="18.65"/>
+              <line x1="12" y1="18.2" x2="12" y2="21.4"/>
+              <line x1="7.62" y1="16.38" x2="5.35" y2="18.65"/>
+              <line x1="5.8" y1="12" x2="2.6" y2="12"/>
+              <line x1="7.62" y1="7.62" x2="5.35" y2="5.35"/>
+              <line x1="12" y1="5.8" x2="12" y2="2.6"/>
+              <line x1="16.38" y1="7.62" x2="18.65" y2="5.35"/>
+            </g>
+          </svg>
+          <i class="fas fa-moon theme-icon-moon" aria-hidden="true"></i>
         </button>
-        {% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
