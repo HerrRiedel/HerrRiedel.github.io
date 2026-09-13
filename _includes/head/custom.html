@@ -328,7 +328,8 @@
     font-size: 0.52em;         /* scaled so the badge box matches "About"'s height */
     font-weight: 700;
     letter-spacing: 0.04em;
-    vertical-align: middle;
+    vertical-align: 0.4em;     /* raise by ~(padding-bottom + descent) so the box
+                                  bottom sits on the title's baseline, not sinking */
     white-space: nowrap;
     line-height: 1;
   }
