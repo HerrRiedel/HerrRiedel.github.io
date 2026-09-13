@@ -96,6 +96,12 @@
   .greedy-nav__toggle .navicon,
   .greedy-nav__toggle .navicon:before,
   .greedy-nav__toggle .navicon:after { background: var(--accent); }
+  /* keep the hamburger/× green on hover+tap (theme's :hover repaints it in the
+     old terracotta) and keep the open-menu overlay on-palette */
+  .greedy-nav__toggle:hover .navicon,
+  .greedy-nav__toggle:hover .navicon:before,
+  .greedy-nav__toggle:hover .navicon:after { background: var(--accent); }
+  .greedy-nav__toggle:before { background-color: var(--bg); }
 
   /* Text — flips to dark in light mode via the --text token. */
   body,
