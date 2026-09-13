@@ -14,6 +14,9 @@ description: "Ph.D. candidate in Economics at UC San Diego. Research on how prod
   <p>
     I grew up in Guadalajara, earned my bachelor's and master's degrees at ITAM in Mexico City, and came to San Diego for my Ph.D. Asimov's <em>Foundation</em> is part of the reason I became an economist. Outside work, I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
   </p>
+  <p style="color: var(--accent);">
+    I am on the 2026–2027 economics job market.
+  </p>
 </div>
 
 ---
