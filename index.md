@@ -3,6 +3,8 @@ layout: single
 author_profile: true
 classes: [wide, justify-body]
 title: "About"
+seo_title: "Gabriel Cañedo Riedel — Economist, UC San Diego"
+description: "Ph.D. candidate in Economics at UC San Diego. Research on how producers respond to regulation, and regulatory capture. Macroeconomics and applied theory."
 ---
 
 <div>
