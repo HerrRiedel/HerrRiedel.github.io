@@ -2,6 +2,8 @@
 permalink: /CV/
 title: "CV"
 excerpt: "Curriculum vitae"
+seo_title: "CV — Gabriel Cañedo Riedel"
+description: "Academic curriculum vitae: education, working papers, teaching, and research experience in economics."
 author_profile: true
 classes: wide
 redirect_from:

@@ -2,6 +2,8 @@
 permalink: /consulting/
 title: "Consulting"
 excerpt: "Consulting"
+seo_title: "Consulting — Gabriel Cañedo Riedel"
+description: "Data-driven site selection for retail businesses. MaMi scores every location in a city and shortlists the best places to open a business."
 author_profile: true
 classes: [wide, justify-body]
 redirect_from:

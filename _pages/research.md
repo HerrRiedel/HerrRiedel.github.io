@@ -2,6 +2,8 @@
 permalink: /research/
 title: "Research"
 excerpt: "Research"
+seo_title: "Research — Gabriel Cañedo Riedel"
+description: "Working papers on regulatory capture, regulation and firm behavior, housing and ADU permitting, and Chile's school-voucher markets."
 author_profile: true
 redirect_from:
   - /research/
