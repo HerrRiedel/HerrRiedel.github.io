@@ -1,9 +1,11 @@
 <!-- start custom head snippets -->
 
-<!-- Palette mode: /green sets localStorage palette=green, /terra clears it.
-     Read it here (synchronously, before first paint) so there's no flash. -->
+<!-- Palette mode: green is the default (class="green" is on <html> from the
+     layout). /terra sets localStorage palette=terra to opt into the old
+     terracotta palette; /green clears it. Read synchronously before first
+     paint so there's no flash. -->
 <script>
-  try { if (localStorage.getItem('palette') === 'green') document.documentElement.classList.add('green'); } catch (e) {}
+  try { if (localStorage.getItem('palette') === 'terra') document.documentElement.classList.remove('green'); } catch (e) {}
 </script>
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
@@ -415,54 +417,77 @@ document.addEventListener('DOMContentLoaded', function () {
   itemEl.setAttribute('overflow', 'visible');
   crowLogo.appendChild(itemEl);
 
-  var COIN  = '<circle cx="7" cy="7" r="5.5" fill="#b5735a"/>'
-            + '<circle cx="7" cy="7" r="3.8" fill="none" stroke="#c88060" stroke-width="0.9"/>';
+  var COIN  = '<circle cx="7" cy="7" r="5.5" fill="#c49a46"/>'
+            + '<circle cx="7" cy="7" r="3.8" fill="none" stroke="#d9b96a" stroke-width="0.9"/>';
   var STICK = '<line x1="1" y1="7" x2="16" y2="1" stroke="#b5735a" stroke-width="2.2" stroke-linecap="round"/>'
             + '<line x1="9" y1="4" x2="13" y2="-1" stroke="#b5735a" stroke-width="1.6" stroke-linecap="round"/>';
-  var BILL  = '<rect x="0" y="4" width="17" height="10" rx="1" fill="#b5735a"/>'
-            + '<text x="8" y="12" font-size="7" font-family="serif" font-weight="bold" fill="#231f1c" text-anchor="middle" opacity="0.5">$</text>';
+  var BILL  = '<rect x="0" y="4" width="17" height="10" rx="1" fill="#74a23e"/>'
+            + '<text x="8" y="12" font-size="7" font-family="serif" font-weight="bold" fill="#1e2126" text-anchor="middle" opacity="0.5">$</text>';
 
-  var ITEMS = [COIN, STICK, BILL];
-  var itemIdx = 0;
+  /* Clicks cycle bill -> coin -> stick, swapping the held item directly (no
+     drop between them); after the stick, a click makes the crow leave it. */
+  var ITEMS = [BILL, COIN, STICK];
+  var heldIndex = -1;
 
   var IDLE = 0, ANIM = 1, HOLDING = 2;
   var state = IDLE;
 
   function triggerCrow(e) {
     e.preventDefault();
-    if (state === ANIM)  return;
-    if (state === IDLE)  startPickup();
-    else                 startEating();
+    if (state === ANIM) return;
+    if (state === IDLE) {
+      startPickup();                          // first click: fly in, grab the bill
+    } else if (heldIndex < ITEMS.length - 1) {
+      swapItem();                             // next clicks: bill -> coin -> stick
+    } else {
+      dropItem();                             // after the stick: leave it, back to idle
+    }
   }
 
+  /* IDLE -> flap in, peck, come up holding the first item (bill). */
   function startPickup() {
     state = ANIM;
-    var item = ITEMS[itemIdx % ITEMS.length];
-    itemIdx++;
+    heldIndex = 0;
 
     /* Phase 1: flap (1.2s) */
     crowSVG.classList.add('crow-flapping');
     setTimeout(function () {
       crowSVG.classList.remove('crow-flapping');
 
-      /* Phase 2: peck (0.7s) — item appears when head returns (after 700ms) */
+      /* Phase 2: peck (0.7s) — item appears when the head returns */
       crowSVG.classList.add('crow-pecking');
       setTimeout(function () {
         crowSVG.classList.remove('crow-pecking');
-        itemEl.innerHTML = item;
+        itemEl.innerHTML = ITEMS[heldIndex];
         itemEl.classList.add('visible');
         state = HOLDING;
       }, 700);
     }, 1200);
   }
 
-  function startEating() {
+  /* HOLDING -> a single peck swaps the held item for the next one (no drop). */
+  function swapItem() {
+    state = ANIM;
+    heldIndex++;
+    itemEl.classList.remove('visible');
+    crowSVG.classList.add('crow-pecking');
+    setTimeout(function () {
+      crowSVG.classList.remove('crow-pecking');
+      itemEl.innerHTML = ITEMS[heldIndex];
+      itemEl.classList.add('visible');
+      state = HOLDING;
+    }, 700);
+  }
+
+  /* After the last item (stick), a click makes the crow leave it and reset. */
+  function dropItem() {
     state = ANIM;
     itemEl.classList.remove('visible');
     crowSVG.classList.add('crow-eating');
     setTimeout(function () {
       crowSVG.classList.remove('crow-eating');
       itemEl.innerHTML = '';
+      heldIndex = -1;
       state = IDLE;
     }, 500);
   }
