@@ -3,19 +3,9 @@ layout: single
 author_profile: true
 classes: [wide, justify-body]
 title: "About"
-title_badge: "2026-27 Econ Job Market"
 seo_title: "Gabriel Cañedo Riedel — Economist, UC San Diego"
 description: "Ph.D. candidate in Economics at UC San Diego. Research on how producers respond to regulation, and regulatory capture. Macroeconomics and applied theory."
 ---
-
-<div>
-  <p>
-    I am a Ph.D. candidate in economics at UC San Diego, working in macroeconomics and applied theory. I study how producers respond to regulation in markets such as housing, education, and food. I am particularly interested in regulatory capture and in how regulation can shift profits from less productive to more productive firms.
-  </p>
-  <p>
-    I grew up in Guadalajara, earned my bachelor's and master's degrees at ITAM in Mexico City, and came to San Diego for my Ph.D. Asimov's <em>Foundation</em> is part of the reason I became an economist. Outside work, I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
-  </p>
-</div>
 
 <div class="about-links">
   <a class="about-link" href="/assets/cv/Gabriel-Canedo-Riedel-Academic-CV.pdf">
@@ -26,6 +16,18 @@ description: "Ph.D. candidate in Economics at UC San Diego. Research on how prod
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
     JMP
   </a>
+  <span class="jm-badge">2026-27 Econ Job Market</span>
+</div>
+
+<div>
+  <p>
+    I am a Ph.D. candidate in economics at UC San Diego, working in macroeconomics and applied theory. I study how producers respond to regulation in markets such as housing, education, and food. I am particularly interested in regulatory capture and in how regulation can shift profits from less productive to more productive firms.
+  </p>
+  <!-- Personal paragraph — hidden during the 2026-27 job market; restore it when the market is over.
+  <p>
+    I grew up in Guadalajara, earned my bachelor's and master's degrees at ITAM in Mexico City, and came to San Diego for my Ph.D. Asimov's <em>Foundation</em> is part of the reason I became an economist. Outside work, I swim, walk the beach at night, hunt for good coffee, and drive around in an open-top Jeep.
+  </p>
+  -->
 </div>
 
 ---

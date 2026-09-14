@@ -292,8 +292,25 @@
   .about-links {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;   /* pills + badge share one height */
     gap: 0.6em;
-    margin: 1.4em 0 0.2em;
+    margin: 0.9em 0 1.3em;
+  }
+  /* Job-market status badge, sitting in the pill row at the same height as the
+     pills (matched padding/border/font); filled green knockout like the JMP tag. */
+  .about-links .jm-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42em 0.8em;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: var(--accent);
+    color: var(--surface);
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    white-space: nowrap;
   }
   .page__content .about-link {
     display: inline-flex;
