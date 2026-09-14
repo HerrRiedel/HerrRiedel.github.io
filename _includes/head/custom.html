@@ -359,9 +359,9 @@
 
   /* Research page: paper entries */
   .paper { margin-bottom: 2em; }
-  /* Clickable title — keeps the plain heading color, links only on hover */
+  /* Clickable title — plain (not bold), heading color; links only on hover */
   .page__content a.paper-title {
-    font-weight: 700;
+    font-weight: normal;
     color: var(--text);
     text-decoration: none;
   }
@@ -369,6 +369,8 @@
     color: var(--link);
     text-decoration: underline;
   }
+  /* Coauthor line, a touch smaller than the title */
+  .paper-authors { font-size: 0.88em; }
   /* The Abstract toggle, styled to match the PDF/Slides links beside it */
   .paper-links .abs-toggle {
     background: none;

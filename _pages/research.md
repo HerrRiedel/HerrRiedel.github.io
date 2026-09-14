@@ -20,21 +20,21 @@ redirect_from:
 
 <div class="paper">
   <a class="paper-title" href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">Who Wins With Up-Zoning? Quasi-Experimental Evidence from California's By-Right Permitting Reforms for Accessory Dwelling Units</a><br>
-  with <a href="https://www.philiphoxie.com/">Philip Hoxie</a><br>
+  <span class="paper-authors">with <a href="https://www.philiphoxie.com/">Philip Hoxie</a></span><br>
   <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">PDF</a></small>
   <div class="paper-abstract" hidden>We study California's 2017 reforms to accessory dwelling unit (ADU) permitting, exploiting a regulatory discontinuity at the Coastal Zone boundary. The reforms increased permitting activity by about 30%, although take-up remained low. Land values rose by 7%. A stylized model shows how lower permitting costs can be capitalized into land values through the option to build an ADU, benefiting incumbent owners even when they do not build. We also find a 3% increase in property tax collections and no detectable price spillovers across the boundary.</div>
 </div>
 
 <div class="paper">
   <a class="paper-title" href="/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">Inputs and the School Quality Effects of Targeted Vouchers</a><br>
-  with <a href="https://cristsanchez.github.io/">Cristián Sánchez</a><br>
+  <span class="paper-authors">with <a href="https://cristsanchez.github.io/">Cristián Sánchez</a></span><br>
   <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">PDF</a></small>
   <div class="paper-abstract" hidden>We study schools' responses to Chile's targeted voucher reform, exploiting differences in its intensity across local education markets. Both public and private voucher schools reduced class sizes and adjusted staffing and teachers' working conditions. We find gains in school value added among private voucher schools, although schools induced to participate were not the main drivers of these gains. We then examine how observed educational inputs relate to the reform's effects on school value added.</div>
 </div>
 
 <div class="paper">
   <a class="paper-title" href="/assets/papers/Price%20and%20Market%20Segmentation%20Consequences%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%2C%20Ramirez%20and%20Sanchez.pdf">Price and Market Segmentation Consequences of Targeted Vouchers</a><br>
-  with Emiliano Ramírez and <a href="https://cristsanchez.github.io/">Cristián Sánchez</a><br>
+  <span class="paper-authors">with Emiliano Ramírez and <a href="https://cristsanchez.github.io/">Cristián Sánchez</a></span><br>
   <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Price%20and%20Market%20Segmentation%20Consequences%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%2C%20Ramirez%20and%20Sanchez.pdf">PDF</a></small>
   <div class="paper-abstract" hidden>We study how Chile's targeted voucher reform reshaped tuition-setting incentives and market segmentation. Participating schools received additional funding for disadvantaged students while being prohibited from charging them top-up fees. Using variation in pre-reform eligibility across municipalities, we find that fees faced by non-eligible students also fell on average in more exposed markets, while private voucher schools that opted out raised fees, moving upmarket. We interpret these patterns through models of school competition with peer effects and sorting. Estimates from a pre-reform school choice model indicate an economically meaningful willingness to pay to avoid low-income peers.</div>
 </div>
