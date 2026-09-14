@@ -203,37 +203,6 @@
     display: none !important;
   }
 
-  /* CV page: native PDF viewer */
-  /* Letter portrait is 1:1.294. min() keeps it from running off a short screen. */
-  .cv-viewer {
-    width: 100%;
-    height: min(129.4vw, 82vh);
-    min-height: 520px;
-    border: 1px solid var(--accent-soft);
-    background: #1c1a18;
-  }
-  .cv-viewer iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
-  /* Must be .page__content p.cv-fallback, not .cv-fallback: the theme ships
-     `.page__content p, li, dl { font-size: 1em }` and `.page__content p
-     { margin: 0 0 1.3em }`, both at (0,2,1). A bare class selector (0,1,0)
-     loses, and font-size/margin-top are silently ignored while other
-     properties from the same rule still apply. Matching their specificity and
-     coming later in the head is what makes this win. */
-  .page__content p.cv-fallback {
-    font-size: 0.88em;   /* body is 22px here; ~2pt smaller */
-    color: var(--text-dim);
-    margin-top: 1.7em;
-  }
-  .page__content p.cv-fallback a { color: var(--accent); }
-
-  /* CV page: mobile-only "open PDF" button. Hidden on desktop, where the
-     inline iframe viewer is shown instead. Revealed in the mobile block below. */
-  .cv-open-mobile { display: none; }
 
   /* Consulting page: figure */
   .mami-fig {
@@ -318,6 +287,33 @@
     letter-spacing: 0.06em;
     vertical-align: 0.12em;
   }
+
+  /* About: CV / JMP pill links — outlined, turning green on hover. */
+  .about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+    margin: 1.4em 0 0.2em;
+  }
+  .page__content .about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.42em 0.95em;
+    border: 1px solid var(--accent-soft);
+    border-radius: 5px;
+    color: var(--text);
+    text-decoration: none !important;
+    font-size: 0.9em;
+    line-height: 1;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  }
+  .page__content .about-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: var(--accent-hover-bg);
+  }
+  .about-link svg { width: 1.05em; height: 1.05em; flex: none; }
 
   /* Title-row badge (e.g. job-market status beside the page title). Same green
      knockout idiom as the JMP tag, scaled up to sit in the h1 title row. */
@@ -413,31 +409,6 @@
     }
     .author__urls li {
       white-space: normal;
-    }
-
-    /* Mobile browsers (iOS Safari especially) won't render a PDF inside an
-       iframe — the viewer shows as an empty box. Hide it and the now-moot
-       "if the viewer does not load" note; offer a direct button instead. */
-    .cv-viewer,
-    .page__content p.cv-fallback {
-      display: none;
-    }
-    .cv-open-mobile {
-      display: block;
-      text-align: center;
-      border: 1px solid var(--accent-soft);
-      border-left: 3px solid var(--accent);
-      padding: 0.9em 1.2em;
-      margin: 0.4em 0 1.2em 0;
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: none !important;
-      transition: background-color 0.15s ease, border-color 0.15s ease;
-    }
-    .cv-open-mobile:active,
-    .cv-open-mobile:hover {
-      background-color: var(--accent-hover-bg);
-      border-color: var(--accent-hover-border);
     }
 
     /* Nav: put every item — About included — behind the hamburger on a phone.
