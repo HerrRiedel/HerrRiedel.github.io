@@ -66,5 +66,3 @@ Each analysis is tailored to the business. For a café, a gym, or a clinic, MaMi
   <span class="demo-desc">Explore the pharmacy habitat maps for Guadalajara and Monterrey.</span>
   <span class="demo-meta">This demonstration uses a subset of the model's variables. It illustrates the method and is not a complete site-selection assessment.</span>
 </a>
-
-To discuss a location study, [get in touch](mailto:gabrielcr@ucsd.edu).
