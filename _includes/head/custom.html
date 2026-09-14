@@ -357,11 +357,36 @@
     line-height: 1;
   }
 
-  /* Research page: abstract left-bar style */
+  /* Research page: paper entries */
+  .paper { margin-bottom: 2em; }
+  /* Clickable title — keeps the plain heading color, links only on hover */
+  .page__content a.paper-title {
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .page__content a.paper-title:hover {
+    color: var(--link);
+    text-decoration: underline;
+  }
+  /* The Abstract toggle, styled to match the PDF/Slides links beside it */
+  .paper-links .abs-toggle {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--link);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .paper-links .abs-toggle:hover { color: var(--link-hover); }
+  .paper-links .abs-toggle:focus:not(:focus-visible) { outline: none; }
+
+  /* Research page: abstract left-bar style (collapsed by default via [hidden]) */
   .paper-abstract {
     border-left: 2px solid var(--accent);
     padding-left: 1em;
-    margin: -0.8em 0 2.8em 0;
+    margin: 0.7em 0 0.2em;
     font-size: 0.85em;
     color: var(--text-muted);
     line-height: 1.65;
@@ -635,6 +660,22 @@ document.addEventListener('DOMContentLoaded', function () {
   t.addEventListener('click', function () {
     var light = document.documentElement.classList.toggle('light');
     try { if (light) localStorage.setItem('mode', 'light'); else localStorage.removeItem('mode'); } catch (e) {}
+  });
+});
+</script>
+
+<!-- Research page: expand/collapse the abstract under each paper -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.abs-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var paper = btn.closest('.paper');
+      var abs = paper && paper.querySelector('.paper-abstract');
+      if (!abs) return;
+      var willOpen = abs.hasAttribute('hidden');
+      if (willOpen) { abs.removeAttribute('hidden'); } else { abs.setAttribute('hidden', ''); }
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
   });
 });
 </script>
