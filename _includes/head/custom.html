@@ -187,6 +187,9 @@
   /* Content area sits slightly above sidebar — creates depth (~2% lift) */
   article.page {
     background-color: var(--surface);
+    display: flow-root;   /* contain the floated inner wrap so the surface tone
+                             covers the whole content area (fixes mobile, where it
+                             collapsed and the text sat on the page background) */
     padding-left: 2em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
