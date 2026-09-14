@@ -21,7 +21,10 @@ description: "Ph.D. candidate in Economics at UC San Diego. Research on how prod
 
 <div>
   <p>
-    I am a Ph.D. candidate in economics at UC San Diego, working in macroeconomics and applied theory. I study how producers respond to regulation in markets such as housing, education, and food. I am particularly interested in regulatory capture and in how regulation can shift profits from less productive to more productive firms.
+    I am a Ph.D. candidate in economics at UC San Diego, working in macroeconomics and applied theory.
+  </p>
+  <p>
+    I study how producers respond to regulation. I am particularly interested in regulatory capture and in how regulation can shift profits from less productive to more productive firms. My work spans education, housing, and food markets.
   </p>
   <!-- Personal paragraph — hidden during the 2026-27 job market; restore it when the market is over.
   <p>
