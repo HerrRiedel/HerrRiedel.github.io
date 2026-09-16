@@ -33,10 +33,8 @@ redirect_from:
 </div>
 
 <div class="paper">
-  <a class="paper-title" href="/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">Inputs and the School Quality Effects of Targeted Vouchers</a><br>
-  <span class="paper-authors">with <a href="https://cristsanchez.github.io/">Cristián Sánchez</a></span><br>
-  <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">PDF</a></small>
-  <div class="paper-abstract" hidden>We study schools' responses to Chile's targeted voucher reform, exploiting differences in its intensity across local education markets. Both public and private voucher schools reduced class sizes and adjusted staffing and teachers' working conditions. We find gains in school value added among private voucher schools, although schools induced to participate were not the main drivers of these gains. We then examine how observed educational inputs relate to the reform's effects on school value added.</div>
+  <span class="paper-title-static">Supply-side Responses to Targeted Vouchers</span><br>
+  <small class="paper-note">Draft coming soon</small>
 </div>
 
 ---
@@ -47,4 +45,11 @@ redirect_from:
   <a class="paper-title" href="/assets/papers/Across%20CES%20(Notes)%20-%20Gabriel%20Cañedo%20Riedel.pdf">Across CES</a><br>
   <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Across%20CES%20(Notes)%20-%20Gabriel%20Cañedo%20Riedel.pdf">PDF</a>&nbsp;·&nbsp;<a href="/assets/papers/Across%20CES%20(Slides)%20-%20Gabriel%20Cañedo%20Riedel.pdf">Slides</a></small>
   <div class="paper-abstract" hidden>I show that CES share functions have an exact representation as log-logistic distribution functions in own price, and that any demand system nesting CES inherits a generalization of this structure. Because share functions fully characterize a demand system, this makes the tools of distribution theory available for demand system design, providing a constructive approach to building flexible alternatives that nest CES. The representation also has economic content: expenditure shares can be interpreted through distributions of consumers' reservation prices, connecting aggregate demand to binary purchasing decisions.</div>
+</div>
+
+<div class="paper">
+  <a class="paper-title" href="/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">Inputs and the School Quality Effects of Targeted Vouchers</a><br>
+  <span class="paper-authors">with <a href="https://cristsanchez.github.io/">Cristián Sánchez</a></span><br>
+  <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Inputs%20and%20the%20School%20Quality%20Effects%20of%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">PDF</a></small>
+  <div class="paper-abstract" hidden>We study schools' responses to Chile's targeted voucher reform, exploiting differences in its intensity across local education markets. Both public and private voucher schools reduced class sizes and adjusted staffing and teachers' working conditions. We find gains in school value added among private voucher schools, although schools induced to participate were not the main drivers of these gains. We then examine how observed educational inputs relate to the reform's effects on school value added.</div>
 </div>
