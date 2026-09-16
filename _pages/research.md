@@ -33,8 +33,10 @@ redirect_from:
 </div>
 
 <div class="paper">
-  <span class="paper-title-static">Supply-side Responses to Targeted Vouchers</span><br>
-  <small class="paper-note">Draft coming soon</small>
+  <a class="paper-title" href="/assets/papers/Supply-side%20Responses%20to%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">Supply-side Responses to Targeted Vouchers</a><br>
+  <span class="paper-authors">with <a href="https://cristsanchez.github.io/">Cristián Sánchez</a></span><br>
+  <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Supply-side%20Responses%20to%20Targeted%20Vouchers%20(Draft)%20-%20Cañedo%20Riedel%20and%20Sanchez.pdf">PDF</a></small>
+  <div class="paper-abstract" hidden>We examine schools' responses to a recent targeted voucher reform in Chile. Private schools' responses to the reform are quicker and larger than public schools' responses; however, schools in both sectors react to the policy along various margins. Private schools enter and exit the market more often. Public and private schools improve educational inputs related to school infrastructure and the teaching staff. Interestingly, private schools' fee responses are such that low income students see an increase in the average fee they face in the market, and higher income students see a decrease in the average fee they face.</div>
 </div>
 
 ---
