@@ -2,11 +2,16 @@
 
 <!-- Palette + mode, read synchronously before first paint (no flash):
      - palette (green default / terra) set by /green /terra, key "palette".
-     - light/dark set by the masthead sun-moon toggle, key "mode". -->
+     - light/dark: an explicit choice from the sun/moon toggle (key "mode" =
+       "light"/"dark") wins; with no choice, follow the OS/browser preference. -->
 <script>
   try {
     if (localStorage.getItem('palette') === 'terra') document.documentElement.classList.add('terra');
-    if (localStorage.getItem('mode') === 'light') document.documentElement.classList.add('light');
+    var mode = localStorage.getItem('mode');
+    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (mode === 'light' || (mode == null && prefersLight)) {
+      document.documentElement.classList.add('light');
+    }
   } catch (e) {}
 </script>
 
@@ -662,10 +667,18 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
   var t = document.getElementById('theme-toggle');
   if (!t) return;
+  // Clicking makes an explicit choice (stored both ways, so it overrides the OS)
   t.addEventListener('click', function () {
     var light = document.documentElement.classList.toggle('light');
-    try { if (light) localStorage.setItem('mode', 'light'); else localStorage.removeItem('mode'); } catch (e) {}
+    try { localStorage.setItem('mode', light ? 'light' : 'dark'); } catch (e) {}
   });
+  // With no explicit choice, follow the OS if it changes while the page is open
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+      var chosen; try { chosen = localStorage.getItem('mode'); } catch (err) { chosen = null; }
+      if (chosen == null) document.documentElement.classList.toggle('light', e.matches);
+    });
+  }
 });
 </script>
 
