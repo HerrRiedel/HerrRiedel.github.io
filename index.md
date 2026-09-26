@@ -27,7 +27,7 @@ description: "Ph.D. candidate in Economics at UC San Diego. Research on how prod
     <strong class="lede-label">Fields:</strong> I work in applied microeconomics (theory and empirics) and applied general equilibrium.
   </p>
   <p>
-    <strong class="lede-label">Topic:</strong> I study how producers respond to regulation. I am particularly interested in regulatory capture and in how regulation can shift profits from less productive to more productive firms. My work spans education, housing, and food markets.
+    <strong class="lede-label">Topic:</strong> I study how industries respond to regulation. I am particularly interested in how firms can use regulation to shift profits toward themselves. I have studied regulation in housing, education, and food markets.
   </p>
   <!-- Personal paragraph — hidden during the 2026-27 job market; restore it when the market is over.
   <p>
