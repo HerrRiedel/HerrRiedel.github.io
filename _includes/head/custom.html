@@ -95,6 +95,25 @@
     background-color: var(--bg);
   }
   .page__footer { background-color: var(--footer); }
+
+  /* Sticky masthead — keep the top nav bar in view while scrolling, the way
+     the author-profile sidebar stays put. The masthead already gets an opaque
+     var(--bg) background above, so content scrolls cleanly underneath. */
+  .masthead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+
+  /* Pin the author photo flush under the sticky masthead so it locks in place
+     immediately instead of doing the little sticky "catch-up" travel. Matches
+     the 98px masthead height. Desktop only — on phones (<=768px) MM keeps the
+     sidebar non-sticky, so the photo still scrolls away to give room to content. */
+  @media (min-width: 769px) {
+    .sidebar.sticky { top: 98px; }
+  }
+
   .page__content a { color: var(--link); }
   .page__content a:hover { color: var(--link-hover); }
   .greedy-nav .visible-links a:before { background: var(--accent); }
