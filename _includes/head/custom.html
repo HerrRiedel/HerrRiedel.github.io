@@ -198,12 +198,35 @@
   .author__urls-wrapper {
     margin-top: 0.2em;
   }
-  /* Tighten spacing between individual links */
+  /* Email / X as side-by-side outlined pills (same look as the CV/JMP pills). */
+  .author__urls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.5em;
+    padding-left: 0;
+    list-style: none;
+  }
   .author__urls li {
     line-height: 1.2;
-    margin-bottom: 0;
-    padding-top: 0.05em;
-    padding-bottom: 0.05em;
+    margin: 0;
+    padding: 0;
+  }
+  .author__urls li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.32em 0.8em;
+    border: 1px solid var(--accent-soft);
+    border-radius: 5px;
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  }
+  .author__urls li a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background-color: var(--accent-hover-bg);
   }
 
   /* Profile photo: remove border, fill sidebar width */
@@ -489,14 +512,15 @@
       display: none;   /* the "Follow" toggle — email/X are shown directly instead */
     }
     .author__urls {
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       position: relative;
       margin: 0.4em 0 0;
       padding: 0;
       border: 0;
       background: transparent;
       box-shadow: none;
-      text-align: center;
     }
     .author__urls:before,
     .author__urls:after {
