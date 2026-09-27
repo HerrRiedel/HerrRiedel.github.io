@@ -166,8 +166,22 @@
   html.light .theme-toggle .theme-icon-sun { display: none; }
   html.light .theme-toggle .theme-icon-moon { display: inline; }
 
-  /* Name is shown in the masthead now, so hide it under the sidebar photo */
-  .author__name { display: none; }
+  /* Author card under the photo: name, then title + institution (from bio). */
+  .author__name {
+    display: block;
+    font-size: 1.15em;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0.5em 0 0.15em;
+  }
+  .author__name a { color: var(--text); }
+  .author__bio {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .author__bio p { margin: 0; }
 
   /* The theme dims the whole sidebar to 85% opacity (brightening on hover),
      which reads as a tint/"film" over the photo. Keep it at full opacity. */
