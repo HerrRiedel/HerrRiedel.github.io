@@ -229,6 +229,21 @@
     background-color: var(--accent-hover-bg);
     text-decoration: none !important;
   }
+  /* Plain, copy-pasteable email address below the contact pills. */
+  .author__email-plain {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin: 0.6em 0 0;
+    font-size: 0.9em;
+    color: var(--text-muted);
+  }
+  .author__email-plain .fa-envelope { color: var(--icon); }
+  .author__email-address {
+    color: var(--text);
+    -webkit-user-select: all;
+    user-select: all;   /* one click selects the whole address for easy copy */
+  }
 
   /* Profile photo: remove border, fill sidebar width */
   .author__avatar img {
@@ -529,6 +544,9 @@
     }
     .author__urls li {
       white-space: normal;
+    }
+    .author__email-plain {
+      justify-content: center;
     }
 
     /* Nav: put every item — About included — behind the hamburger on a phone.
