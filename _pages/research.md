@@ -19,9 +19,9 @@ redirect_from:
 </div>
 
 <div class="paper">
-  <a class="paper-title" href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">Who Wins With Up-Zoning? Quasi-Experimental Evidence from California's Reforms for Accessory Dwelling Units</a><br>
+  <a class="paper-title" href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">Who Wins With Up-Zoning? Quasi-Experimental Evidence from California's Reforms for Accessory Dwelling Units</a><br>
   <span class="paper-authors">with <a href="https://www.philiphoxie.com/">Philip Hoxie</a></span><br>
-  <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">PDF</a></small>
+  <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">PDF</a></small>
   <div class="paper-abstract" hidden>Can up-zoning and permitting reforms for small units increase housing supply, and who captures the benefits? We study California's 2017 deregulation of accessory dwelling units (ADUs) through state preemption of local permitting, exploiting a regulatory discontinuity at the California Coastal Zone boundary. Permitting reforms increased ADU permitting activity by about 30%, although these effects are small in magnitude. However, the reform did increase land values by 7%. With a simple model, we show that the change in land values reflects the decreased permitting costs associated with the reform package. We also find that permitting reforms are likely not creating large price spillovers, and the increases in land values are associated with a 1.3% increase in property tax collections.</div>
 </div>
 
