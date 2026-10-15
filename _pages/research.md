@@ -19,7 +19,7 @@ redirect_from:
 </div>
 
 <div class="paper">
-  <a class="paper-title" href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">Who Wins With Up-Zoning? Quasi-Experimental Evidence from California's By-Right Permitting Reforms for Accessory Dwelling Units</a><br>
+  <a class="paper-title" href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">Who Wins With Up-Zoning? Quasi-Experimental Evidence from California's Reforms for Accessory Dwelling Units</a><br>
   <span class="paper-authors">with <a href="https://www.philiphoxie.com/">Philip Hoxie</a></span><br>
   <small class="paper-links"><button type="button" class="abs-toggle" aria-expanded="false">Abstract</button>&nbsp;·&nbsp;<a href="/assets/papers/Who%20Wins%20With%20Up-Zoning%20(Draft)%20-%20Cañedo%20Riedel%20and%20Hoxie.pdf">PDF</a></small>
   <div class="paper-abstract" hidden>We study California's 2017 reforms to accessory dwelling unit (ADU) permitting, exploiting a regulatory discontinuity at the Coastal Zone boundary. The reforms increased permitting activity by about 30%, although take-up remained low. Land values rose by 7%. A stylized model shows how lower permitting costs can be capitalized into land values through the option to build an ADU, benefiting incumbent owners even when they do not build. We also find a 3% increase in property tax collections and no detectable price spillovers across the boundary.</div>
