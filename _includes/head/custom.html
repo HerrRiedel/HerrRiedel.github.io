@@ -382,6 +382,9 @@
     gap: 0.6em;
     margin: 0.9em 0 1.3em;
   }
+  /* A second pill row (e.g. statements) sits one pill-gap below the first,
+     reading as one group rather than two separate blocks. */
+  .about-links + .about-links { margin-top: -0.7em; }
   /* Job-market status badge, sitting in the pill row at the same height as the
      pills (matched padding/border/font); filled green knockout like the JMP tag. */
   .about-links .jm-badge {
